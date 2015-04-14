@@ -8,7 +8,7 @@ script:
 - mkdir -p build/logs
 - mkdir cache
 - chmod 777 cache
-- vendor/bin/phpunit --coverage-clover build/logs/clover.xml test/
+- vendor/bin/phpunit --coverage-clover build/logs/clover.xml tests/
 
 after_script:
   - php vendor/bin/coveralls -v
