@@ -365,4 +365,76 @@ class Voormelding
             }
         }
     }
+
+    /**
+     * Getter voor de aanmaakdatum van het bestand.
+     * @return string
+     */
+    protected final function getDatumAanmaakBestand()
+    {
+        return $this->datumAanmaakBestand;
+    }
+
+    /**
+     * Getter voor de tijd van het aanmaakbestand.
+     * @return string
+     */
+    protected final function getTijdAanmaakBestand()
+    {
+        return $this->tijdAanmaakBestand;
+    }
+
+    /**
+     * Getter voor de berichtversie.
+     * @return int
+     */
+    protected final function getBerichtVersie()
+    {
+        return $this->berichtVersie;
+    }
+
+    /**
+     * Getter voor de softwareversie.
+     * @return int
+     */
+    protected final function getSoftwareVersie()
+    {
+        return $this->softwareVersie;
+    }
+
+    /**
+     * Getter voor de productversie.
+     * @return int
+     */
+    protected final function getProductVersie()
+    {
+        return $this->productVersie;
+    }
+
+    /**
+     * Getter voor de klantcode.
+     * @return string
+     */
+    protected final function getKlantCode()
+    {
+        return $this->klantCode;
+    }
+
+    /**
+     * Getter voor het voormelding-id.
+     * @return int
+     */
+    protected final function getVoormeldingId()
+    {
+        return $this->voormeldingId;
+    }
+
+    /**
+     * Getter voor de aanleverdatum van de zending(en).
+     * @return string
+     */
+    protected final function getAanleverdatumZendingen()
+    {
+        return $this->aanleverdatumZendingen;
+    }
 }
