@@ -1,0 +1,19 @@
+{
+    "name": "soneritics/postnl",
+    "type": "library",
+    "description": "Aanmaken van PostNL vooraanmeldingbestanden om pakketten te verzenden.",
+    "homepage": "https://github.com/Soneritics/PostNL",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "squizlabs/php_codesniffer": "dev-master",
+        "satooshi/php-coveralls": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {"PostNL\\": "Soneritics/PostNL/"}
+    }
+}
