@@ -370,7 +370,7 @@ class Voormelding
      * Getter voor de aanmaakdatum van het bestand.
      * @return string
      */
-    protected final function getDatumAanmaakBestand()
+    final protected function getDatumAanmaakBestand()
     {
         return $this->datumAanmaakBestand;
     }
@@ -379,7 +379,7 @@ class Voormelding
      * Getter voor de tijd van het aanmaakbestand.
      * @return string
      */
-    protected final function getTijdAanmaakBestand()
+    final protected function getTijdAanmaakBestand()
     {
         return $this->tijdAanmaakBestand;
     }
@@ -388,7 +388,7 @@ class Voormelding
      * Getter voor de berichtversie.
      * @return int
      */
-    protected final function getBerichtVersie()
+    final protected function getBerichtVersie()
     {
         return $this->berichtVersie;
     }
@@ -397,7 +397,7 @@ class Voormelding
      * Getter voor de softwareversie.
      * @return int
      */
-    protected final function getSoftwareVersie()
+    final protected function getSoftwareVersie()
     {
         return $this->softwareVersie;
     }
@@ -406,7 +406,7 @@ class Voormelding
      * Getter voor de productversie.
      * @return int
      */
-    protected final function getProductVersie()
+    final protected function getProductVersie()
     {
         return $this->productVersie;
     }
@@ -415,7 +415,7 @@ class Voormelding
      * Getter voor de klantcode.
      * @return string
      */
-    protected final function getKlantCode()
+    final protected function getKlantCode()
     {
         return $this->klantCode;
     }
@@ -424,7 +424,7 @@ class Voormelding
      * Getter voor het voormelding-id.
      * @return int
      */
-    protected final function getVoormeldingId()
+    final protected function getVoormeldingId()
     {
         return $this->voormeldingId;
     }
@@ -433,7 +433,7 @@ class Voormelding
      * Getter voor de aanleverdatum van de zending(en).
      * @return string
      */
-    protected final function getAanleverdatumZendingen()
+    final protected function getAanleverdatumZendingen()
     {
         return $this->aanleverdatumZendingen;
     }
