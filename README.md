@@ -8,7 +8,20 @@ Auteur
 * [@Soneritics](https://github.com/Soneritics) - Jordi Jolink
 
 ## Introductie ##
-Vooraanmelding PostNL pakketten.
+Middels deze componenten kan eenvoudig een voormeldbestand gegenereerd worden voor PostNL pakketten.
 
 ## Minimale requirements ##
  - PHP 5.5
+
+## Installatie ##
+Deze code kan het best uitgecheckt worden middels Composer. Hiervoor kan de package gebruikt worden: soneritics/postnl
+
+## Codetaal: Nederlands ##
+Voor de taal van de classes, variabelen en commentaar is gekozen voor Nederlands. Daarbij worden getters en setters als hybride aangeduid, bijvoorbeeld: setKlantnummer.
+Hiervoor is gekozen aangezien PostNL uitsluitend binnen Nederland verzendt, en daardoor ook vooral door Nederlanders geïmplementeerd zal worden.
+Daarnaast worden specifieke woorden gebruikt, waarvan de Engelse vertaling de werking erg onduidelijk zal maken.
+
+## Voorbeeld ##
+```php
+    $vooraanmelding = (new Vooraanmelding);
+```
