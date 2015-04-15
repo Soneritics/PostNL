@@ -35,13 +35,86 @@ use PostNL\Mapping\MappingGenerator;
 class Rembours extends MappingGenerator
 {
     /**
+     * Mapping array waarin wordt aangegeven welke getter overeenkomt
+     * met welke veldcode. Definieert tevens de volgorde.
+     * @var array
+     */
+    protected $mapping = [
+        'A228' => 'IBAN',
+        'A229' => 'BIC'
+    ];
+
+    /**
+     * IBAN rekeningnummer van de verzender.
+     * @var string
+     */
+    protected $IBAN;
+
+    /**
+     * BIC code van de verzender.
+     * @var string
+     */
+    protected $BIC;
+
+    /**
+     * Getter voor het IBAN rekeningnummer.
+     * @return string
+     */
+    protected function getIBAN()
+    {
+        return $this->IBAN;
+    }
+
+    /**
+     * Getter voor de BIC code.
+     * @return string
+     */
+    protected function getBIC()
+    {
+        return $this->BIC;
+    }
+
+    /**
+     * Stel het IBAN rekeningnummer in van de verzender.
+     * @param string $IBAN
+     * @return \PostNL\Data\Rembours
+     */
+    public function setIBAN($IBAN)
+    {
+        // @todo check op geldige IBAN code
+        $this->IBAN = $IBAN;
+        return $this;
+    }
+
+    /**
+     * Stel het BIC nummer in van de verzender.
+     * @param string $BIC
+     * @return \PostNL\Data\Rembours
+     */
+    public function setBIC($BIC)
+    {
+        if (strlen($BIC) < 8 || strlen($BIC) > 11) {
+            throw new \Exception('Ongeldige BIC-code.');
+        }
+
+        $this->BIC = $BIC;
+        return $this;
+    }
+
+        /**
      * Valideer de ingevoerde gegevens voordat de mapping wordt toegepast om
      * output te genereren.
      * @throws \Exception
      */
     protected function validate()
     {
-        
+        $mandatory = ['IBAN', 'BIC'];
+        foreach ($mandatory as $property) {
+            if (empty($property)) {
+                throw new \Exception(
+                    'Verplichte property niet gevuld: ' . $property
+                );
+            }
+        }
     }
-
 }
