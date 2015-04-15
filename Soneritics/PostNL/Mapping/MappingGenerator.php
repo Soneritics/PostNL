@@ -39,11 +39,18 @@ abstract class MappingGenerator
 
     /**
      * Map de waarden op basis van de $mapping property.
-     * @throw \Exception
      * @return array
      */
     public function genereer()
     {
+        $this->validate();
         return $this->getMappedValues();
     }
+
+    /**
+     * Valideer de ingevoerde gegevens voordat de mapping wordt toegepast om
+     * output te genereren.
+     * @throws \Exception
+     */
+    abstract protected function validate();
 }

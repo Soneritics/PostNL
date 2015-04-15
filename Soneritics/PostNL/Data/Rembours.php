@@ -24,6 +24,8 @@
  */
 namespace PostNL\Data;
 
+use PostNL\Mapping\MappingGenerator;
+
 /**
  * Rembours object.
  *
@@ -32,5 +34,14 @@ namespace PostNL\Data;
  */
 class Rembours extends MappingGenerator
 {
+    /**
+     * Valideer de ingevoerde gegevens voordat de mapping wordt toegepast om
+     * output te genereren.
+     * @throws \Exception
+     */
+    protected function validate()
+    {
+        
+    }
 
 }
