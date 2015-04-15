@@ -125,7 +125,7 @@ class Voormelding
     protected $voormeldingId;
 
     /**
-     * Aanleverlocatie.
+     * Aanleverlocatie (BLS-code).
      * @var string
      */
     protected $aanleverLocatie;
@@ -308,7 +308,7 @@ class Voormelding
     }
 
     /**
-     * Setter voor de aanleverlocatie.
+     * Setter voor de aanleverlocatie (BLS-code).
      * @param int $locatie
      * @return \PostNL\Voormelding
      * @throws \Exception
