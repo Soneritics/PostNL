@@ -165,16 +165,26 @@ class Voormelding
         yield "A230 " . $this->getAanleverLocatie();
         yield "A999";
 
+        // Som remboursbedragen bijhouden
+        $somRembours = 0;
+
         // Genereer V-segment
         foreach ($this->pakketten as $pakket) {
             foreach ($pakket->genereer() as $value) {
                 yield $value;
+
+            }
+
+            // Remboursbedrag optellen indien gevuld
+            $remboursBedrag = $pakket->getRemboursbedrag();
+            if (!empty($remboursBedrag)) {
+                $somRembours += $remboursBedrag;
             }
         }
 
         // Genereer Z-segment
         yield 'Z001 ' . count($this->pakketten);
-        yield 'Z002 0'; // @todo: Som remboursbedragen
+        yield 'Z002 ' . $somRembours;
         yield 'Z999';
     }
 
