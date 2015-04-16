@@ -39,7 +39,7 @@ abstract class MappingGenerator
 
     /**
      * Map de waarden op basis van de $mapping property.
-     * @return array
+     * @return \Generator
      */
     public function genereer()
     {

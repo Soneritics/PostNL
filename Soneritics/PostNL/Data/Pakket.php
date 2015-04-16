@@ -34,9 +34,10 @@ use PostNL\Mapping\MappingGenerator;
  */
 class Pakket extends MappingGenerator
 {
+    protected $mapping = ['TEST' => 'Test'];
+
     /**
-     * Valideer de ingevoerde gegevens voordat de mapping wordt toegepast om
-     * output te genereren.
+     * Valideer de ingevoerde gegevens voordat de mapping wordt toegepast om output te genereren.
      * @throws \Exception
      */
     protected function validate()
@@ -44,4 +45,8 @@ class Pakket extends MappingGenerator
         
     }
 
+    public function getTest()
+    {
+        return 'test';
+    }
 }

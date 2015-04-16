@@ -110,7 +110,7 @@ class Rembours extends MappingGenerator
     {
         $mandatory = ['IBAN', 'BIC'];
         foreach ($mandatory as $property) {
-            if (empty($property)) {
+            if (empty($this->$property)) {
                 throw new \Exception(
                     'Verplichte property niet gevuld: ' . $property
                 );
