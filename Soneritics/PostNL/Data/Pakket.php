@@ -76,175 +76,175 @@ class Pakket extends MappingGenerator
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $zendingcode;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $referentietekst;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $productcode;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $frankeeraanduiding = 15;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $emailadres;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $mobiel;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $telefoon;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $volgnummerCollo = 1;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $aantalColli = 1;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $remboursbedrag = 0;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $verzekerdBedrag = 0;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $geadresseerdeBedrijfsnaam;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $geadresseerdeAfdeling;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $geadresseerdeAchternaam;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $geadresseerdeVoornaam;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $geadresseerdeGebouwnaam;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $geadresseerdeVerdieping;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $geadresseerdeStraatnaam;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $geadresseerdeHuisnummerPostbusnummer;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $geadresseerdeHuisnummerToevoeging;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $geadresseerdePostcode;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $geadresseerdeWoonplaats;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $geadresseerdeWijk;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $geadresseerdeRegio;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $geadresseerdeDeurcode;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $geadresseerdeOpmerking;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $geadresseerdeLandcode;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $inhoud;
 
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $gewicht;
 
