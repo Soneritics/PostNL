@@ -46,11 +46,15 @@ trait MappingTrait
 
         // Mapping toepassen en resultaat yielden
         foreach ($this->mapping as $identifier => $getter) {
-            $getterFunction = "get{$getter}";
-            $value = $this->$getterFunction();
+            if ($identifier === $getter) {
+                yield $getter;
+            } else {
+                $getterFunction = "get{$getter}";
+                $value = $this->$getterFunction();
 
-            if (!empty($value)) {
-                yield "{$identifier} {$value}";
+                if (!empty($value)) {
+                    yield "{$identifier} {$value}";
+                }
             }
         }
     }
