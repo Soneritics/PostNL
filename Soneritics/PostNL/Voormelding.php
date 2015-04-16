@@ -24,10 +24,10 @@
  */
 namespace PostNL;
 
-use Mapping\MappingTrait;
-use Data\Afzender;
-use Data\Pakket;
-use Data\Rembours;
+use PostNL\Mapping\MappingTrait;
+use PostNL\Data\Afzender;
+use PostNL\Data\Pakket;
+use PostNL\Data\Rembours;
 
 /**
  * Voormelding voor verzendingen.
@@ -139,8 +139,8 @@ class Voormelding
     }
 
     /**
-     * Genereert het voormeldbestand en returnt de inhoud van dit bestand.
-     * @return string
+     * Genereert het voormeldbestand en `yield` de inhoud van dit bestand zodat er een Generator object ontstaat.
+     * @return \Generator
      */
     public function genereer()
     {
@@ -148,27 +148,47 @@ class Voormelding
         $this->validate();
 
         // Genereer A-segment
-        $result = $this->getMappedValues();
-        $result += $this->afzender->genereer();
-
-        if (!empty($this->rembours)) {
-            $result += $this->rembours->genereer();
+        foreach ($this->getMappedValues() as $value) {
+            yield $value;
         }
 
-        $result[] = "A230 " . $this->getAanleverLocatie();
-        $result[] = "A999";
+        foreach ($this->afzender->genereer() as $value) {
+            yield $value;
+        }
+
+        if (!empty($this->rembours)) {
+            foreach ($this->rembours->genereer() as $value) {
+                yield $value;
+            }
+        }
+
+        yield "A230 " . $this->getAanleverLocatie();
+        yield "A999";
 
         // Genereer V-segment
         foreach ($this->pakketten as $pakket) {
-            $result[] = $pakket->genereer();
+            foreach ($pakket->genereer() as $value) {
+                yield $value;
+            }
         }
 
         // Genereer Z-segment
-        $result[] = 'Z001 ' . count($this->pakketten);
-        $result[] = 'Z002 0'; // @todo: Som remboursbedragen
-        $result[] = 'Z999';
+        yield 'Z001 ' . count($this->pakketten);
+        yield 'Z002 0'; // @todo: Som remboursbedragen
+        yield 'Z999';
+    }
 
-        // Totaalresultaat returnen
+    /**
+     * Genereert de inhoud van het bestand en returnt de volledige inhoud van dit bestand.
+     * @return string
+     */
+    public function genereerInhoud()
+    {
+        $result = [];
+        foreach ($this->genereer() as $line) {
+            $result[] = $line;
+        }
+
         return implode("\n", $result);
     }
 
@@ -223,8 +243,8 @@ class Voormelding
 
         // Zet datum en tijd op basis van timestamp
         $datum = date('Ymd', $timestamp);
-        $this->datumAanmaakBestand($datum);
-        $this->tijdAanmaakBestand(date('His', $timestamp));
+        $this->datumAanmaakBestand = $datum;
+        $this->tijdAanmaakBestand = date('His', $timestamp);
 
         // Kijk of datum na aanleverdatum is
         if (empty($this->aanleverdatumZendingen) ||
@@ -358,7 +378,7 @@ class Voormelding
         ];
 
         foreach ($mandatory as $property) {
-            if (empty($property)) {
+            if (empty($this->$property)) {
                 throw new \Exception(
                     'Verplichte property niet gevuld: ' . $property
                 );
@@ -409,6 +429,15 @@ class Voormelding
     final protected function getProductVersie()
     {
         return $this->productVersie;
+    }
+
+    /**
+     * Getter voor de aanleverlocatie.
+     * @return int
+     */
+    final protected function getAanleverLocatie()
+    {
+        return $this->aanleverLocatie;
     }
 
     /**

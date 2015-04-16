@@ -44,18 +44,14 @@ trait MappingTrait
             throw new \Exception('$mapping property niet gevuld.');
         }
 
-        // Mapping toepassen en resultaat retourneren
-        $result = [];
-
+        // Mapping toepassen en resultaat yielden
         foreach ($this->mapping as $identifier => $getter) {
             $getterFunction = "get{$getter}";
             $value = $this->$getterFunction();
 
             if (!empty($value)) {
-                $result[] = "{$identifier} {$value}";
+                yield "{$identifier} {$value}";
             }
         }
-
-        return $result;
     }
 }
