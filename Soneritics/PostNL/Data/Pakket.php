@@ -267,7 +267,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getZendingcode()
@@ -276,7 +276,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getReferentietekst()
@@ -285,7 +285,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getProductcode()
@@ -294,7 +294,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getFrankeeraanduiding()
@@ -303,7 +303,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getEmailadres()
@@ -312,7 +312,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getMobiel()
@@ -321,7 +321,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getTelefoon()
@@ -330,7 +330,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getVolgnummerCollo()
@@ -339,7 +339,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getAantalColli()
@@ -348,7 +348,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     public function getRemboursbedrag()
@@ -357,7 +357,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getVerzekerdBedrag()
@@ -366,7 +366,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getGeadresseerdeBedrijfsnaam()
@@ -375,7 +375,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getGeadresseerdeAfdeling()
@@ -384,7 +384,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getGeadresseerdeAchternaam()
@@ -393,7 +393,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getGeadresseerdeVoornaam()
@@ -402,7 +402,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getGeadresseerdeGebouwnaam()
@@ -411,7 +411,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getGeadresseerdeVerdieping()
@@ -420,7 +420,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getGeadresseerdeStraatnaam()
@@ -429,7 +429,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getGeadresseerdeHuisnummerPostbusnummer()
@@ -438,7 +438,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getGeadresseerdeHuisnummerToevoeging()
@@ -447,7 +447,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getGeadresseerdePostcode()
@@ -456,7 +456,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getGeadresseerdeWoonplaats()
@@ -465,7 +465,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getGeadresseerdeWijk()
@@ -474,7 +474,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getGeadresseerdeRegio()
@@ -483,7 +483,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getGeadresseerdeDeurcode()
@@ -492,7 +492,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getGeadresseerdeOpmerking()
@@ -501,7 +501,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getGeadresseerdeLandcode()
@@ -510,7 +510,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getInhoud()
@@ -519,7 +519,7 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     * 
+     *
      * @return type
      */
     protected function getGewicht()
