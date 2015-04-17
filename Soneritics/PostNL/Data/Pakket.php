@@ -75,176 +75,176 @@ class Pakket extends MappingGenerator
     ];
 
     /**
-     *
-     * @var type
+     * Zendingcode (3S code).
+     * @var string
      */
     protected $zendingcode;
 
     /**
-     *
-     * @var type
+     * Referentietekst (optioneel).
+     * @var string
      */
     protected $referentietekst;
 
     /**
-     *
-     * @var type
+     * Productcode. Gedefinieerd in de Productcode class.
+     * @var string
      */
-    protected $productcode;
+    protected $productcode = Productcode::STANDAARD_VERZENDING;
 
     /**
-     *
-     * @var type
+     * Frankeeraanduiding. Vaste waarde.
+     * @var int
      */
     protected $frankeeraanduiding = 15;
 
     /**
-     *
-     * @var type
+     * Emailadres (optioneel).
+     * @var string
      */
     protected $emailadres;
 
     /**
-     *
-     * @var type
+     * Mobiele telefoonnummer (optioneel).
+     * @var string
      */
     protected $mobiel;
 
     /**
-     *
-     * @var type
+     * Telefoonnummer (optioneel).
+     * @var string
      */
     protected $telefoon;
 
     /**
-     *
-     * @var type
+     * Volgnummer van de collo, indien er meer colli in de zending zijn.
+     * @var int
      */
     protected $volgnummerCollo = 1;
 
     /**
-     *
-     * @var type
+     * Aantal colli waaruit de zending bestaat.
+     * @var int
      */
     protected $aantalColli = 1;
 
     /**
-     *
-     * @var type
+     * Remboursbedrag in eurocenten (optioneel).
+     * @var int
      */
     protected $remboursbedrag = 0;
 
     /**
-     *
-     * @var type
+     * Verzekerd bedrag in centen (optioneel).
+     * @var int
      */
     protected $verzekerdBedrag = 0;
 
     /**
-     *
-     * @var type
+     * Bedrijfsnaam van de geadresseerde.
+     * @var string
      */
     protected $geadresseerdeBedrijfsnaam;
 
     /**
-     *
-     * @var type
+     * Afdeling van de geadresseerde.
+     * @var string
      */
     protected $geadresseerdeAfdeling;
 
     /**
-     *
-     * @var type
+     * Achternaam van de geadresseerde.
+     * @var string
      */
     protected $geadresseerdeAchternaam;
 
     /**
-     *
-     * @var type
+     * Voornaam van de geadresseerde.
+     * @var string
      */
     protected $geadresseerdeVoornaam;
 
     /**
-     *
-     * @var type
+     * Gebouwnaam van de geadresseerde.
+     * @var string
      */
     protected $geadresseerdeGebouwnaam;
 
     /**
-     *
+     * Verdieping van de geadresseerde.
      * @var type
      */
     protected $geadresseerdeVerdieping;
 
     /**
-     *
-     * @var type
+     * Straatnaam van de geadresseerde.
+     * @var string
      */
     protected $geadresseerdeStraatnaam;
 
     /**
-     *
-     * @var type
+     * Huisnummer óf postbusnummer van de geadresseerde.
+     * @var string
      */
     protected $geadresseerdeHuisnummerPostbusnummer;
 
     /**
-     *
-     * @var type
+     * Toevoeging op het huisnummer (optioneel).
+     * @var string
      */
     protected $geadresseerdeHuisnummerToevoeging;
 
     /**
-     *
-     * @var type
+     * Postcode van de geadresseerde.
+     * @var string
      */
     protected $geadresseerdePostcode;
 
     /**
-     *
-     * @var type
+     * Woonplaats van de geadresseerde.
+     * @var string
      */
     protected $geadresseerdeWoonplaats;
 
     /**
-     *
-     * @var type
+     * Wijk van de geadresseerde.
+     * @var string
      */
     protected $geadresseerdeWijk;
 
     /**
-     *
-     * @var type
+     * Regio van de geadresseerde.
+     * @var string
      */
     protected $geadresseerdeRegio;
 
     /**
-     *
-     * @var type
+     * Deurcode van de geadresseerde.
+     * @var string
      */
     protected $geadresseerdeDeurcode;
 
     /**
-     *
-     * @var type
+     * Opmerking van de geadresseerde.
+     * @var string
      */
     protected $geadresseerdeOpmerking;
 
     /**
-     *
-     * @var type
+     * Landcode van de geadresseerde.
+     * @var string
      */
-    protected $geadresseerdeLandcode;
+    protected $geadresseerdeLandcode = 'NL';
 
     /**
-     *
-     * @var type
+     * Inhoud van het pakket (optioneel).
+     * @var string
      */
     protected $inhoud;
 
     /**
-     *
-     * @var type
+     * Gewicht van het pakket in grammen.
+     * @var int
      */
     protected $gewicht;
 
@@ -254,7 +254,22 @@ class Pakket extends MappingGenerator
      */
     protected function validate()
     {
-        
+        // Check verplichte velden
+        $mandatory = ['zendingcode'];
+        foreach ($mandatory as $property) {
+            if (empty($this->$property)) {
+                throw new \Exception(
+                    'Verplichte property niet gevuld: ' . $property
+                );
+            }
+        }
+
+        // Specifieke business rules
+        if (empty($this->geadresseerdeBedrijfsnaam) && empty($this->geadresseerdeAchternaam)) {
+            throw new \Exception(
+                'Er moet een bedrijfsnaam of achternaam opgegeven worden.'
+            );
+        }
     }
 
     /**
@@ -267,8 +282,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de zendingcode.
+     * @return string
      */
     protected function getZendingcode()
     {
@@ -276,8 +291,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de referentietekst.
+     * @return string
      */
     protected function getReferentietekst()
     {
@@ -285,8 +300,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de productcode.
+     * @return string
      */
     protected function getProductcode()
     {
@@ -294,8 +309,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de frankeeraanduiding.
+     * @return int
      */
     protected function getFrankeeraanduiding()
     {
@@ -303,8 +318,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor het e-mailadres.
+     * @return string
      */
     protected function getEmailadres()
     {
@@ -312,8 +327,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor het mobiele nummer.
+     * @return string
      */
     protected function getMobiel()
     {
@@ -321,8 +336,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor het telefoonnummer.
+     * @return string
      */
     protected function getTelefoon()
     {
@@ -330,8 +345,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor het volgnummer van de collo.
+     * @return int
      */
     protected function getVolgnummerCollo()
     {
@@ -339,8 +354,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor het aantal colli.
+     * @return int
      */
     protected function getAantalColli()
     {
@@ -348,8 +363,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor het remboursbedrag.
+     * @return int
      */
     public function getRemboursbedrag()
     {
@@ -357,8 +372,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor het verzekerde bedrag.
+     * @return int
      */
     protected function getVerzekerdBedrag()
     {
@@ -366,8 +381,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de bedrijfsnaam van de geadresseerde.
+     * @return string
      */
     protected function getGeadresseerdeBedrijfsnaam()
     {
@@ -375,8 +390,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de afdeling van de geadresseerde.
+     * @return string
      */
     protected function getGeadresseerdeAfdeling()
     {
@@ -384,8 +399,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de achternaam van de geadresseerde.
+     * @return string
      */
     protected function getGeadresseerdeAchternaam()
     {
@@ -393,8 +408,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de voornaam van de geadresseerde.
+     * @return string
      */
     protected function getGeadresseerdeVoornaam()
     {
@@ -402,8 +417,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de gebouwnaam van de geadresseerde.
+     * @return string
      */
     protected function getGeadresseerdeGebouwnaam()
     {
@@ -411,8 +426,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de verdieping van de geadresseerde.
+     * @return string
      */
     protected function getGeadresseerdeVerdieping()
     {
@@ -420,8 +435,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de straatnaam van de geadresseerde.
+     * @return string
      */
     protected function getGeadresseerdeStraatnaam()
     {
@@ -429,8 +444,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor het huisnummer/postbusnummer van de geadresseerde.
+     * @return string
      */
     protected function getGeadresseerdeHuisnummerPostbusnummer()
     {
@@ -438,8 +453,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de huisnummer toevoeging van de geadresseerde.
+     * @return string
      */
     protected function getGeadresseerdeHuisnummerToevoeging()
     {
@@ -447,8 +462,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de postcode van de geadresseerde.
+     * @return string
      */
     protected function getGeadresseerdePostcode()
     {
@@ -456,8 +471,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de woonplaats van de geadresseerde.
+     * @return string
      */
     protected function getGeadresseerdeWoonplaats()
     {
@@ -465,8 +480,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de wijk van de geadresseerde.
+     * @return string
      */
     protected function getGeadresseerdeWijk()
     {
@@ -474,8 +489,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de regio van de geadresseerde.
+     * @return string
      */
     protected function getGeadresseerdeRegio()
     {
@@ -483,8 +498,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de deurcode van de geadresseerde.
+     * @return string
      */
     protected function getGeadresseerdeDeurcode()
     {
@@ -492,8 +507,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de opmerking van de geadresseerde.
+     * @return string
      */
     protected function getGeadresseerdeOpmerking()
     {
@@ -501,8 +516,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de landcode van de geadresseerde.
+     * @return string
      */
     protected function getGeadresseerdeLandcode()
     {
@@ -510,8 +525,8 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor de inhoud van het pakket.
+     * @return string
      */
     protected function getInhoud()
     {
@@ -519,185 +534,475 @@ class Pakket extends MappingGenerator
     }
 
     /**
-     *
-     * @return type
+     * Getter voor het gewicht van het pakket (in grammen).
+     * @return int
      */
     protected function getGewicht()
     {
         return $this->gewicht;
     }
 
+    /**
+     * Zendingcode (3S) instellen.
+     * @param string $zendingcode
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setZendingcode($zendingcode)
     {
-        $this->zendingcode = $zendingcode;
+        $zendingCodeFormatted = strtoupper($zendingcode);
+        if (substr($zendingCodeFormatted, 0, 2) !== '3S') {
+            throw new \Exception('Ongeldige zendingcode. Een zendingcode begint met 3S.');
+        }
+
+        if (strlen($zendingCodeFormatted) !== 15) {
+            throw new \Exception('Ongeldige zendingcode. Een zendingcode bevat 15 tekens.');
+        }
+
+        $this->zendingcode = $zendingCodeFormatted;
         return $this;
     }
 
+    /**
+     * Referentietekst instellen.
+     * @param string $referentietekst
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setReferentietekst($referentietekst)
     {
+        if (strlen($referentietekst) > 35) {
+            throw new \Exception('Referentietekst mag niet langer zijn dan 35 tekens.');
+        }
+
         $this->referentietekst = $referentietekst;
         return $this;
     }
 
+    /**
+     * Productcode. Komt uit de Productcode class.
+     * @param string $productcode Constante uit de PostNL\Data\Productcode class
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setProductcode($productcode)
     {
+        if (strlen($productcode) !== 5) {
+            throw new \Exception('Ongeldige productcode. Gebruik de constantes uit de Productcode class hiervoor.');
+        }
+
         $this->productcode = $productcode;
         return $this;
     }
 
+    /**
+     * Frankeeraanduiding.
+     * @param int $frankeeraanduiding
+     * @return \PostNL\Data\Pakket
+     */
     public function setFrankeeraanduiding($frankeeraanduiding)
     {
-        $this->frankeeraanduiding = $frankeeraanduiding;
+        $this->frankeeraanduiding = (int)$frankeeraanduiding;
         return $this;
     }
 
+    /**
+     * E-mailadres.
+     * @param string $emailadres
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setEmailadres($emailadres)
     {
+        if (strlen($emailadres) > 50) {
+            throw new \Exception('E-mailadres mag maximaal 50 karakters bevatten.');
+        }
+
         $this->emailadres = $emailadres;
         return $this;
     }
 
+    /**
+     * Mobiele telefoonnummer.
+     * @param string $mobiel
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setMobiel($mobiel)
     {
+        if (strlen($mobiel) > 12) {
+            throw new \Exception('Mobiel nummer mag maximaal 12 karakters bevatten.');
+        }
+
         $this->mobiel = $mobiel;
         return $this;
     }
 
+    /**
+     * Telefoonnummer.
+     * @param string $telefoon
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setTelefoon($telefoon)
     {
+        if (strlen($telefoon) > 12) {
+            throw new \Exception('Telefoonnummer mag maximaal 12 karakters bevatten.');
+        }
+
         $this->telefoon = $telefoon;
         return $this;
     }
 
+    /**
+     * Volgnummer van dit collo.
+     * @param int $volgnummerCollo
+     * @return \PostNL\Data\Pakket
+     */
     public function setVolgnummerCollo($volgnummerCollo)
     {
-        $this->volgnummerCollo = $volgnummerCollo;
+        $this->volgnummerCollo = (int)$volgnummerCollo;
         return $this;
     }
 
+    /**
+     * Aantal colli in zending.
+     * @param int $aantalColli
+     * @return \PostNL\Data\Pakket
+     */
     public function setAantalColli($aantalColli)
     {
-        $this->aantalColli = $aantalColli;
+        $this->aantalColli = (int)$aantalColli;
         return $this;
     }
 
+    /**
+     * Remboursbedrag in eurocenten.
+     * @param int $remboursbedrag Remboursbedrag in eurocenten.
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setRemboursbedrag($remboursbedrag)
     {
-        $this->remboursbedrag = $remboursbedrag;
+        if ($remboursbedrag != (int)$remboursbedrag) {
+            throw new \Exception('Remboursbedrag is een bedrag in centen zonder decimalen.');
+        }
+
+        $this->remboursbedrag = (int)$remboursbedrag;
         return $this;
     }
 
+    /**
+     * Verzekerd bedrag in eurocenten.
+     * @param int $verzekerdBedrag Verzekerd bedrag in eurocenten.
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setVerzekerdBedrag($verzekerdBedrag)
     {
-        $this->verzekerdBedrag = $verzekerdBedrag;
+        if ($verzekerdBedrag != (int)$verzekerdBedrag) {
+            throw new \Exception('Verzekerd bedrag is een bedrag in centen zonder decimalen.');
+        }
+
+        $this->verzekerdBedrag = (int)$verzekerdBedrag;
         return $this;
     }
 
+    /**
+     * Bedrijfsnaam van de geadresseerde.
+     * @param string $geadresseerdeBedrijfsnaam
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setGeadresseerdeBedrijfsnaam($geadresseerdeBedrijfsnaam)
     {
+        if (strlen($geadresseerdeBedrijfsnaam) > 35) {
+            throw new \Exception('Veld mag niet meer dan 35 karakters bevatten.');
+        }
+
         $this->geadresseerdeBedrijfsnaam = $geadresseerdeBedrijfsnaam;
         return $this;
     }
 
+    /**
+     * Afdeling van de geadresseerde.
+     * @param string $geadresseerdeAfdeling
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setGeadresseerdeAfdeling($geadresseerdeAfdeling)
     {
+        if (strlen($geadresseerdeAfdeling) > 35) {
+            throw new \Exception('Veld mag niet meer dan 35 karakters bevatten.');
+        }
+
         $this->geadresseerdeAfdeling = $geadresseerdeAfdeling;
         return $this;
     }
 
+    /**
+     * Achternaam van de geadresseerde.
+     * @param string $geadresseerdeAchternaam
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setGeadresseerdeAchternaam($geadresseerdeAchternaam)
     {
+        if (strlen($geadresseerdeAchternaam) > 35) {
+            throw new \Exception('Veld mag niet meer dan 35 karakters bevatten.');
+        }
+
         $this->geadresseerdeAchternaam = $geadresseerdeAchternaam;
         return $this;
     }
 
+    /**
+     * Voornaam van de geadresseerde.
+     * @param string $geadresseerdeVoornaam
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setGeadresseerdeVoornaam($geadresseerdeVoornaam)
     {
+        if (strlen($geadresseerdeVoornaam) > 35) {
+            throw new \Exception('Veld mag niet meer dan 35 karakters bevatten.');
+        }
+
         $this->geadresseerdeVoornaam = $geadresseerdeVoornaam;
         return $this;
     }
 
+    /**
+     * Gebouwnaam van de geadresseerde.
+     * @param string $geadresseerdeGebouwnaam
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setGeadresseerdeGebouwnaam($geadresseerdeGebouwnaam)
     {
+        if (strlen($geadresseerdeGebouwnaam) > 35) {
+            throw new \Exception('Veld mag niet meer dan 35 karakters bevatten.');
+        }
+
         $this->geadresseerdeGebouwnaam = $geadresseerdeGebouwnaam;
         return $this;
     }
 
+    /**
+     * Verdieping van de geadresseerde.
+     * @param string $geadresseerdeVerdieping
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setGeadresseerdeVerdieping($geadresseerdeVerdieping)
     {
+        if (strlen($geadresseerdeVerdieping) > 35) {
+            throw new \Exception('Veld mag niet meer dan 35 karakters bevatten.');
+        }
+
         $this->geadresseerdeVerdieping = $geadresseerdeVerdieping;
         return $this;
     }
 
+    /**
+     * Straatnaam van de geadresseerde.
+     * @param string $geadresseerdeStraatnaam
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setGeadresseerdeStraatnaam($geadresseerdeStraatnaam)
     {
+        if (strlen($geadresseerdeStraatnaam) > 95) {
+            throw new \Exception('Veld mag niet meer dan 95 karakters bevatten.');
+        }
+
         $this->geadresseerdeStraatnaam = $geadresseerdeStraatnaam;
         return $this;
     }
 
+    /**
+     * Huisnummer/postbusnummer van de geadresseerde.
+     * @param int $geadresseerdeHuisnummerPostbusnummer
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setGeadresseerdeHuisnummerPostbusnummer($geadresseerdeHuisnummerPostbusnummer)
     {
+        if (strlen($geadresseerdeHuisnummerPostbusnummer) > 5) {
+            throw new \Exception('Veld mag niet meer dan 5 karakters bevatten.');
+        }
+
+        if ($geadresseerdeHuisnummerPostbusnummer != (int)$geadresseerdeHuisnummerPostbusnummer) {
+            throw new \Exception('Het veld mag uitsluitend cijfers bevatten.');
+        }
+
         $this->geadresseerdeHuisnummerPostbusnummer = $geadresseerdeHuisnummerPostbusnummer;
         return $this;
     }
 
+    /**
+     * Huisnummer toevoeging van de geadresseerde.
+     * @param string $geadresseerdeHuisnummerToevoeging
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setGeadresseerdeHuisnummerToevoeging($geadresseerdeHuisnummerToevoeging)
     {
+        if (strlen($geadresseerdeHuisnummerPostbusnummer) > 6) {
+            throw new \Exception('Veld mag niet meer dan 6 karakters bevatten.');
+        }
+
         $this->geadresseerdeHuisnummerToevoeging = $geadresseerdeHuisnummerToevoeging;
         return $this;
     }
 
+    /**
+     * Postcode van de geadresseerde.
+     * @param string $geadresseerdePostcode
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setGeadresseerdePostcode($geadresseerdePostcode)
     {
-        $this->geadresseerdePostcode = $geadresseerdePostcode;
+        $postcode = str_replace(' ', '', $geadresseerdePostcode);
+
+        if (strlen($postcode) !== 6) {
+            throw new \Exception('De postcode moet exact 6 karakters bevatten.');
+        }
+
+        $this->geadresseerdePostcode = $postcode;
         return $this;
     }
 
+    /**
+     * Woonplaats van de geadresseerde.
+     * @param string $geadresseerdeWoonplaats
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setGeadresseerdeWoonplaats($geadresseerdeWoonplaats)
     {
+        if (strlen($geadresseerdeWoonplaats) > 35) {
+            throw new \Exception('Veld mag niet meer dan 35 karakters bevatten.');
+        }
+
         $this->geadresseerdeWoonplaats = $geadresseerdeWoonplaats;
         return $this;
     }
 
+    /**
+     * Wijk van de geadresseerde.
+     * @param string $geadresseerdeWijk
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setGeadresseerdeWijk($geadresseerdeWijk)
     {
+        if (strlen($geadresseerdeWijk) > 35) {
+            throw new \Exception('Veld mag niet meer dan 35 karakters bevatten.');
+        }
+
         $this->geadresseerdeWijk = $geadresseerdeWijk;
         return $this;
     }
 
+    /**
+     * Regio van de geadresseerde.
+     * @param string $geadresseerdeRegio
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setGeadresseerdeRegio($geadresseerdeRegio)
     {
+        if (strlen($geadresseerdeRegio) > 35) {
+            throw new \Exception('Veld mag niet meer dan 35 karakters bevatten.');
+        }
+
         $this->geadresseerdeRegio = $geadresseerdeRegio;
         return $this;
     }
 
+    /**
+     * Deurcode van de geadresseerde.
+     * @param string $geadresseerdeDeurcode
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setGeadresseerdeDeurcode($geadresseerdeDeurcode)
     {
+        if (strlen($geadresseerdeDeurcode) > 35) {
+            throw new \Exception('Veld mag niet meer dan 35 karakters bevatten.');
+        }
+
         $this->geadresseerdeDeurcode = $geadresseerdeDeurcode;
         return $this;
     }
 
+    /**
+     * Opmerking van de geadresseerde.
+     * @param string $geadresseerdeOpmerking
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setGeadresseerdeOpmerking($geadresseerdeOpmerking)
     {
+        if (strlen($geadresseerdeOpmerking) > 35) {
+            throw new \Exception('Veld mag niet meer dan 35 karakters bevatten.');
+        }
+
         $this->geadresseerdeOpmerking = $geadresseerdeOpmerking;
         return $this;
     }
 
+    /**
+     * Landcode van de geadresseerde.
+     * @param string $geadresseerdeLandcode
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setGeadresseerdeLandcode($geadresseerdeLandcode)
     {
-        $this->geadresseerdeLandcode = $geadresseerdeLandcode;
+        if (strlen($geadresseerdeLandcode) !== 2) {
+            throw new \Exception('Veld moet exact 2 karakters bevatten.');
+        }
+
+        $this->geadresseerdeLandcode = strtoupper($geadresseerdeLandcode);
         return $this;
     }
 
+    /**
+     * Inhoud van het pakket.
+     * @param string $inhoud
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setInhoud($inhoud)
     {
+        if (strlen($inhoud) > 35) {
+            throw new \Exception('Veld mag niet meer dan 35 karakters bevatten.');
+        }
+
         $this->inhoud = $inhoud;
         return $this;
     }
 
+    /**
+     * Gewicht van het pakket in grammen.
+     * @param int $gewicht Gewicht in grammen.
+     * @return \PostNL\Data\Pakket
+     * @throws \Exception
+     */
     public function setGewicht($gewicht)
     {
-        $this->gewicht = $gewicht;
+        if ($gewicht != (int)$gewicht) {
+            throw new \Exception('Het gewicht is in grammen, zonder decimalen.');
+        }
+
+        if (strlen($gewicht) > 6) {
+            throw new \Exception('Veld mag niet meer dan 6 karakters bevatten.');
+        }
+
+        $this->gewicht = (int)$gewicht;
         return $this;
     }
 }
