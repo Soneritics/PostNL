@@ -89,6 +89,7 @@ class Rembours extends MappingGenerator
     /**
      * Stel het BIC nummer in van de verzender.
      * @param string $BIC
+     * @throws \Exception
      * @return \PostNL\Data\Rembours
      */
     public function setBIC($BIC)
@@ -101,7 +102,7 @@ class Rembours extends MappingGenerator
         return $this;
     }
 
-        /**
+    /**
      * Valideer de ingevoerde gegevens voordat de mapping wordt toegepast om
      * output te genereren.
      * @throws \Exception
