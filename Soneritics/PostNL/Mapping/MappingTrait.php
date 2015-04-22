@@ -45,6 +45,15 @@ trait MappingTrait
         }
 
         // Mapping toepassen en resultaat yielden
+        return $this->yieldMappings();
+    }
+
+    /**
+     * Verwerk de mappings en yield de resultaten tot een Generator class.
+     * @return \Generator
+     */
+    private function yieldMappings()
+    {
         foreach ($this->mapping as $identifier => $getter) {
             if ($identifier === $getter) {
                 yield $getter;
