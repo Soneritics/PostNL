@@ -33,14 +33,42 @@ require_once __DIR__ . '/TestAbstract/TestAbstract.php';
 class MappingTraitTest extends TestAbstract
 {
     /**
+     * SetUp include de nodige testclasses.
+     */
+    public function setUp()
+    {
+        parent::setUp();
+        require_once __DIR__ . '/Data/EmptyMappingGeneratorExtender.php';
+    }
+
+    /**
      * Test de exceptions van de MappingTrait, via de MappingGenerator class.
      * Hiervoor wordt een testobject gebruikt met een missende property.
      * @expectedException Exception
      */
     public function testMissingMapping()
     {
-        require_once __DIR__ . '/Data/EmptyMappingGeneratorExtender.php';
         $result = (new EmptyMappingGeneratorExtender)->genereer();
         $this->assertEmpty($result);
+    }
+
+    /**
+     * Test voor key == value in de mapping array.
+     */
+    public function testIdentifierIsGetter()
+    {
+        $resultGenerator = (new EmptyMappingGeneratorExtender)
+            ->testFillMapping('TEST', 'TEST')
+            ->genereer();
+
+        $result = [];
+        foreach ($resultGenerator as $line) {
+            $result[] = $line;
+        }
+
+        $this->assertEquals(
+            implode("\n", $result),
+            "TEST"
+        );
     }
 }

@@ -33,10 +33,28 @@ use PostNL\Mapping\MappingGenerator;
 class EmptyMappingGeneratorExtender extends MappingGenerator
 {
     /**
+     * Mpping array
+     * @var array
+     */
+    protected $mapping = [];
+
+    /**
      * Abstracte functie.
      */
     protected function validate()
     {
 
+    }
+
+    /**
+     * Voegt een waarde toe aan de mapping property.
+     * @param $key
+     * @param $value
+     * @return $this
+     */
+    public function testFillMapping($key, $value)
+    {
+        $this->mapping[$key] = $value;
+        return $this;
     }
 }
