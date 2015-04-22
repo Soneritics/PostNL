@@ -326,6 +326,7 @@ class Afzender extends MappingGenerator
     /**
      * Stel de bedrijfsnaam van de afzender in.
      * @param string $bedrijfsnaam
+     * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
     public function setBedrijfsnaam($bedrijfsnaam)
@@ -341,6 +342,7 @@ class Afzender extends MappingGenerator
     /**
      * Stel de afdeling van de afzender in.
      * @param string $afdeling
+     * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
     public function setAfdeling($afdeling)
@@ -356,6 +358,7 @@ class Afzender extends MappingGenerator
     /**
      * Stel de achternaam van de afzender in.
      * @param string $achternaam
+     * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
     public function setAchternaam($achternaam)
@@ -371,6 +374,7 @@ class Afzender extends MappingGenerator
     /**
      * Stel de voornaam van de afzender in.
      * @param string $voornaam
+     * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
     public function setVoornaam($voornaam)
@@ -386,6 +390,7 @@ class Afzender extends MappingGenerator
     /**
      * Stel de gebouwnaam van de afzender in.
      * @param string $gebouwnaam
+     * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
     public function setGebouwnaam($gebouwnaam)
@@ -401,6 +406,7 @@ class Afzender extends MappingGenerator
     /**
      * Stel de verdieping van de afzender in.
      * @param string $verdieping
+     * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
     public function setVerdieping($verdieping)
@@ -416,6 +422,7 @@ class Afzender extends MappingGenerator
     /**
      * Stel de straatnaam of postbus in voor de afzender.
      * @param string $straatnaamPostbus
+     * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
     public function setStraatnaamPostbus($straatnaamPostbus)
@@ -433,6 +440,7 @@ class Afzender extends MappingGenerator
     /**
      * Stel het huisnummer/postbusnummer in voor de afzender.
      * @param string $huisnummerPostbusnummer
+     * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
     public function setHuisnummerPostbusnummer($huisnummerPostbusnummer)
@@ -450,11 +458,12 @@ class Afzender extends MappingGenerator
     /**
      * Stel de huisnummer-toevoeging in voor de afzender.
      * @param string $huisnummerToevoeging
+     * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
     public function setHuisnummerToevoeging($huisnummerToevoeging)
     {
-        if (strlen($bedrijfsnaam) > 6) {
+        if (strlen($huisnummerToevoeging) > 6) {
             throw new \Exception(
                 'Huisnummer toevoeging kan maximaal 6 tekens bevatten.'
             );
@@ -467,6 +476,7 @@ class Afzender extends MappingGenerator
     /**
      * Stel de afzender postcode in.
      * @param string $postcode
+     * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
     public function setPostcode($postcode)
@@ -482,6 +492,7 @@ class Afzender extends MappingGenerator
     /**
      * Stel de afzender woonplaats in.
      * @param string $woonplaats
+     * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
     public function setWoonplaats($woonplaats)
@@ -497,6 +508,7 @@ class Afzender extends MappingGenerator
     /**
      * Stel de afzender wijk in.
      * @param string $wijk
+     * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
     public function setWijk($wijk)
@@ -512,6 +524,7 @@ class Afzender extends MappingGenerator
     /**
      * Stel de afzender regio in.
      * @param string $regio
+     * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
     public function setRegio($regio)
@@ -527,6 +540,7 @@ class Afzender extends MappingGenerator
     /**
      * Stel de afzender deurcode in.
      * @param string $deurcode
+     * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
     public function setDeurcode($deurcode)
@@ -542,12 +556,19 @@ class Afzender extends MappingGenerator
     /**
      * Stel de afzender opmerking in.
      * @param string $opmerking
+     * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
     public function setOpmerking($opmerking)
     {
         if (strlen($opmerking) > 35) {
             throw new \Exception('Opmerking kan maximaal 35 tekens bevatten.');
+        }
+
+        if (strpos($opmerking, "\n") !== false) {
+            throw new \Exception(
+                'Opmerking mag geen new line character bevatten.'
+            );
         }
 
         $this->opmerking = $opmerking;
@@ -557,6 +578,7 @@ class Afzender extends MappingGenerator
     /**
      * Stel de landcode van de afzender in.
      * @param string $landcode
+     * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
     public function setLandcode($landcode)
