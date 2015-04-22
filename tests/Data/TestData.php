@@ -33,4 +33,21 @@ class TestData
 {
     const VALID_BIC = 'RABONL2U';
     const VALID_IBAN = 'NLRABO12345678';
+
+    const AFZENDER_BEDRIJFSNAAM = 'Bedrijfsnaam';
+    const AFZENDER_AFDELING = 'Afdeling';
+    const AFZENDER_ACHTERNAAM = 'Achternaam';
+    const AFZENDER_VOORNAAM = 'Voornaam';
+    const AFZENDER_GEBOUWNAAM = 'Gebouw';
+    const AFZENDER_VERDIEPING = '1e verdieping';
+    const AFZENDER_STRAATNAAM = 'Straat';
+    const AFZENDER_HUISNUMMER = '15';
+    const AFZENDER_HUISNUMMER_TOEVOEGING = 'a';
+    const AFZENDER_POSTCODE = '1234AB';
+    const AFZENDER_WOONPLAATS = 'Woonplaats';
+    const AFZENDER_WIJK = 'Wijk';
+    const AFZENDER_REGIO = 'Regio';
+    const AFZENDER_DEURCODE = '12345';
+    const AFZENDER_OPMERKING = 'Dit is een test';
+    const AFZENDER_LANDCODE = 'NL';
 }
