@@ -848,7 +848,7 @@ class Pakket extends MappingGenerator
      */
     public function setGeadresseerdeHuisnummerToevoeging($geadresseerdeHuisnummerToevoeging)
     {
-        if (strlen($geadresseerdeHuisnummerPostbusnummer) > 6) {
+        if (strlen($geadresseerdeHuisnummerToevoeging) > 6) {
             throw new \Exception('Veld mag niet meer dan 6 karakters bevatten.');
         }
 
