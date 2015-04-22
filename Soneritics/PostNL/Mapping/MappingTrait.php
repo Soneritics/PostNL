@@ -34,8 +34,8 @@ trait MappingTrait
 {
     /**
      * Map de waarden op basis van de $mapping property.
-     * @throw \Exception
-     * @return array
+     * @return \Generator
+     * @throws \Exception
      */
     protected function getMappedValues()
     {
