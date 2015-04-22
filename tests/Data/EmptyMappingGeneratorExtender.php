@@ -1,8 +1,8 @@
 <?php
-/*
+/* 
  * The MIT License
  *
- * Copyright 2014 Soneritics Webdevelopment.
+ * Copyright 2015 Soneritics Webdevelopment.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,15 +22,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+use PostNL\Mapping\MappingGenerator;
 
 /**
- * Testdata voor de unit tests.
+ * Leeg object dat gebruikmaakt van de MappingGenerator.
  *
- * @author Jordi Jolink
- * @since 22-4-2015
+ * @author Jordi Jolink <mail@jordijolink.nl>
+ * @since  22-4-2015
  */
-class TestData
+class EmptyMappingGeneratorExtender extends MappingGenerator
 {
-    const VALID_BIC = 'RABONL2U';
-    const VALID_IBAN = 'NLRABO12345678';
+    /**
+     * Abstracte functie.
+     */
+    protected function validate()
+    {
+
+    }
 }

@@ -22,15 +22,25 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+require_once __DIR__ . '/TestAbstract/TestAbstract.php';
 
 /**
- * Testdata voor de unit tests.
+ * Unit test voor de MappingTrait.
  *
  * @author Jordi Jolink
  * @since 22-4-2015
  */
-class TestData
+class MappingTraitTest extends TestAbstract
 {
-    const VALID_BIC = 'RABONL2U';
-    const VALID_IBAN = 'NLRABO12345678';
+    /**
+     * Test de exceptions van de MappingTrait, via de MappingGenerator class.
+     * Hiervoor wordt een testobject gebruikt met een missende property.
+     * @expectedException Exception
+     */
+    public function testMissingMapping()
+    {
+        require_once __DIR__ . '/Data/EmptyMappingGeneratorExtender.php';
+        $result = (new EmptyMappingGeneratorExtender)->genereer();
+        $this->assertEmpty($result);
+    }
 }
