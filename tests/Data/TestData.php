@@ -22,42 +22,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-require_once __DIR__ . '/TestAbstract/TestAbstract.php';
-
-use PostNL\Data\Rembours;
 
 /**
- * Integratie tests voor PostNL\Data\Rembours
+ * Testdata voor de unit tests.
  *
  * @author Jordi Jolink
  * @since 22-4-2015
  */
-class RemboursIntegrationTest extends TestAbstract
+class TestData
 {
-    /**
-     * Integratietest om het resultaat van de genereer() functie van het
-     * PostNL\Data\Rembours object te controleren.
-     * Het Rembours-object bevat twee waarden die beide verplicht zijn, daarom
-     * slechts één testcase in deze unit test.
-     */
-    public function testGenereren()
-    {
-        $resultGenerator = (new Rembours)
-            ->setBIC(TestData::VALID_BIC)
-            ->setIBAN(TestData::VALID_IBAN)
-            ->genereer();
-
-        $result = [];
-        foreach ($resultGenerator as $line) {
-            $result[] = $line;
-        }
-
-        $validIBAN = TestData::VALID_IBAN;
-        $validBIC = TestData::VALID_BIC;
-
-        $this->assertEquals(
-            implode("\n", $result),
-            "A228 {$validIBAN}\nA229 {$validBIC}"
-        );
-    }
-}
+    const VALID_BIC = 'RABONL2U';
+    const VALID_IBAN = 'NLRABO12345678';
+} 

@@ -31,6 +31,8 @@ require_once "{$root}/Data/Productcode.php";
 require_once "{$root}/Data/Rembours.php";
 require_once "{$root}/Voormelding.php";
 
+require_once __DIR__ . "/../Data/TestData.php";
+
 /**
  * Abstracte class voor unit tests.
  *

@@ -34,9 +34,6 @@ use PostNL\Data\Rembours;
  */
 class RemboursTest extends TestAbstract
 {
-    private $validBIC = 'RABONL2U';
-    private $validIBAN = 'NLRABO12345678'; // @todo
-
     /**
      * Test de validatiefunctie door een leeg remboursobject aan te maken.
      * @expectedException Exception
@@ -55,7 +52,7 @@ class RemboursTest extends TestAbstract
     public function testValidationErrorForIBAN()
     {
         $rembours = new Rembours;
-        $rembours->setBIC($this->validBIC);
+        $rembours->setBIC(TestData::VALID_BIC);
         $result = $rembours->genereer();
         $this->assertEmpty($result);
     }
@@ -67,7 +64,7 @@ class RemboursTest extends TestAbstract
     public function testValidationErrorForBIC()
     {
         $rembours = new Rembours;
-        $rembours->setIBAN($this->validIBAN);
+        $rembours->setIBAN(TestData::VALID_IBAN);
         $result = $rembours->genereer();
         $this->assertEmpty($result);
     }
