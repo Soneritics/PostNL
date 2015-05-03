@@ -331,7 +331,7 @@ class Voormelding
 
         // Voormelding ID samenstellen
         $this->voormeldingId = $this->getKlantCode() .
-            str_pad($volgnummer, 8, ' 0', STR_PAD_LEFT);
+            str_pad($volgnummer, 8, '0', STR_PAD_LEFT);
 
         // Chainable
         return $this;
