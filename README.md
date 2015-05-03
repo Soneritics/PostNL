@@ -23,33 +23,33 @@ Daarnaast worden specifieke woorden gebruikt, waarvan de Engelse vertaling de we
 
 ## Voorbeeld ##
 ```php
-    $afzender = (new Afzender)
-        ->setBedrijfsnaam('Bedrijfsnaam')
-        ->setPostcode('1234AB')
-        ->setHuisnummerPostbusnummer('1')
-        ->setLandcode('NL');
+$afzender = (new Afzender)
+    ->setBedrijfsnaam('Bedrijfsnaam')
+    ->setPostcode('1234AB')
+    ->setHuisnummerPostbusnummer('1')
+    ->setLandcode('NL');
 
-    $voormelding = (new Voormelding)
-        ->setAfzender($afzender)
-        ->setKlantCode($customerCode)
-        ->setVolgnummer($volgnummer)
-        ->setAanleverLocatie($bls);
+$voormelding = (new Voormelding)
+    ->setAfzender($afzender)
+    ->setKlantCode($customerCode)
+    ->setVolgnummer($volgnummer)
+    ->setAanleverLocatie($bls);
 
-    $pakket = (new Pakket)
-        ->setGeadresseerdeBedrijfsnaam($company)
-        ->setGeadresseerdeVoornaam($firstname)
-        ->setGeadresseerdeAchternaam($lastname)
-        ->setGeadresseerdePostcode($zipcode)
-        ->setGeadresseerdeStraatnaam($streetname)
-        ->setGeadresseerdeHuisnummerPostbusnummer($housenumber)
-        ->setGeadresseerdeHuisnummerToevoeging($housenumber_extension)
-        ->setGeadresseerdeWoonplaats($city)
-        ->setGeadresseerdeLandcode($country)
-        ->setEmailadres($email)
-        ->setZendingcode($shipment_code);
-    $voormelding->addPakket($pakket);
+$pakket = (new Pakket)
+    ->setGeadresseerdeBedrijfsnaam($company)
+    ->setGeadresseerdeVoornaam($firstname)
+    ->setGeadresseerdeAchternaam($lastname)
+    ->setGeadresseerdePostcode($zipcode)
+    ->setGeadresseerdeStraatnaam($streetname)
+    ->setGeadresseerdeHuisnummerPostbusnummer($housenumber)
+    ->setGeadresseerdeHuisnummerToevoeging($housenumber_extension)
+    ->setGeadresseerdeWoonplaats($city)
+    ->setGeadresseerdeLandcode($country)
+    ->setEmailadres($email)
+    ->setZendingcode($shipment_code);
+$voormelding->addPakket($pakket);
 
-    // Contents ophalen. Dit kan opgeslagen worden in een LST bestand.
-    $voormeldContents = $voormelding->genereerInhoud()
+// Contents ophalen. Dit kan opgeslagen worden in een LST bestand.
+$voormeldContents = $voormelding->genereerInhoud()
 ```
 
