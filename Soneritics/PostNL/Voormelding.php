@@ -55,7 +55,8 @@ class Voormelding
         'A022' => 'ProductVersie',
         'A030' => 'KlantCode',
         'A040' => 'VoormeldingId',
-        'A060' => 'AanleverdatumZendingen'
+        'A060' => 'AanleverdatumZendingen',
+        'A100' => 'KlantNr'
     ];
 
     /**
@@ -117,6 +118,12 @@ class Voormelding
      * @var string
      */
     protected $klantCode;
+
+    /**
+     * PostNL Klantnummer.
+     * @var string
+     */
+    protected $klantNr;
 
     /**
      * Voormelding ID (klantcode + volgnummer)
@@ -306,6 +313,16 @@ class Voormelding
     }
 
     /**
+     * Setter voor het klantnummer.
+     * @param string $klantNr
+     */
+    public function setKlantNr($klantNr)
+    {
+        $this->klantNr = $klantNr;
+        return $this;
+    }
+
+    /**
      * Setter voor het volgnummer. Genereert een PostNL voormeld ID.
      * Het is belangrijk dat het klantnummer reeds geset is.
      * @param int $volgnummer
@@ -383,6 +400,7 @@ class Voormelding
             'tijdAanmaakBestand',
             'aanleverdatumZendingen',
             'klantCode',
+            'klantNr',
             'voormeldingId',
             'aanleverLocatie'
         ];
@@ -457,6 +475,15 @@ class Voormelding
     final protected function getKlantCode()
     {
         return $this->klantCode;
+    }
+
+    /**
+     * Getter voor het klantnummer.
+     * @return string
+     */
+    final protected function getKlantNr()
+    {
+        return $this->klantNr;
     }
 
     /**

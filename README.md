@@ -32,6 +32,7 @@ $afzender = (new Afzender)
 $voormelding = (new Voormelding)
     ->setAfzender($afzender)
     ->setKlantCode($customerCode)
+    ->setKlantNummer($customerNr)
     ->setVolgnummer($volgnummer)
     ->setAanleverLocatie($bls);
 
