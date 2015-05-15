@@ -149,6 +149,17 @@ class AfzenderTest extends TestAbstract
     }
 
     /**
+     * Test het opgeven van een te lang huisnummer-toevoeging (max 6 tekens).
+     * @expectedException Exception
+     */
+    public function testHousenumberExtensionTooLong()
+    {
+        $tooLong = str_pad('x', 7);
+        (new Afzender)
+            ->setHuisnummerToevoeging($tooLong);
+    }
+
+    /**
      * Test het opgeven van een te lange postcode (max 6 tekens).
      * @expectedException Exception
      */
