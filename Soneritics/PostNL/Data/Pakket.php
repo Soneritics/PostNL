@@ -832,7 +832,7 @@ class Pakket extends MappingGenerator
             throw new \Exception('Veld mag niet meer dan 5 karakters bevatten.');
         }
 
-        if ($geadresseerdeHuisnummerPostbusnummer != (int)$geadresseerdeHuisnummerPostbusnummer) {
+        if ($geadresseerdeHuisnummerPostbusnummer != (string)(int)$geadresseerdeHuisnummerPostbusnummer) {
             throw new \Exception('Het veld mag uitsluitend cijfers bevatten.');
         }
 

@@ -35,7 +35,7 @@ use PostNL\Data\Afzender;
 class AfzenderTest extends TestAbstract
 {
     /**
-     * Test de validatiefunctie door een leeg remboursobject aan te maken.
+     * Test de validatiefunctie door een leeg afzenderobject aan te maken.
      * @expectedException Exception
      */
     public function testValidationError()
