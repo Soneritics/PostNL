@@ -162,6 +162,18 @@ class PakketTest extends TestAbstract
     }
 
     /**
+     * Test het opgeven van een te lange (geadresseerde) afdeling.
+     * (max 35 tekens)
+     * @expectedException Exception
+     */
+    public function testAddressingdivisionNameTooLong()
+    {
+        $tooLong = str_pad('x', 36);
+        (new Pakket)
+            ->setGeadresseerdeAfdeling($tooLong);
+    }
+
+    /**
      * Test het opgeven van een te lange (geadresseerde) achternaam.
      * (max 35 tekens)
      * @expectedException Exception
