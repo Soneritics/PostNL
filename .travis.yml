@@ -6,8 +6,6 @@ php:
 script:
 - vendor/bin/phpcs --standard=PSR1,PSR2 Soneritics/PostNL/
 - mkdir -p build/logs
-- mkdir cache
-- chmod 777 cache
 - vendor/bin/phpunit --coverage-clover build/logs/clover.xml tests/
 
 after_script:
