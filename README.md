@@ -43,11 +43,11 @@ $pakket = (new Pakket)
     ->setGeadresseerdePostcode($zipcode)
     ->setGeadresseerdeStraatnaam($streetname)
     ->setGeadresseerdeHuisnummerPostbusnummer($housenumber)
-    ->setGeadresseerdeHuisnummerToevoeging($housenumber_extension)
+    ->setGeadresseerdeHuisnummerToevoeging($housenumberExtension)
     ->setGeadresseerdeWoonplaats($city)
     ->setGeadresseerdeLandcode($country)
     ->setEmailadres($email)
-    ->setZendingcode($shipment_code);
+    ->setZendingcode($shipmentCode);
 $voormelding->addPakket($pakket);
 
 // Contents ophalen. Dit kan opgeslagen worden in een LST bestand.
