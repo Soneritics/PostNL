@@ -24,6 +24,9 @@
  */
 namespace PostNL\Service;
 
+use PostNL\Model\Message;
+use PostNL\Model\Shipments;
+
 /**
  * Labelling Service
  *
@@ -32,7 +35,7 @@ namespace PostNL\Service;
  */
 class LabellingService extends AbstractService
 {
-    public function GenerateLabel()
+    public function GenerateLabel(Shipments $shipments, Message $message)
     {
 
 
