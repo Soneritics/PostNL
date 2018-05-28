@@ -35,9 +35,17 @@ use PostNL\Model\Shipments;
  */
 class LabellingService extends AbstractService
 {
+    /**
+     * Generate a label for a shipment.
+     * @param Shipments $shipments
+     * @param Message $message
+     * @param bool $confirm
+     * @return string
+     * @throws \Exception
+     */
     public function GenerateLabel(Shipments $shipments, Message $message, bool $confirm = true)
     {
-        $result = $this->post(
+        $serviceResult = $this->post(
             '/label?confirm=' . ($confirm ? 'true' : 'false'),
             [
                 'Customer' => $this->customer,
@@ -45,7 +53,8 @@ class LabellingService extends AbstractService
                 'Shipments' => $shipments
             ]
         );
-return $result;
-        throw new \Exception('Could not generate label. Unknown exception.');
+
+        // Directly return the serviceResult - @todo
+        return $serviceResult;
     }
 }
