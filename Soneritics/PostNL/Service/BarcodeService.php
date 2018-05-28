@@ -44,8 +44,8 @@ class BarcodeService extends AbstractService
         $result = $this->get(
             '/barcode',
             [
-                'CustomerCode' => $this->customer->CustomerCode,
-                'CustomerNumber' => $this->customer->CustomerNumber,
+                'CustomerCode' => $this->customer->getCustomerCode(),
+                'CustomerNumber' => $this->customer->getCustomerNumber(),
                 'Type' => $type,
                 'Serie' => $serie
             ]
