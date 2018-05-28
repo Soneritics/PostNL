@@ -36,7 +36,7 @@ class Address
      * Mandatory
      * @var string
      */
-    private $AddressType = '02';
+    private $AddressType;
 
     /**
      * Mandatory
