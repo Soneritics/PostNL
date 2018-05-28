@@ -24,50 +24,52 @@
  */
 namespace PostNL\Model;
 
+use PostNL\Business\AutoJsonSerializer;
+
 /**
  * Address
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  28-5-2018
  */
-class Address
+class Address extends AutoJsonSerializer
 {
     /**
      * Mandatory
      * @var string
      */
-    private $AddressType;
+    protected $AddressType;
 
     /**
      * Mandatory
      * @var string
      */
-    private $City;
+    protected $City;
 
     /**
      * Mandatory; This field has a dependency with the field Name.
      * One of both fields must be filled mandatory; using both fields is also allowed. Mandatory when AddressType is 09.
      * @var string
      */
-    private $CompanyName;
+    protected $CompanyName;
 
     /**
      * Mandatory
      * @var string
      */
-    private $Countrycode;
+    protected $Countrycode;
 
     /**
      * Mandatory for shipments to Benelux. Max. length is 5 characters (only for Benelux addresses).
      * For Benelux addresses,this field should always be numeric.
      * @var string
      */
-    private $HouseNr;
+    protected $HouseNr;
 
     /**
      * @var string
      */
-    private $HouseNrExt;
+    protected $HouseNrExt;
 
     /**
      * Last name of person. This field has a dependency with the field CompanyName.
@@ -76,62 +78,62 @@ class Address
      * of your customer.
      * @var string
      */
-    private $Name;
+    protected $Name;
 
     /**
      * This field has a dependency with the field StreetHouseNrExt.
      * One of both fields must be filled mandatory; using both fields is also allowed.
      * @var string
      */
-    private $Street;
+    protected $Street;
 
     /**
      * Combination of Street, HouseNr and HouseNrExt.
      * @var string
      */
-    private $StreetHouseNrExt;
+    protected $StreetHouseNrExt;
 
     /**
      * Zipcode of the address. Mandatory for shipments to Benelux.
      * Max length (NL) 6 characters,(BE;LU) 4 numeric characters
      * @var string
      */
-    private $Zipcode;
+    protected $Zipcode;
 
     /**
      * @var string
      */
-    private $Area;
+    protected $Area;
 
     /**
      * @var string
      */
-    private $Buildingname;
+    protected $Buildingname;
 
     /**
      * @var string
      */
-    private $Department;
+    protected $Department;
 
     /**
      * @var string
      */
-    private $Doorcode;
+    protected $Doorcode;
 
     /**
      * @var string
      */
-    private $FirstName;
+    protected $FirstName;
 
     /**
      * @var string
      */
-    private $Floor;
+    protected $Floor;
 
     /**
      * @var string
      */
-    private $Region;
+    protected $Region;
 
     /**
      * @return string

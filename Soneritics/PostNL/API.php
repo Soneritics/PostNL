@@ -27,6 +27,7 @@ namespace PostNL;
 use PostNL\Endpoints\Endpoints;
 use PostNL\Model\Customer;
 use PostNL\Service\BarcodeService;
+use PostNL\Service\LabellingService;
 
 /**
  * PostNL API
@@ -71,5 +72,14 @@ class API
     public function getBarcodeService(): BarcodeService
     {
         return new BarcodeService($this->apiKey, $this->customer, $this->endpoints->Barcode);
+    }
+
+    /**
+     * Get a labelling service instance.
+     * @return LabellingService
+     */
+    public function getLabellingService(): LabellingService
+    {
+        return new LabellingService($this->apiKey, $this->customer, $this->endpoints->Labelling);
     }
 }

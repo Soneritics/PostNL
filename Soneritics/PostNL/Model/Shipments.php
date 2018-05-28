@@ -30,12 +30,12 @@ namespace PostNL\Model;
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  28-5-2018
  */
-class Shipments
+class Shipments implements \Serializable, \JsonSerializable
 {
     /**
      * @var array
      */
-    private $shipments = [];
+    protected $shipments = [];
 
     /**
      * Add a shipment
@@ -52,6 +52,43 @@ class Shipments
      * @return array
      */
     public function getShipments()
+    {
+        return $this->shipments;
+    }
+
+    /**
+     * String representation of object
+     * @link http://php.net/manual/en/serializable.serialize.php
+     * @return string the string representation of the object or null
+     * @since 5.1.0
+     */
+    public function serialize()
+    {
+        return serialize($this->shipments);
+    }
+
+    /**
+     * Constructs the object
+     * @link http://php.net/manual/en/serializable.unserialize.php
+     * @param string $serialized <p>
+     * The string representation of the object.
+     * </p>
+     * @return void
+     * @since 5.1.0
+     */
+    public function unserialize($serialized)
+    {
+        $this->shipments = unserialize($serialized);
+    }
+
+    /**
+     * Specify data which should be serialized to JSON
+     * @link http://php.net/manual/en/jsonserializable.jsonserialize.php
+     * @return mixed data which can be serialized by <b>json_encode</b>,
+     * which is a value of any type other than a resource.
+     * @since 5.4.0
+     */
+    public function jsonSerialize()
     {
         return $this->shipments;
     }

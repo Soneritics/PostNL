@@ -24,52 +24,54 @@
  */
 namespace PostNL\Model;
 
+use PostNL\Business\AutoJsonSerializer;
+
 /**
  * Customer data
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  27-5-2018
  */
-class Customer
+class Customer extends AutoJsonSerializer
 {
     /**
      * Mandatory
      * @var Address
      */
-    private $Address;
+    protected $Address;
 
     /**
      * Mandatory
      * @var string
      */
-    private $CollectionLocation;
+    protected $CollectionLocation;
 
     /**
      * Mandatory
      * @var string
      */
-    private $CustomerCode;
+    protected $CustomerCode;
 
     /**
      * Mandatory
      * @var string
      */
-    private $CustomerNumber;
+    protected $CustomerNumber;
 
     /**
      * @var string
      */
-    private $ContactPerson;
+    protected $ContactPerson;
 
     /**
      * @var string
      */
-    private $Email;
+    protected $Email;
 
     /**
      * @var string
      */
-    private $Name;
+    protected $Name;
 
     /**
      * @return Address

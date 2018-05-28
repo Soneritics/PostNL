@@ -22,30 +22,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace PostNL\Service;
-
-use PostNL\Model\Message;
-use PostNL\Model\Shipments;
+namespace PostNL\Enum;
 
 /**
- * Labelling Service
+ * PrinterType enum package
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  28-5-2018
  */
-class LabellingService extends AbstractService
+class PrinterType
 {
-    public function GenerateLabel(Shipments $shipments, Message $message, bool $confirm = true)
-    {
-        $result = $this->post(
-            '/label?confirm=' . ($confirm ? 'true' : 'false'),
-            [
-                'Customer' => $this->customer,
-                'Message' => $message,
-                'Shipments' => $shipments
-            ]
-        );
-return $result;
-        throw new \Exception('Could not generate label. Unknown exception.');
-    }
+    const GIF = 'GraphicFile|GIF 200 dpi';
+    const GIF_300 = 'GraphicFile|GIF 300 dpi';
+    const GIF_600 = 'GraphicFile|GIF 600 dpi';
+    const JPG = 'GraphicFile|JPG 200 dpi';
+    const JPG_300 = 'GraphicFile|JPG 300 dpi';
+    const JPG_600 = 'GraphicFile|JPG 600 dpi';
+    const PDF = 'GraphicFile|PDF';
 }

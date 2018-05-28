@@ -24,32 +24,42 @@
  */
 namespace PostNL\Model;
 
+use PostNL\Business\AutoJsonSerializer;
+use PostNL\Enum\PrinterType;
+
 /**
  * Message
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  28-5-2018
  */
-class Message
+class Message extends AutoJsonSerializer
 {
     /**
      * @var int
      */
-    private $MessageID;
+    protected $MessageID;
 
     /**
      * @var string
      */
-    private $MessageTimeStamp;
+    protected $Printertype;
+
+    /**
+     * @var string
+     */
+    protected $MessageTimeStamp;
 
     /**
      * Message constructor.
      * @param int $MessageID
-     * @param \DateTime $MessageTimeStamp
+     * @param string $Printertype
+     * @param \DateTime|null $MessageTimeStamp
      */
-    public function __construct(int $MessageID, \DateTime $MessageTimeStamp = null)
+    public function __construct(int $MessageID, string $Printertype = PrinterType::PDF, \DateTime $MessageTimeStamp = null)
     {
         $this->setMessageID($MessageID);
+        $this->setPrintertype($Printertype);
         $this->setMessageTimeStamp($MessageTimeStamp ?? new \DateTime());
     }
 
@@ -86,6 +96,24 @@ class Message
     public function setMessageTimeStamp(\DateTime $MessageTimeStamp): Message
     {
         $this->MessageTimeStamp = $MessageTimeStamp->format('d-m-Y H:i:s');
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPrintertype(): string
+    {
+        return $this->Printertype;
+    }
+
+    /**
+     * @param string $Printertype
+     * @return Message
+     */
+    public function setPrintertype(string $Printertype): Message
+    {
+        $this->Printertype = $Printertype;
         return $this;
     }
 }

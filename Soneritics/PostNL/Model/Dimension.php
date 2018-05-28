@@ -24,44 +24,46 @@
  */
 namespace PostNL\Model;
 
+use PostNL\Business\AutoJsonSerializer;
+
 /**
  * Dimension
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  28-5-2018
  */
-class Dimension
+class Dimension extends AutoJsonSerializer
 {
     /**
      * Mandatory
      * Weight of the shipment in grams. Approximate weight suffices
      * @var int
      */
-    private $Weight;
+    protected $Weight;
 
     /**
      * Height of the shipment in milimeters (mm).
      * @var int
      */
-    private $Height;
+    protected $Height;
 
     /**
      * Length of the shipment in milimeters (mm).
      * @var int
      */
-    private $Length;
+    protected $Length;
 
     /**
      * Volume of the shipment in centimeters (cm3). Mandatory for E@H-products
      * @var int
      */
-    private $Volume;
+    protected $Volume;
 
     /**
      * Width of the shipment in milimeters (mm).
      * @var int
      */
-    private $Width;
+    protected $Width;
 
     /**
      * Weight of the shipment in grams. Approximate weight suffices
@@ -84,6 +86,7 @@ class Dimension
     }
 
     /**
+     * Height of the shipment in milimeters (mm).
      * @return int
      */
     public function getHeight(): int
@@ -92,6 +95,7 @@ class Dimension
     }
 
     /**
+     * Height of the shipment in milimeters (mm).
      * @param int $Height
      * @return Dimension
      */
@@ -102,6 +106,7 @@ class Dimension
     }
 
     /**
+     * Length of the shipment in milimeters (mm).
      * @return int
      */
     public function getLength(): int
@@ -110,6 +115,7 @@ class Dimension
     }
 
     /**
+     * Length of the shipment in milimeters (mm).
      * @param int $Length
      * @return Dimension
      */
@@ -120,6 +126,7 @@ class Dimension
     }
 
     /**
+     * Width of the shipment in milimeters (mm).
      * @return int
      */
     public function getVolume(): int
@@ -128,6 +135,7 @@ class Dimension
     }
 
     /**
+     * Width of the shipment in milimeters (mm).
      * @param int $Volume
      * @return Dimension
      */
@@ -138,6 +146,7 @@ class Dimension
     }
 
     /**
+     * Width of the shipment in milimeters (mm).
      * @return int
      */
     public function getWidth(): int
@@ -146,6 +155,7 @@ class Dimension
     }
 
     /**
+     * Width of the shipment in milimeters (mm).
      * @param int $Width
      * @return Dimension
      */
