@@ -25,7 +25,7 @@
 namespace PostNL;
 
 use PostNL\Endpoints\Endpoints;
-use PostNL\Information\Customer;
+use PostNL\Model\Customer;
 use PostNL\Service\BarcodeService;
 
 /**

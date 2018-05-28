@@ -24,7 +24,7 @@
  */
 namespace PostNL\Service;
 
-use PostNL\Information\Customer;
+use PostNL\Model\Customer;
 
 /**
  * Abstract Service
