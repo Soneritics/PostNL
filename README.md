@@ -40,7 +40,7 @@ ___WIP!___
 | **Send & Track**                                                    |||
 | Barcode webservice                            |      ✓      |   1_1   |
 | Confirming webservice                         |      X      |   N/A   |
-| Labelling webservice                          |      X      |   N/A   |
+| Labelling webservice                          |      ✓      |   2_1   |
 | Shippingstatus webservice                     |      X      |   N/A   |
 | **Delivery options**                                                |||
 | Deliverydate webservice                       |      X      |   N/A   |
