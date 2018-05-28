@@ -22,19 +22,17 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace PostNL;
+namespace PostNL\Service;
 
-use PostNL\Endpoints\Endpoints;
 use PostNL\Information\Customer;
-use PostNL\Service\BarcodeService;
 
 /**
- * PostNL API
+ * Abstract Service
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  27-5-2018
  */
-class API
+abstract class AbstractService
 {
     /**
      * @var string
@@ -42,34 +40,58 @@ class API
     private $apiKey;
 
     /**
-     * @var Customer
+     * @var string
      */
-    private $customer;
+    private $endpoint;
 
     /**
-     * @var Endpoints
+     * @var Customer
      */
-    private $endpoints;
+    protected $customer;
 
     /**
      * API constructor.
      * @param string $apiKey
      * @param Customer $customer
-     * @param Endpoints $endpoints
+     * @param string $endpoint
      */
-    public function __construct(string $apiKey, Customer $customer, Endpoints $endpoints)
+    public function __construct(string $apiKey, Customer $customer, string $endpoint)
     {
         $this->apiKey = $apiKey;
+        $this->endpoint = $endpoint;
         $this->customer = $customer;
-        $this->endpoints = $endpoints;
     }
 
     /**
-     * Get a barcode service instance.
-     * @return BarcodeService
+     * Get data from a REST call.
+     * @param $url
+     * @param $data
+     * @return string
+     * @throws \Exception
      */
-    public function getBarcodeService(): BarcodeService
+    protected function get($url, $data)
     {
-        return new BarcodeService($this->apiKey, $this->customer, $this->endpoints->Barcode);
+        return (new \PestJSON($this->endpoint))->get($url, $data, $this->getHeaders());
+    }
+
+    /**
+     * POST data to a REST endpoint.
+     * @param $url
+     * @param $data
+     * @return string
+     * @throws \Exception
+     */
+    protected function post($url, $data)
+    {
+        return (new \PestJSON($this->endpoint))->post($url, $data, $this->getHeaders());
+    }
+
+    /**
+     * Fetch the security headers.
+     * @return array
+     */
+    private function getHeaders()
+    {
+        return ['apikey' => $this->apiKey];
     }
 }

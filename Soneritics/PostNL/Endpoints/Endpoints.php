@@ -22,54 +22,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace PostNL;
-
-use PostNL\Endpoints\Endpoints;
-use PostNL\Information\Customer;
-use PostNL\Service\BarcodeService;
+namespace PostNL\Endpoints;
 
 /**
- * PostNL API
+ * Endpoints
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  27-5-2018
  */
-class API
+abstract class Endpoints
 {
     /**
      * @var string
      */
-    private $apiKey;
+    public $Barcode;
 
     /**
-     * @var Customer
+     * Endpoints constructor.
+     * Check if all endpoints are implemented.
+     * @throws \Exception
      */
-    private $customer;
-
-    /**
-     * @var Endpoints
-     */
-    private $endpoints;
-
-    /**
-     * API constructor.
-     * @param string $apiKey
-     * @param Customer $customer
-     * @param Endpoints $endpoints
-     */
-    public function __construct(string $apiKey, Customer $customer, Endpoints $endpoints)
+    public function __construct()
     {
-        $this->apiKey = $apiKey;
-        $this->customer = $customer;
-        $this->endpoints = $endpoints;
-    }
-
-    /**
-     * Get a barcode service instance.
-     * @return BarcodeService
-     */
-    public function getBarcodeService(): BarcodeService
-    {
-        return new BarcodeService($this->apiKey, $this->customer, $this->endpoints->Barcode);
+        // @todo: Loop all class properties and check if !empty()
     }
 }

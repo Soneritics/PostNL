@@ -22,54 +22,39 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace PostNL;
-
-use PostNL\Endpoints\Endpoints;
-use PostNL\Information\Customer;
-use PostNL\Service\BarcodeService;
+namespace PostNL\Service;
 
 /**
- * PostNL API
+ * Barcode Service
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  27-5-2018
  */
-class API
+class BarcodeService extends AbstractService
 {
     /**
-     * @var string
+     * Generate a barcode.
+     * @param string $type
+     * @param string $serie
+     * @return string
+     * @throws \Exception
      */
-    private $apiKey;
-
-    /**
-     * @var Customer
-     */
-    private $customer;
-
-    /**
-     * @var Endpoints
-     */
-    private $endpoints;
-
-    /**
-     * API constructor.
-     * @param string $apiKey
-     * @param Customer $customer
-     * @param Endpoints $endpoints
-     */
-    public function __construct(string $apiKey, Customer $customer, Endpoints $endpoints)
+    public function GenerateBarcode($type = '3S', $serie = '000000000-999999999'): string
     {
-        $this->apiKey = $apiKey;
-        $this->customer = $customer;
-        $this->endpoints = $endpoints;
-    }
+        $result = $this->get(
+            '/barcode',
+            [
+                'CustomerCode' => $this->customer->CustomerCode,
+                'CustomerNumber' => $this->customer->CustomerNumber,
+                'Type' => $type,
+                'Serie' => $serie
+            ]
+        );
 
-    /**
-     * Get a barcode service instance.
-     * @return BarcodeService
-     */
-    public function getBarcodeService(): BarcodeService
-    {
-        return new BarcodeService($this->apiKey, $this->customer, $this->endpoints->Barcode);
+        if (is_array($result) && !empty($result['Barcode'])) {
+            return (string)$result['Barcode'];
+        }
+
+        throw new \Exception('Could not generate barcode. Unknown exception.');
     }
 }
