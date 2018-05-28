@@ -1,12 +1,13 @@
-install: composer install --prefer-source --dev
+install: composer install
 language: php
 php:
-- 5.5
+- 7.1
+- 7.0
 - 5.6
 script:
 - vendor/bin/phpcs --standard=PSR1,PSR2 Soneritics/PostNL/
 - mkdir -p build/logs
-- vendor/bin/phpunit --coverage-clover build/logs/clover.xml tests/
+- vendor/bin/phpunit --coverage-clover build/logs/clover.xml tests/Voormelding/
 
 after_script:
   - php vendor/bin/coveralls -v
