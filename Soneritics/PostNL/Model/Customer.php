@@ -33,12 +33,178 @@ namespace PostNL\Model;
 class Customer
 {
     /**
+     * Mandatory
+     * @var Address
+     */
+    private $Address;
+
+    /**
+     * Mandatory
      * @var string
      */
-    public $CustomerCode;
+    private $CollectionLocation;
+
+    /**
+     * Mandatory
+     * @var string
+     */
+    private $CustomerCode;
+
+    /**
+     * Mandatory
+     * @var string
+     */
+    private $CustomerNumber;
 
     /**
      * @var string
      */
-    public $CustomerNumber;
+    private $ContactPerson;
+
+    /**
+     * @var string
+     */
+    private $Email;
+
+    /**
+     * @var string
+     */
+    private $Name;
+
+    /**
+     * @return Address
+     */
+    public function getAddress(): Address
+    {
+        return $this->Address;
+    }
+
+    /**
+     * @param Address $Address
+     * @return Customer
+     */
+    public function setAddress(Address $Address): Customer
+    {
+        $this->Address = $Address;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCollectionLocation(): string
+    {
+        return $this->CollectionLocation;
+    }
+
+    /**
+     * Code of delivery location at PostNL Pakketten
+     * @param string $CollectionLocation
+     * @return Customer
+     */
+    public function setCollectionLocation(string $CollectionLocation): Customer
+    {
+        $this->CollectionLocation = $CollectionLocation;
+        return $this;
+    }
+
+    /**
+     * Customer code as known at PostNL Pakketten
+     * @return string
+     */
+    public function getCustomerCode(): string
+    {
+        return $this->CustomerCode;
+    }
+
+    /**
+     * Customer code as known at PostNL Pakketten
+     * @param string $CustomerCode
+     * @return Customer
+     */
+    public function setCustomerCode(string $CustomerCode): Customer
+    {
+        $this->CustomerCode = $CustomerCode;
+        return $this;
+    }
+
+    /**
+     * Name of customer contact person
+     * @return string
+     */
+    public function getCustomerNumber(): string
+    {
+        return $this->CustomerNumber;
+    }
+
+    /**
+     * Name of customer contact person
+     * @param string $CustomerNumber
+     * @return Customer
+     */
+    public function setCustomerNumber(string $CustomerNumber): Customer
+    {
+        $this->CustomerNumber = $CustomerNumber;
+        return $this;
+    }
+
+    /**
+     * Name of customer contact person
+     * @return string
+     */
+    public function getContactPerson(): string
+    {
+        return $this->ContactPerson;
+    }
+
+    /**
+     * Name of customer contact person
+     * @param string $ContactPerson
+     * @return Customer
+     */
+    public function setContactPerson(string $ContactPerson): Customer
+    {
+        $this->ContactPerson = $ContactPerson;
+        return $this;
+    }
+
+    /**
+     * E-mail address of the customer
+     * @return string
+     */
+    public function getEmail(): string
+    {
+        return $this->Email;
+    }
+
+    /**
+     * E-mail address of the customer
+     * @param string $Email
+     * @return Customer
+     */
+    public function setEmail(string $Email): Customer
+    {
+        $this->Email = $Email;
+        return $this;
+    }
+
+    /**
+     * Customer name
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->Name;
+    }
+
+    /**
+     * Customer name
+     * @param string $Name
+     * @return Customer
+     */
+    public function setName(string $Name): Customer
+    {
+        $this->Name = $Name;
+        return $this;
+    }
 }
