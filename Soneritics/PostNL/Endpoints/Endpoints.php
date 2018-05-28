@@ -38,6 +38,11 @@ abstract class Endpoints
     public $Barcode;
 
     /**
+     * @var string
+     */
+    public $Labelling;
+
+    /**
      * Endpoints constructor.
      * Check if all endpoints are implemented.
      * @throws \Exception
