@@ -19,7 +19,11 @@ This library offers a variety of functions for PostNL. Mainly, these are the two
 Use Composer to install: soneritics/postnl
 
 ## PostNL API
-___WIP!___
+The base for connecting to the PostNL API will be provided by this plugin.
+It is advised not to use it in a production environment, as it's nog error-proof,
+nor fully (automated) tested.
+
+Create an issue if you need help, or need more services than the ones provided.
 
 ### Supported APIs
 | Service                                       | Implemented | Version |
@@ -49,6 +53,60 @@ ___WIP!___
 | **Mail**                                                            |||
 | Bulkmail webservice                           |      X      |   N/A   |
 
+### Code example: Creating the API
+Always start with creating the API object.
+```php
+$apiKey = '*YOUR API KEY*';
+
+$endpoints = new Sandbox;
+$customer = (new Customer)
+    ->setCustomerCode('DEVC')
+    ->setCustomerNumber('11223344')
+    ->setAddress((new Address)
+        ->setAddressType(AddressType::SENDER)
+        ->setCompanyName('Soneritics')
+        ->setStreet('De Rosmolen')
+        ->setHouseNr('153')
+        ->setZipcode('6932NC')
+        ->setCity('Westervoort')
+        ->setCountrycode('NL')
+    );
+
+$api = new API($apiKey, $customer, $endpoints);
+```
+
+### Code example: Fetching a barcode
+```php
+$barcodeService = $api->getBarcodeService();
+$barcode = $barcodeService->GenerateBarcode();
+echo "generated barcode: {$barcode}\r\n";
+```
+
+### Code example: Generate a label and confirm shipment (basic)
+```php
+$message = new Message(1, PrinterType::JPG);
+$dimension = (new Dimension)->setWeight(1000);
+$receivingAddress = (new Address)
+    ->setAddressType(AddressType::RECEIVER)
+    ->setCompanyName('Jordi Jolink')
+    ->setStreet('De Rosmolen')
+    ->setHouseNr('153')
+    ->setZipcode('6932NC')
+    ->setCity('Westervoort')
+    ->setCountrycode('NL');
+
+$shipments = (new Shipments)->addShipment(
+    (new Shipment)
+        ->setAddresses((new Addresses)->addAddress($receivingAddress))
+        ->setBarcode($barcode)
+        ->setDimension($dimension)
+);
+
+$result = $api->getLabellingService()->GenerateLabel($shipments, $message);
+$labelContentsBase64 = $result['ResponseShipments'][0]['Labels'][0]['Content'];
+```
+
+---
 
 ## PostNL Vooraanmelding
 ### Codetaal: Nederlands
