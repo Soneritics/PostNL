@@ -22,38 +22,22 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace PostNL\Endpoints;
+namespace PostNL\Enum;
 
 /**
- * Endpoints
+ * DeliveryOptions enum package
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
- * @since  27-5-2018
+ * @since  30-5-2018
  */
-abstract class Endpoints
+class DeliveryOptions
 {
-    /**
-     * @var string
-     */
-    public $Barcode;
-
-    /**
-     * @var string
-     */
-    public $Labelling;
-
-    /**
-     * @var string
-     */
-    public $Timeframe;
-
-    /**
-     * Endpoints constructor.
-     * Check if all endpoints are implemented.
-     * @throws \Exception
-     */
-    public function __construct()
-    {
-        // @todo: Loop all class properties and check if !empty()
-    }
+    const DAYTIME = 'Daytime'; // Daytime delivery
+    const EVENING = 'Evening'; // Evening delivery
+    const MORNING = 'Morning'; // Morning delivery before 10:00
+    const NOON = 'Noon'; // Morning delivery before 12:00
+    const SUNDAY = 'Sunday'; // Sunday delivery
+    const SAMEDAY = 'Sameday'; // Sameday delivery (must be used in combination with Evening)
+    const AFTERNOON = 'Afternoon'; // Afternoon delivery before 17:00
+    const MYTIME = 'MyTime';	// MyTime delivery (in Dutch: Op Afspraak Bezorgd)
 }

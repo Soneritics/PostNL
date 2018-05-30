@@ -49,7 +49,7 @@ Create an issue if you need help, or need more services than the ones provided.
 | **Delivery options**                                                |||
 | Deliverydate webservice                       |      X      |   N/A   |
 | Location webservice                           |      X      |   N/A   |
-| Timeframe webservice                          |      X      |   N/A   |
+| Timeframe webservice                          |      ✓      |   2_1   |
 | **Mail**                                                            |||
 | Bulkmail webservice                           |      X      |   N/A   |
 
@@ -104,6 +104,29 @@ $shipments = (new Shipments)->addShipment(
 
 $result = $api->getLabellingService()->GenerateLabel($shipments, $message);
 $labelContentsBase64 = $result['ResponseShipments'][0]['Labels'][0]['Content'];
+```
+
+### Code example: Get time frames
+```php
+$receivingAddress = (new Address)
+    ->setAddressType(AddressType::RECEIVER)
+    ->setCompanyName('Jordi Jolink')
+    ->setStreet('De Rosmolen')
+    ->setHouseNr('153')
+    ->setZipcode('6932NC')
+    ->setCity('Westervoort')
+    ->setCountrycode('NL');
+
+$deliveryOptions = [
+    DeliveryOptions::DAYTIME,
+    DeliveryOptions::EVENING,
+    DeliveryOptions::AFTERNOON,
+    DeliveryOptions::MORNING,
+    DeliveryOptions::NOON
+];
+
+$result = $api->getTimeframeService()->calculateTimeframes($receivingAddress, $deliveryOptions);
+print_r($result);
 ```
 
 ---

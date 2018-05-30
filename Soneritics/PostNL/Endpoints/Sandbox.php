@@ -34,4 +34,5 @@ class Sandbox extends Endpoints
 {
     public $Barcode = 'https://api-sandbox.postnl.nl/shipment/v1_1';
     public $Labelling = 'https://api-sandbox.postnl.nl/shipment/v2_1';
+    public $Timeframe = 'https://api-sandbox.postnl.nl/shipment/v2_1';
 }
