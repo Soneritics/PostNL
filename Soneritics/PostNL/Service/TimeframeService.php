@@ -53,11 +53,11 @@ class TimeframeService extends AbstractService
         bool $AllowSundaySorting = false)
     {
         if ($startDate === null) {
-            $startDate = new \DateTime("+1 day");
+            $startDate = new \DateTime();
         }
 
         if ($endDate === null) {
-            $endDate = $startDate->add(new \DateInterval("P15D"));
+            $endDate = (clone $startDate)->add(new \DateInterval("P15D"));
         }
 
         if ($startDate > $endDate) {
