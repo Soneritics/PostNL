@@ -106,7 +106,7 @@ $result = $api->getLabellingService()->GenerateLabel($shipments, $message);
 $labelContentsBase64 = $result['ResponseShipments'][0]['Labels'][0]['Content'];
 ```
 
-### Code example: Get time frames
+### Code example: Get time frames, get a label and confirm the shipment
 ```php
 $receivingAddress = (new Address)
     ->setAddressType(AddressType::RECEIVER)
@@ -126,7 +126,32 @@ $deliveryOptions = [
 ];
 
 $result = $api->getTimeframeService()->calculateTimeframes($receivingAddress, $deliveryOptions);
+echo "Timeframes:\r\n";
 print_r($result);
+
+# Confirm time frame
+$barcodeService = $api->getBarcodeService();
+
+echo "Confirming timeframe..\r\n";
+if (!empty($result['Timeframes']['Timeframe'])) {
+    $timeframe = array_pop($result['Timeframes']['Timeframe']);
+    if ($timeframe !== null) {
+        $deliveryTimestampStart = new DateTime($timeframe['Date'] . ' ' . $timeframe['Timeframes']['TimeframeTimeFrame']['From']);
+        $deliveryTimestampEnd = new DateTime($timeframe['Date'] . ' ' . $timeframe['Timeframes']['TimeframeTimeFrame']['To']);
+
+        $shipments = (new Shipments)->addShipment(
+            (new Shipment)
+                ->setAddresses((new Addresses)->addAddress($receivingAddress))
+                ->setBarcode($barcodeService->GenerateBarcode())
+                ->setDimension($dimension)
+                ->setDeliveryDate($deliveryTimestampStart)
+        );
+
+        $result = $api->getLabellingService()->GenerateLabel($shipments, $message);
+        print_r($result);
+    }
+}
+echo "Timeframe confirmed.\r\n";
 ```
 
 ---
