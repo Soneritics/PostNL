@@ -139,12 +139,16 @@ if (!empty($result['Timeframes']['Timeframe'])) {
         $deliveryTimestampStart = new DateTime($timeframe['Date'] . ' ' . $timeframe['Timeframes']['TimeframeTimeFrame']['From']);
         $deliveryTimestampEnd = new DateTime($timeframe['Date'] . ' ' . $timeframe['Timeframes']['TimeframeTimeFrame']['To']);
 
-        $shipments = (new Shipments)->addShipment(
+       $contact = (new Contact)->setEmail('mail@jordijolink.nl');
+       $shipments = (new Shipments)->addShipment(
             (new Shipment)
                 ->setAddresses((new Addresses)->addAddress($receivingAddress))
                 ->setBarcode($barcodeService->GenerateBarcode())
                 ->setDimension($dimension)
                 ->setDeliveryDate($deliveryTimestampStart)
+                ->setDeliveryTimeStampStart($deliveryTimestampStart)
+                ->setDeliveryTimeStampEnd($deliveryTimestampEnd)
+                ->setContacts((new Contacts)->addContact($contact))
         );
 
         $result = $api->getLabellingService()->GenerateLabel($shipments, $message);
