@@ -47,6 +47,12 @@ class Shipment extends AutoJsonSerializer
     protected $Barcode;
 
     /**
+     * Mandatory when using Timeframes
+     * @var Contacts
+     */
+    protected $Contacts;
+
+    /**
      * Mandatory
      * @var string
      */
@@ -207,6 +213,24 @@ class Shipment extends AutoJsonSerializer
     public function setBarcode(string $Barcode): Shipment
     {
         $this->Barcode = $Barcode;
+        return $this;
+    }
+
+    /**
+     * @return Contacts
+     */
+    public function getContacts(): Contacts
+    {
+        return $this->Contacts;
+    }
+
+    /**
+     * @param Contacts $Contacts
+     * @return Shipment
+     */
+    public function setContacts(Contacts $Contacts): Shipment
+    {
+        $this->Contacts = $Contacts;
         return $this;
     }
 
