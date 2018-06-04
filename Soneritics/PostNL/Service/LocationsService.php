@@ -24,6 +24,7 @@
  */
 namespace PostNL\Service;
 
+use PostNL\Enum\RequestDeliveryOptions;
 use PostNL\Enum\RetailNetworkID;
 use PostNL\Model\Address;
 use PostNL\Model\OpeningTime;
@@ -43,14 +44,41 @@ class LocationsService extends AbstractService
      * @param \DateTime|null $earliestDeliveryDate
      * @param OpeningTime|null $openingTime
      * @return array
+     * @throws \Exception
      */
     public function getNearestLocations(
         Address $address,
-        array $deliveryOptions = [DeliveryOptions::DAYTIME],
+        array $deliveryOptions = [RequestDeliveryOptions::PICKUP_POSTNL],
         \DateTime $earliestDeliveryDate = null,
         OpeningTime $openingTime = null
     ) {
-        return [];
+        $requestData = [
+            'CountryCode' => $address->getCountrycode(),
+            'PostalCode' => $address->getZipcode(),
+            'DeliveryOptions' => $deliveryOptions
+        ];
+
+        if ($earliestDeliveryDate !== null) {
+            $requestData['DeliveryDate'] = $earliestDeliveryDate->format('d-m-Y');
+        }
+
+        if ($openingTime !== null) {
+            $requestData['OpeningTime'] = (string)$openingTime;
+        }
+
+        if (($city = $address->getCity()) !== null) {
+            $requestData['City'] = $city;
+        }
+
+        if (($street = $address->getStreet()) !== null) {
+            $requestData['Street'] = $street;
+        }
+
+        if (($houseNr = $address->getHouseNr()) !== null) {
+            $requestData['HouseNumber'] = $houseNr;
+        }
+
+        return $this->get('/nearest', $requestData);
     }
 
     /**
