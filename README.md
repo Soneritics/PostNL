@@ -21,7 +21,7 @@ Use Composer to install: soneritics/postnl
 ## PostNL API
 The base for connecting to the PostNL API will be provided by this plugin.
 It is advised not to use it in a production environment, as it's nog error-proof,
-nor fully (automated) tested.
+nor (fully automated) tested.
 
 Create an issue if you need help, or need more services than the ones provided.
 
@@ -37,8 +37,6 @@ Create an issue if you need help, or need more services than the ones provided.
 | Deliverydate webservice                       |      X      |   N/A   |
 | Location webservice                           |      ✓      |   2_1   |
 | Timeframe webservice                          |      ✓      |   2_1   |
-| **Mail**                                                            |||
-| Bulkmail webservice                           |      X      |   N/A   |
 
 ### Code example: Creating the API
 Always start with creating the API object.
