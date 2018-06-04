@@ -143,6 +143,32 @@ if (!empty($result['Timeframes']['Timeframe'])) {
 echo "Timeframe confirmed.\r\n";
 ```
 
+### Code example: Fetch nearest locations
+```php
+$receivingAddress = (new Address)
+    ->setAddressType(AddressType::RECEIVER)
+    ->setZipcode('6932NC')
+    ->setCountrycode('NL');
+
+$result = $api->getLocationsService()->getNearestLocations($receivingAddress);
+print_r($result);
+```
+
+### Code example: Fetch nearest locations by geocode and lookup location info
+```php
+$result = $api->getLocationsService()->getNearestLocationsByGeocode(51.963807, 5.968984, 'NL');
+
+if (!empty($result['GetLocationsResult']['ResponseLocation'])) {
+    $location = $result['GetLocationsResult']['ResponseLocation'][0];
+    print_r($location);
+
+    echo "Location info:\r\n";
+    $locationCode = $location['LocationCode'];
+    $retailNetworkID = $location['RetailNetworkID'];
+    print_r($api->getLocationsService()->getLocationInformation($locationCode, $retailNetworkID));
+}
+```
+
 ---
 
 ## PostNL Vooraanmelding
