@@ -90,16 +90,32 @@ class LocationsService extends AbstractService
      * @param \DateTime|null $earliestDeliveryDate
      * @param OpeningTime|null $openingTime
      * @return array
+     * @throws \Exception
      */
     public function getNearestLocationsByGeocode(
         int $lat,
         int $lon,
         string $countryCode,
-        array $deliveryOptions = [DeliveryOptions::DAYTIME],
+        array $deliveryOptions = [RequestDeliveryOptions::PICKUP_POSTNL],
         \DateTime $earliestDeliveryDate = null,
         OpeningTime $openingTime = null
     ) {
-        return [];
+        $requestData = [
+            'Latitude' => $lat,
+            'Longitude' => $lon,
+            'CountryCode' => $countryCode,
+            'DeliveryOptions' => $deliveryOptions
+        ];
+
+        if ($earliestDeliveryDate !== null) {
+            $requestData['DeliveryDate'] = $earliestDeliveryDate->format('d-m-Y');
+        }
+
+        if ($openingTime !== null) {
+            $requestData['OpeningTime'] = (string)$openingTime;
+        }
+
+        return $this->get('/nearest/geocode', $requestData);
     }
 
     /**
