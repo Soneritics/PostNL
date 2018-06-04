@@ -123,9 +123,16 @@ class LocationsService extends AbstractService
      * @param string $locationCode
      * @param string $RetailNetworkID
      * @return array
+     * @throws \Exception
      */
     public function getLocationInformation(string $locationCode, string $RetailNetworkID = RetailNetworkID::NETHERLANDS)
     {
-        return [];
+        return $this->get(
+            '/lookup',
+            [
+                'LocationCode' => $locationCode,
+                'RetailNetworkID' => $RetailNetworkID
+            ]
+        );
     }
 }
