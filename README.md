@@ -28,19 +28,6 @@ Create an issue if you need help, or need more services than the ones provided.
 ### Supported APIs
 | Service                                       | Implemented | Version |
 |-----------------------------------------------|:-----------:|:-------:|
-| **Addresses**                                                     |||
-| Adrescheck Nationaal                          |      X      |   N/A   |
-| Adrescheck Basis Nationaal                    |      X      |   N/A   |
-| Adrescheck Internationaal                     |      X      |   N/A   |
-| Persoon op Adrescheck Basis                   |      X      |   N/A   |
-| Geo Adrescheck Nationaal                      |      X      |   N/A   |
-| **Creditworthiness & Business information**                       |||
-| Bedrijfscheck Nationaal                       |      X      |   N/A   |
-| Fraudepreventie Check Basis                   |      X      |   N/A   |
-| IBANcheck Nationaal                           |      X      |   N/A   |
-| Kredietcheck Consument Basis                  |      X      |   N/A   |
-| Kredietcheck Consument Premium                |      X      |   N/A   |
-| Kredietcheck Zakelijk                         |      X      |   N/A   |
 | **Send & Track**                                                    |||
 | Barcode webservice                            |      ✓      |   1_1   |
 | Confirming webservice                         |      X      |   N/A   |
