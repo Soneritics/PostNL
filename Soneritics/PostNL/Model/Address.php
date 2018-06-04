@@ -156,7 +156,7 @@ class Address extends AutoJsonSerializer
     /**
      * @return string
      */
-    public function getCity(): string
+    public function getCity(): ?string
     {
         return $this->City;
     }
@@ -174,7 +174,7 @@ class Address extends AutoJsonSerializer
     /**
      * @return string
      */
-    public function getCompanyName(): string
+    public function getCompanyName(): ?string
     {
         return $this->CompanyName;
     }
@@ -192,7 +192,7 @@ class Address extends AutoJsonSerializer
     /**
      * @return string
      */
-    public function getCountrycode(): string
+    public function getCountrycode(): ?string
     {
         return $this->Countrycode;
     }
@@ -210,7 +210,7 @@ class Address extends AutoJsonSerializer
     /**
      * @return string
      */
-    public function getHouseNr(): string
+    public function getHouseNr(): ?string
     {
         return $this->HouseNr;
     }
@@ -228,7 +228,7 @@ class Address extends AutoJsonSerializer
     /**
      * @return string
      */
-    public function getHouseNrExt(): string
+    public function getHouseNrExt(): ?string
     {
         return $this->HouseNrExt;
     }
@@ -246,7 +246,7 @@ class Address extends AutoJsonSerializer
     /**
      * @return string
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->Name;
     }
@@ -264,7 +264,7 @@ class Address extends AutoJsonSerializer
     /**
      * @return string
      */
-    public function getStreet(): string
+    public function getStreet(): ?string
     {
         return $this->Street;
     }
@@ -282,7 +282,7 @@ class Address extends AutoJsonSerializer
     /**
      * @return string
      */
-    public function getStreetHouseNrExt(): string
+    public function getStreetHouseNrExt(): ?string
     {
         return $this->StreetHouseNrExt;
     }
@@ -300,7 +300,7 @@ class Address extends AutoJsonSerializer
     /**
      * @return string
      */
-    public function getZipcode(): string
+    public function getZipcode(): ?string
     {
         return $this->Zipcode;
     }
@@ -318,7 +318,7 @@ class Address extends AutoJsonSerializer
     /**
      * @return string
      */
-    public function getArea(): string
+    public function getArea(): ?string
     {
         return $this->Area;
     }
@@ -336,7 +336,7 @@ class Address extends AutoJsonSerializer
     /**
      * @return string
      */
-    public function getBuildingname(): string
+    public function getBuildingname(): ?string
     {
         return $this->Buildingname;
     }
@@ -354,7 +354,7 @@ class Address extends AutoJsonSerializer
     /**
      * @return string
      */
-    public function getDepartment(): string
+    public function getDepartment(): ?string
     {
         return $this->Department;
     }
@@ -372,7 +372,7 @@ class Address extends AutoJsonSerializer
     /**
      * @return string
      */
-    public function getDoorcode(): string
+    public function getDoorcode(): ?string
     {
         return $this->Doorcode;
     }
@@ -390,7 +390,7 @@ class Address extends AutoJsonSerializer
     /**
      * @return string
      */
-    public function getFirstName(): string
+    public function getFirstName(): ?string
     {
         return $this->FirstName;
     }
@@ -408,7 +408,7 @@ class Address extends AutoJsonSerializer
     /**
      * @return string
      */
-    public function getFloor(): string
+    public function getFloor(): ?string
     {
         return $this->Floor;
     }
@@ -426,7 +426,7 @@ class Address extends AutoJsonSerializer
     /**
      * @return string
      */
-    public function getRegion(): string
+    public function getRegion(): ?string
     {
         return $this->Region;
     }
