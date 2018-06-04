@@ -22,18 +22,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace PostNL\Endpoints;
+namespace PostNL\Enum;
 
 /**
- * Sandbox sndpoints
+ * RetailNetworkID enum package
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
- * @since  27-5-2018
+ * @since  4-6-2018
  */
-class Sandbox extends Endpoints
+class RetailNetworkID
 {
-    public $Barcode = 'https://api-sandbox.postnl.nl/shipment/v1_1';
-    public $Labelling = 'https://api-sandbox.postnl.nl/shipment/v2_1';
-    public $Timeframe = 'https://api-sandbox.postnl.nl/shipment/v2_1';
-    public $Locations = 'https://api-sandbox.postnl.nl/shipment/v2_1/locations';
+    const NETHERLANDS = 'PNPNL-01';
+    const BELGIUM = 'LD-01';
 }

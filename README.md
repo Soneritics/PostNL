@@ -35,7 +35,7 @@ Create an issue if you need help, or need more services than the ones provided.
 | Shippingstatus webservice                     |      X      |   N/A   |
 | **Delivery options**                                                |||
 | Deliverydate webservice                       |      X      |   N/A   |
-| Location webservice                           |      X      |   N/A   |
+| Location webservice                           |      ✓      |   2_1   |
 | Timeframe webservice                          |      ✓      |   2_1   |
 | **Mail**                                                            |||
 | Bulkmail webservice                           |      X      |   N/A   |

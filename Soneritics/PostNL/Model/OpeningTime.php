@@ -22,43 +22,83 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace PostNL\Endpoints;
+namespace PostNL\Model;
 
 /**
- * Endpoints
+ * OpeningTime
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
- * @since  27-5-2018
+ * @since  4-6-2018
  */
-abstract class Endpoints
+class OpeningTime
 {
     /**
-     * @var string
+     * @var int
      */
-    public $Barcode;
+    protected $hour;
 
     /**
-     * @var string
+     * @var int
      */
-    public $Labelling;
+    protected $minute;
 
     /**
-     * @var string
+     * OpeningTime constructor.
+     * @param int $hour
+     * @param int $minute
      */
-    public $Timeframe;
-
-    /**
-     * @var string
-     */
-    public $Locations;
-
-    /**
-     * Endpoints constructor.
-     * Check if all endpoints are implemented.
-     * @throws \Exception
-     */
-    public function __construct()
+    public function __construct(int $hour = 0, int $minute = 0)
     {
-        // @todo: Loop all class properties and check if !empty()
+        $this->hour = $hour;
+        $this->minute = $minute;
+    }
+
+    /**
+     * Get the opening time as a string
+     * @return string
+     */
+    public function _toString()
+    {
+        return implode(':', [
+            str_pad((string)$this->hour, '0', STR_PAD_LEFT),
+            str_pad((string)$this->minute, '0', STR_PAD_LEFT),
+            '00'
+        ]);
+    }
+
+    /**
+     * @return int
+     */
+    public function getHour(): int
+    {
+        return $this->hour;
+    }
+
+    /**
+     * @param int $hour
+     * @return OpeningTime
+     */
+    public function setHour(int $hour): OpeningTime
+    {
+        $this->hour = $hour;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMinute(): int
+    {
+        return $this->minute;
+    }
+
+    /**
+     * @param int $minute
+     * @return OpeningTime
+     */
+    public function setMinute(int $minute): OpeningTime
+    {
+        $this->minute = $minute;
+        return $this;
     }
 }

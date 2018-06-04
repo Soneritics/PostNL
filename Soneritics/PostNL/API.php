@@ -28,6 +28,7 @@ use PostNL\Endpoints\Endpoints;
 use PostNL\Model\Customer;
 use PostNL\Service\BarcodeService;
 use PostNL\Service\LabellingService;
+use PostNL\Service\LocationsService;
 use PostNL\Service\TimeframeService;
 
 /**
@@ -85,11 +86,20 @@ class API
     }
 
     /**
-     * Get a labelling service instance.
+     * Get a timeframe service instance.
      * @return TimeframeService
      */
     public function getTimeframeService(): TimeframeService
     {
         return new TimeframeService($this->apiKey, $this->customer, $this->endpoints->Timeframe);
+    }
+
+    /**
+     * Get a locations service instance
+     * @return LocationsService
+     */
+    public function getLocationsService(): LocationsService
+    {
+        return new LocationsService($this->apiKey, $this->customer, $this->endpoints->Locations);
     }
 }
