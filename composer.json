@@ -9,9 +9,9 @@
         "educoder/pest": "dev-master"
     },
     "require-dev": {
-        "phpunit/phpunit": "*",
+        "phpunit/phpunit": "^7",
         "squizlabs/php_codesniffer": "*",
-        "satooshi/php-coveralls": "*"
+        "php-coveralls/php-coveralls": "*"
     },
     "autoload": {
         "psr-4": {"PostNL\\": "Soneritics/PostNL/"}

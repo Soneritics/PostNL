@@ -22,7 +22,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-$root = __DIR__ . '/../../Soneritics/PostNL';
+$root = __DIR__ . '/../../../Soneritics/PostNL';
 require_once "{$root}/Mapping/MappingTrait.php";
 require_once "{$root}/Mapping/MappingGenerator.php";
 require_once "{$root}/Data/Afzender.php";
@@ -33,13 +33,16 @@ require_once "{$root}/Voormelding.php";
 
 require_once __DIR__ . "/../Data/TestData.php";
 
+use PHPUnit\Framework\TestCase;
+
+
 /**
  * Abstracte class voor unit tests.
  *
  * @author Jordi Jolink
  * @since 21-4-2015
  */
-class TestAbstract extends PHPUnit_Framework_TestCase
+class TestAbstract extends TestCase
 {
 
 } 
