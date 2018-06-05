@@ -40,24 +40,28 @@ use PostNL\Service\TimeframeService;
 class API
 {
     /**
+     *
      * @var string
      */
     private $apiKey;
 
     /**
+     *
      * @var Customer
      */
     private $customer;
 
     /**
+     *
      * @var Endpoints
      */
     private $endpoints;
 
     /**
      * API constructor.
-     * @param string $apiKey
-     * @param Customer $customer
+     *
+     * @param string    $apiKey
+     * @param Customer  $customer
      * @param Endpoints $endpoints
      */
     public function __construct(string $apiKey, Customer $customer, Endpoints $endpoints)
@@ -69,6 +73,7 @@ class API
 
     /**
      * Get a barcode service instance.
+     *
      * @return BarcodeService
      */
     public function getBarcodeService(): BarcodeService
@@ -78,6 +83,7 @@ class API
 
     /**
      * Get a labelling service instance.
+     *
      * @return LabellingService
      */
     public function getLabellingService(): LabellingService
@@ -87,6 +93,7 @@ class API
 
     /**
      * Get a timeframe service instance.
+     *
      * @return TimeframeService
      */
     public function getTimeframeService(): TimeframeService
@@ -96,6 +103,7 @@ class API
 
     /**
      * Get a locations service instance
+     *
      * @return LocationsService
      */
     public function getLocationsService(): LocationsService

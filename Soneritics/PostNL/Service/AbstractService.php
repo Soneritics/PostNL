@@ -35,25 +35,29 @@ use PostNL\Model\Customer;
 abstract class AbstractService
 {
     /**
+     *
      * @var string
      */
     private $apiKey;
 
     /**
+     *
      * @var string
      */
     private $endpoint;
 
     /**
+     *
      * @var Customer
      */
     protected $customer;
 
     /**
      * API constructor.
-     * @param string $apiKey
+     *
+     * @param string   $apiKey
      * @param Customer $customer
-     * @param string $endpoint
+     * @param string   $endpoint
      */
     public function __construct(string $apiKey, Customer $customer, string $endpoint)
     {
@@ -64,8 +68,9 @@ abstract class AbstractService
 
     /**
      * Get data from a REST call.
-     * @param $url
-     * @param $data
+     *
+     * @param  $url
+     * @param  $data
      * @return string
      * @throws \Exception
      */
@@ -76,8 +81,9 @@ abstract class AbstractService
 
     /**
      * POST data to a REST endpoint.
-     * @param $url
-     * @param $data
+     *
+     * @param  $url
+     * @param  $data
      * @return string
      * @throws \Exception
      */
@@ -88,6 +94,7 @@ abstract class AbstractService
 
     /**
      * Fetch the security headers.
+     *
      * @return array
      */
     private function getHeaders()

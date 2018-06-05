@@ -37,11 +37,12 @@ class TimeframeService extends AbstractService
 {
     /**
      * Retrieve timeframes for delivery.
-     * @param Address $address
-     * @param array $deliveryOptions
-     * @param \DateTime|null $startDate
-     * @param \DateTime|null $endDate
-     * @param bool $AllowSundaySorting
+     *
+     * @param  Address        $address
+     * @param  array          $deliveryOptions
+     * @param  \DateTime|null $startDate
+     * @param  \DateTime|null $endDate
+     * @param  bool           $AllowSundaySorting
      * @return string
      * @throws \Exception
      */
@@ -50,8 +51,8 @@ class TimeframeService extends AbstractService
         array $deliveryOptions = [DeliveryOptions::DAYTIME],
         \DateTime $startDate = null,
         \DateTime $endDate = null,
-        bool $AllowSundaySorting = false)
-    {
+        bool $AllowSundaySorting = false
+    ) {
         if ($startDate === null) {
             $startDate = new \DateTime();
         }

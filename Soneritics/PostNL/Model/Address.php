@@ -36,12 +36,14 @@ class Address extends AutoJsonSerializer
 {
     /**
      * Mandatory
+     *
      * @var string
      */
     protected $AddressType;
 
     /**
      * Mandatory
+     *
      * @var string
      */
     protected $City;
@@ -49,12 +51,14 @@ class Address extends AutoJsonSerializer
     /**
      * Mandatory; This field has a dependency with the field Name.
      * One of both fields must be filled mandatory; using both fields is also allowed. Mandatory when AddressType is 09.
+     *
      * @var string
      */
     protected $CompanyName;
 
     /**
      * Mandatory
+     *
      * @var string
      */
     protected $Countrycode;
@@ -62,11 +66,13 @@ class Address extends AutoJsonSerializer
     /**
      * Mandatory for shipments to Benelux. Max. length is 5 characters (only for Benelux addresses).
      * For Benelux addresses,this field should always be numeric.
+     *
      * @var string
      */
     protected $HouseNr;
 
     /**
+     *
      * @var string
      */
     protected $HouseNrExt;
@@ -76,6 +82,7 @@ class Address extends AutoJsonSerializer
      * One of both fields must be filled mandatory; using both fields is also allowed.
      * Remark: please add FirstName and Name (lastname) of the receiver to improve the parcel tracking experience
      * of your customer.
+     *
      * @var string
      */
     protected $Name;
@@ -83,12 +90,14 @@ class Address extends AutoJsonSerializer
     /**
      * This field has a dependency with the field StreetHouseNrExt.
      * One of both fields must be filled mandatory; using both fields is also allowed.
+     *
      * @var string
      */
     protected $Street;
 
     /**
      * Combination of Street, HouseNr and HouseNrExt.
+     *
      * @var string
      */
     protected $StreetHouseNrExt;
@@ -96,46 +105,55 @@ class Address extends AutoJsonSerializer
     /**
      * Zipcode of the address. Mandatory for shipments to Benelux.
      * Max length (NL) 6 characters,(BE;LU) 4 numeric characters
+     *
      * @var string
      */
     protected $Zipcode;
 
     /**
+     *
      * @var string
      */
     protected $Area;
 
     /**
+     *
      * @var string
      */
     protected $Buildingname;
 
     /**
+     *
      * @var string
      */
     protected $Department;
 
     /**
+     *
      * @var string
      */
     protected $Doorcode;
 
     /**
+     *
      * @var string
      */
     protected $FirstName;
 
     /**
+     *
      * @var string
      */
     protected $Floor;
 
     /**
+     *
      * @var string
      */
     protected $Region;
 
     /**
+     *
      * @return string
      */
     public function getAddressType(): string
@@ -144,7 +162,8 @@ class Address extends AutoJsonSerializer
     }
 
     /**
-     * @param string $AddressType
+     *
+     * @param  string $AddressType
      * @return Address
      */
     public function setAddressType(string $AddressType): Address
@@ -154,6 +173,7 @@ class Address extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getCity(): ?string
@@ -162,7 +182,8 @@ class Address extends AutoJsonSerializer
     }
 
     /**
-     * @param string $City
+     *
+     * @param  string $City
      * @return Address
      */
     public function setCity(string $City): Address
@@ -172,6 +193,7 @@ class Address extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getCompanyName(): ?string
@@ -180,7 +202,8 @@ class Address extends AutoJsonSerializer
     }
 
     /**
-     * @param string $CompanyName
+     *
+     * @param  string $CompanyName
      * @return Address
      */
     public function setCompanyName(string $CompanyName): Address
@@ -190,6 +213,7 @@ class Address extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getCountrycode(): ?string
@@ -198,7 +222,8 @@ class Address extends AutoJsonSerializer
     }
 
     /**
-     * @param string $Countrycode
+     *
+     * @param  string $Countrycode
      * @return Address
      */
     public function setCountrycode(string $Countrycode): Address
@@ -208,6 +233,7 @@ class Address extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getHouseNr(): ?string
@@ -216,7 +242,8 @@ class Address extends AutoJsonSerializer
     }
 
     /**
-     * @param string $HouseNr
+     *
+     * @param  string $HouseNr
      * @return Address
      */
     public function setHouseNr(string $HouseNr): Address
@@ -226,6 +253,7 @@ class Address extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getHouseNrExt(): ?string
@@ -234,7 +262,8 @@ class Address extends AutoJsonSerializer
     }
 
     /**
-     * @param string $HouseNrExt
+     *
+     * @param  string $HouseNrExt
      * @return Address
      */
     public function setHouseNrExt(string $HouseNrExt): Address
@@ -244,6 +273,7 @@ class Address extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getName(): ?string
@@ -252,7 +282,8 @@ class Address extends AutoJsonSerializer
     }
 
     /**
-     * @param string $Name
+     *
+     * @param  string $Name
      * @return Address
      */
     public function setName(string $Name): Address
@@ -262,6 +293,7 @@ class Address extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getStreet(): ?string
@@ -270,7 +302,8 @@ class Address extends AutoJsonSerializer
     }
 
     /**
-     * @param string $Street
+     *
+     * @param  string $Street
      * @return Address
      */
     public function setStreet(string $Street): Address
@@ -280,6 +313,7 @@ class Address extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getStreetHouseNrExt(): ?string
@@ -288,7 +322,8 @@ class Address extends AutoJsonSerializer
     }
 
     /**
-     * @param string $StreetHouseNrExt
+     *
+     * @param  string $StreetHouseNrExt
      * @return Address
      */
     public function setStreetHouseNrExt(string $StreetHouseNrExt): Address
@@ -298,6 +333,7 @@ class Address extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getZipcode(): ?string
@@ -306,7 +342,8 @@ class Address extends AutoJsonSerializer
     }
 
     /**
-     * @param string $Zipcode
+     *
+     * @param  string $Zipcode
      * @return Address
      */
     public function setZipcode(string $Zipcode): Address
@@ -316,6 +353,7 @@ class Address extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getArea(): ?string
@@ -324,7 +362,8 @@ class Address extends AutoJsonSerializer
     }
 
     /**
-     * @param string $Area
+     *
+     * @param  string $Area
      * @return Address
      */
     public function setArea(string $Area): Address
@@ -334,6 +373,7 @@ class Address extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getBuildingname(): ?string
@@ -342,7 +382,8 @@ class Address extends AutoJsonSerializer
     }
 
     /**
-     * @param string $Buildingname
+     *
+     * @param  string $Buildingname
      * @return Address
      */
     public function setBuildingname(string $Buildingname): Address
@@ -352,6 +393,7 @@ class Address extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getDepartment(): ?string
@@ -360,7 +402,8 @@ class Address extends AutoJsonSerializer
     }
 
     /**
-     * @param string $Department
+     *
+     * @param  string $Department
      * @return Address
      */
     public function setDepartment(string $Department): Address
@@ -370,6 +413,7 @@ class Address extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getDoorcode(): ?string
@@ -378,7 +422,8 @@ class Address extends AutoJsonSerializer
     }
 
     /**
-     * @param string $Doorcode
+     *
+     * @param  string $Doorcode
      * @return Address
      */
     public function setDoorcode(string $Doorcode): Address
@@ -388,6 +433,7 @@ class Address extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getFirstName(): ?string
@@ -396,7 +442,8 @@ class Address extends AutoJsonSerializer
     }
 
     /**
-     * @param string $FirstName
+     *
+     * @param  string $FirstName
      * @return Address
      */
     public function setFirstName(string $FirstName): Address
@@ -406,6 +453,7 @@ class Address extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getFloor(): ?string
@@ -414,7 +462,8 @@ class Address extends AutoJsonSerializer
     }
 
     /**
-     * @param string $Floor
+     *
+     * @param  string $Floor
      * @return Address
      */
     public function setFloor(string $Floor): Address
@@ -424,6 +473,7 @@ class Address extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getRegion(): ?string
@@ -432,7 +482,8 @@ class Address extends AutoJsonSerializer
     }
 
     /**
-     * @param string $Region
+     *
+     * @param  string $Region
      * @return Address
      */
     public function setRegion(string $Region): Address

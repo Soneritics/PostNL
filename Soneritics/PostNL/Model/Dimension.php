@@ -37,36 +37,42 @@ class Dimension extends AutoJsonSerializer
     /**
      * Mandatory
      * Weight of the shipment in grams. Approximate weight suffices
+     *
      * @var int
      */
     protected $Weight;
 
     /**
      * Height of the shipment in milimeters (mm).
+     *
      * @var int
      */
     protected $Height;
 
     /**
      * Length of the shipment in milimeters (mm).
+     *
      * @var int
      */
     protected $Length;
 
     /**
      * Volume of the shipment in centimeters (cm3). Mandatory for E@H-products
+     *
      * @var int
      */
     protected $Volume;
 
     /**
      * Width of the shipment in milimeters (mm).
+     *
      * @var int
      */
     protected $Width;
 
     /**
      * Weight of the shipment in grams. Approximate weight suffices
+     *
      * @return int
      */
     public function getWeight(): int
@@ -76,7 +82,8 @@ class Dimension extends AutoJsonSerializer
 
     /**
      * Weight of the shipment in grams. Approximate weight suffices
-     * @param int $Weight
+     *
+     * @param  int $Weight
      * @return Dimension
      */
     public function setWeight(int $Weight): Dimension
@@ -87,6 +94,7 @@ class Dimension extends AutoJsonSerializer
 
     /**
      * Height of the shipment in milimeters (mm).
+     *
      * @return int
      */
     public function getHeight(): int
@@ -96,7 +104,8 @@ class Dimension extends AutoJsonSerializer
 
     /**
      * Height of the shipment in milimeters (mm).
-     * @param int $Height
+     *
+     * @param  int $Height
      * @return Dimension
      */
     public function setHeight(int $Height): Dimension
@@ -107,6 +116,7 @@ class Dimension extends AutoJsonSerializer
 
     /**
      * Length of the shipment in milimeters (mm).
+     *
      * @return int
      */
     public function getLength(): int
@@ -116,7 +126,8 @@ class Dimension extends AutoJsonSerializer
 
     /**
      * Length of the shipment in milimeters (mm).
-     * @param int $Length
+     *
+     * @param  int $Length
      * @return Dimension
      */
     public function setLength(int $Length): Dimension
@@ -127,6 +138,7 @@ class Dimension extends AutoJsonSerializer
 
     /**
      * Width of the shipment in milimeters (mm).
+     *
      * @return int
      */
     public function getVolume(): int
@@ -136,7 +148,8 @@ class Dimension extends AutoJsonSerializer
 
     /**
      * Width of the shipment in milimeters (mm).
-     * @param int $Volume
+     *
+     * @param  int $Volume
      * @return Dimension
      */
     public function setVolume(int $Volume): Dimension
@@ -147,6 +160,7 @@ class Dimension extends AutoJsonSerializer
 
     /**
      * Width of the shipment in milimeters (mm).
+     *
      * @return int
      */
     public function getWidth(): int
@@ -156,7 +170,8 @@ class Dimension extends AutoJsonSerializer
 
     /**
      * Width of the shipment in milimeters (mm).
-     * @param int $Width
+     *
+     * @param  int $Width
      * @return Dimension
      */
     public function setWidth(int $Width): Dimension

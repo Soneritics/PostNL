@@ -34,6 +34,7 @@ trait MappingTrait
 {
     /**
      * Map de waarden op basis van de $mapping property.
+     *
      * @return \Generator
      * @throws \Exception
      */
@@ -50,6 +51,7 @@ trait MappingTrait
 
     /**
      * Verwerk de mappings en yield de resultaten tot een Generator class.
+     *
      * @return \Generator
      */
     private function yieldMappings()

@@ -39,6 +39,7 @@ abstract class MappingGenerator
 
     /**
      * Map de waarden op basis van de $mapping property.
+     *
      * @return \Generator
      */
     public function genereer()
@@ -50,6 +51,7 @@ abstract class MappingGenerator
     /**
      * Valideer de ingevoerde gegevens voordat de mapping wordt toegepast om
      * output te genereren.
+     *
      * @throws \Exception
      */
     abstract protected function validate();

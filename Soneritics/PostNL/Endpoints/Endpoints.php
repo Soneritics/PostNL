@@ -33,21 +33,25 @@ namespace PostNL\Endpoints;
 abstract class Endpoints
 {
     /**
+     *
      * @var string
      */
     public $Barcode;
 
     /**
+     *
      * @var string
      */
     public $Labelling;
 
     /**
+     *
      * @var string
      */
     public $Timeframe;
 
     /**
+     *
      * @var string
      */
     public $Locations;
@@ -55,6 +59,7 @@ abstract class Endpoints
     /**
      * Endpoints constructor.
      * Check if all endpoints are implemented.
+     *
      * @throws \Exception
      */
     public function __construct()

@@ -36,151 +36,180 @@ class Shipment extends AutoJsonSerializer
 {
     /**
      * Mandatory
+     *
      * @var Addresses
      */
     protected $Addresses;
 
     /**
      * Mandatory
+     *
      * @var string
      */
     protected $Barcode;
 
     /**
      * Mandatory when using Timeframes
+     *
      * @var Contacts
      */
     protected $Contacts;
 
     /**
      * Mandatory
+     *
      * @var string
      */
     protected $DeliveryAddress;
 
     /**
      * Mandatory
+     *
      * @var Dimension
      */
     protected $Dimension;
 
     /**
      * Mandatory
+     *
      * @var string
      */
     protected $ProductCodeDelivery = '3085';
 
     /**
+     *
      * @var string
      */
     protected $CollectionTimeStampStart;
 
     /**
+     *
      * @var string
      */
     protected $CollectionTimeStampEnd;
 
     /**
+     *
      * @var string
      */
     protected $Content;
 
     /**
+     *
      * @var string
      */
     protected $CostCenter;
 
     /**
+     *
      * @var string
      */
     protected $CustomerOrderNumber;
 
     /**
+     *
      * @var string
      */
     protected $DeliveryDate;
 
     /**
+     *
      * @var string
      */
     protected $DeliveryTimeStampStart;
 
     /**
+     *
      * @var string
      */
     protected $DeliveryTimeStampEnd;
 
     /**
+     *
      * @var string
      */
     protected $DownPartnerBarcode;
 
     /**
+     *
      * @var string
      */
     protected $DownPartnerID;
 
     /**
+     *
      * @var string
      */
     protected $DownPartnerLocation;
 
     /**
+     *
      * @var int
      */
     protected $IDType;
 
     /**
+     *
      * @var string
      */
     protected $IDNumber;
 
     /**
+     *
      * @var string
      */
     protected $IDExpiration;
 
     /**
+     *
      * @var int
      */
     protected $ProductCodeCollect;
 
     /**
+     *
      * @var string
      */
     protected $ReceiverDateOfBirth;
 
     /**
+     *
      * @var string
      */
     protected $Reference;
 
     /**
+     *
      * @var string
      */
     protected $ReferenceCollect;
 
     /**
+     *
      * @var string
      */
     protected $Remark;
 
     /**
+     *
      * @var string
      */
     protected $ReturnBarcode;
 
     /**
+     *
      * @var string
      */
     protected $ReturnReference;
 
     /**
+     *
      * @var string
      */
     protected $TimeslotID;
 
     /**
+     *
      * @return Addresses
      */
     public function getAddresses(): Addresses
@@ -189,7 +218,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param Addresses $Addresses
+     *
+     * @param  Addresses $Addresses
      * @return Shipment
      */
     public function setAddresses(Addresses $Addresses): Shipment
@@ -199,6 +229,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getBarcode(): string
@@ -207,7 +238,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param string $Barcode
+     *
+     * @param  string $Barcode
      * @return Shipment
      */
     public function setBarcode(string $Barcode): Shipment
@@ -217,6 +249,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return Contacts
      */
     public function getContacts(): Contacts
@@ -225,7 +258,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param Contacts $Contacts
+     *
+     * @param  Contacts $Contacts
      * @return Shipment
      */
     public function setContacts(Contacts $Contacts): Shipment
@@ -235,6 +269,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getDeliveryAddress(): string
@@ -243,7 +278,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param string $DeliveryAddress
+     *
+     * @param  string $DeliveryAddress
      * @return Shipment
      */
     public function setDeliveryAddress(string $DeliveryAddress): Shipment
@@ -253,6 +289,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return Dimension
      */
     public function getDimension(): Dimension
@@ -261,7 +298,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param Dimension $Dimension
+     *
+     * @param  Dimension $Dimension
      * @return Shipment
      */
     public function setDimension(Dimension $Dimension): Shipment
@@ -271,6 +309,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getProductCodeDelivery(): string
@@ -279,7 +318,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param string $ProductCodeDelivery
+     *
+     * @param  string $ProductCodeDelivery
      * @return Shipment
      */
     public function setProductCodeDelivery(string $ProductCodeDelivery): Shipment
@@ -289,6 +329,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getCollectionTimeStampStart(): string
@@ -297,7 +338,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param \DateTime $CollectionTimeStampStart
+     *
+     * @param  \DateTime $CollectionTimeStampStart
      * @return Shipment
      */
     public function setCollectionTimeStampStart(\DateTime $CollectionTimeStampStart): Shipment
@@ -307,6 +349,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getCollectionTimeStampEnd(): string
@@ -315,7 +358,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param \DateTime $CollectionTimeStampEnd
+     *
+     * @param  \DateTime $CollectionTimeStampEnd
      * @return Shipment
      */
     public function setCollectionTimeStampEnd(\DateTime $CollectionTimeStampEnd): Shipment
@@ -325,6 +369,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getContent(): string
@@ -333,7 +378,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param string $Content
+     *
+     * @param  string $Content
      * @return Shipment
      */
     public function setContent(string $Content): Shipment
@@ -343,6 +389,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getCostCenter(): string
@@ -351,7 +398,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param string $CostCenter
+     *
+     * @param  string $CostCenter
      * @return Shipment
      */
     public function setCostCenter(string $CostCenter): Shipment
@@ -361,6 +409,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getCustomerOrderNumber(): string
@@ -369,7 +418,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param string $CustomerOrderNumber
+     *
+     * @param  string $CustomerOrderNumber
      * @return Shipment
      */
     public function setCustomerOrderNumber(string $CustomerOrderNumber): Shipment
@@ -379,6 +429,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getDeliveryDate(): string
@@ -387,7 +438,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param \DateTime $DeliveryDate
+     *
+     * @param  \DateTime $DeliveryDate
      * @return Shipment
      */
     public function setDeliveryDate(\DateTime $DeliveryDate): Shipment
@@ -397,6 +449,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getDeliveryTimeStampStart(): string
@@ -405,7 +458,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param \DateTime $DeliveryTimeStampStart
+     *
+     * @param  \DateTime $DeliveryTimeStampStart
      * @return Shipment
      */
     public function setDeliveryTimeStampStart(\DateTime $DeliveryTimeStampStart): Shipment
@@ -415,6 +469,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getDeliveryTimeStampEnd(): string
@@ -423,7 +478,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param \DateTime $DeliveryTimeStampEnd
+     *
+     * @param  \DateTime $DeliveryTimeStampEnd
      * @return Shipment
      */
     public function setDeliveryTimeStampEnd(\DateTime $DeliveryTimeStampEnd): Shipment
@@ -433,6 +489,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getDownPartnerBarcode(): string
@@ -441,7 +498,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param string $DownPartnerBarcode
+     *
+     * @param  string $DownPartnerBarcode
      * @return Shipment
      */
     public function setDownPartnerBarcode(string $DownPartnerBarcode): Shipment
@@ -451,6 +509,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getDownPartnerID(): string
@@ -459,7 +518,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param string $DownPartnerID
+     *
+     * @param  string $DownPartnerID
      * @return Shipment
      */
     public function setDownPartnerID(string $DownPartnerID): Shipment
@@ -469,6 +529,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getDownPartnerLocation(): string
@@ -477,7 +538,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param string $DownPartnerLocation
+     *
+     * @param  string $DownPartnerLocation
      * @return Shipment
      */
     public function setDownPartnerLocation(string $DownPartnerLocation): Shipment
@@ -487,6 +549,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return int
      */
     public function getIDType(): int
@@ -495,7 +558,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param int $IDType
+     *
+     * @param  int $IDType
      * @return Shipment
      */
     public function setIDType(int $IDType): Shipment
@@ -505,6 +569,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getIDNumber(): string
@@ -513,7 +578,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param string $IDNumber
+     *
+     * @param  string $IDNumber
      * @return Shipment
      */
     public function setIDNumber(string $IDNumber): Shipment
@@ -523,6 +589,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getIDExpiration(): string
@@ -531,7 +598,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param \DateTime $IDExpiration
+     *
+     * @param  \DateTime $IDExpiration
      * @return Shipment
      */
     public function setIDExpiration(\DateTime $IDExpiration): Shipment
@@ -541,6 +609,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return int
      */
     public function getProductCodeCollect(): int
@@ -549,7 +618,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param int $ProductCodeCollect
+     *
+     * @param  int $ProductCodeCollect
      * @return Shipment
      */
     public function setProductCodeCollect(int $ProductCodeCollect): Shipment
@@ -559,6 +629,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getReceiverDateOfBirth(): string
@@ -567,7 +638,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param \DateTime $ReceiverDateOfBirth
+     *
+     * @param  \DateTime $ReceiverDateOfBirth
      * @return Shipment
      */
     public function setReceiverDateOfBirth(\DateTime $ReceiverDateOfBirth): Shipment
@@ -577,6 +649,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getReference(): string
@@ -585,7 +658,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param string $Reference
+     *
+     * @param  string $Reference
      * @return Shipment
      */
     public function setReference(string $Reference): Shipment
@@ -595,6 +669,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getReferenceCollect(): string
@@ -603,7 +678,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param string $ReferenceCollect
+     *
+     * @param  string $ReferenceCollect
      * @return Shipment
      */
     public function setReferenceCollect(string $ReferenceCollect): Shipment
@@ -613,6 +689,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getRemark(): string
@@ -621,7 +698,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param string $Remark
+     *
+     * @param  string $Remark
      * @return Shipment
      */
     public function setRemark(string $Remark): Shipment
@@ -631,6 +709,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getReturnBarcode(): string
@@ -639,7 +718,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param string $ReturnBarcode
+     *
+     * @param  string $ReturnBarcode
      * @return Shipment
      */
     public function setReturnBarcode(string $ReturnBarcode): Shipment
@@ -649,6 +729,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getReturnReference(): string
@@ -657,7 +738,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param string $ReturnReference
+     *
+     * @param  string $ReturnReference
      * @return Shipment
      */
     public function setReturnReference(string $ReturnReference): Shipment
@@ -667,6 +749,7 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getTimeslotID(): string
@@ -675,7 +758,8 @@ class Shipment extends AutoJsonSerializer
     }
 
     /**
-     * @param string $TimeslotID
+     *
+     * @param  string $TimeslotID
      * @return Shipment
      */
     public function setTimeslotID(string $TimeslotID): Shipment

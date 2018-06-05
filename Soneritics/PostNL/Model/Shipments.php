@@ -33,13 +33,15 @@ namespace PostNL\Model;
 class Shipments implements \Serializable, \JsonSerializable
 {
     /**
+     *
      * @var array
      */
     protected $shipments = [];
 
     /**
      * Add a shipment
-     * @param Shipment $shipment
+     *
+     * @param  Shipment $shipment
      * @return $this
      */
     public function addShipment(Shipment $shipment)
@@ -49,6 +51,7 @@ class Shipments implements \Serializable, \JsonSerializable
     }
 
     /**
+     *
      * @return array
      */
     public function getShipments()
@@ -58,9 +61,10 @@ class Shipments implements \Serializable, \JsonSerializable
 
     /**
      * String representation of object
-     * @link http://php.net/manual/en/serializable.serialize.php
+     *
+     * @link   http://php.net/manual/en/serializable.serialize.php
      * @return string the string representation of the object or null
-     * @since 5.1.0
+     * @since  5.1.0
      */
     public function serialize()
     {
@@ -69,12 +73,13 @@ class Shipments implements \Serializable, \JsonSerializable
 
     /**
      * Constructs the object
-     * @link http://php.net/manual/en/serializable.unserialize.php
-     * @param string $serialized <p>
-     * The string representation of the object.
-     * </p>
+     *
+     * @link   http://php.net/manual/en/serializable.unserialize.php
+     * @param  string $serialized <p>
+     *                            The string representation of the object.
+     *                            </p>
      * @return void
-     * @since 5.1.0
+     * @since  5.1.0
      */
     public function unserialize($serialized)
     {
@@ -83,10 +88,11 @@ class Shipments implements \Serializable, \JsonSerializable
 
     /**
      * Specify data which should be serialized to JSON
-     * @link http://php.net/manual/en/jsonserializable.jsonserialize.php
+     *
+     * @link   http://php.net/manual/en/jsonserializable.jsonserialize.php
      * @return mixed data which can be serialized by <b>json_encode</b>,
      * which is a value of any type other than a resource.
-     * @since 5.4.0
+     * @since  5.4.0
      */
     public function jsonSerialize()
     {

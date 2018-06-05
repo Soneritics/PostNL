@@ -36,24 +36,28 @@ use PostNL\Enum\PrinterType;
 class Message extends AutoJsonSerializer
 {
     /**
+     *
      * @var int
      */
     protected $MessageID;
 
     /**
+     *
      * @var string
      */
     protected $Printertype;
 
     /**
+     *
      * @var string
      */
     protected $MessageTimeStamp;
 
     /**
      * Message constructor.
-     * @param int $MessageID
-     * @param string $Printertype
+     *
+     * @param int            $MessageID
+     * @param string         $Printertype
      * @param \DateTime|null $MessageTimeStamp
      */
     public function __construct(int $MessageID, string $Printertype = PrinterType::PDF, \DateTime $MessageTimeStamp = null)
@@ -64,6 +68,7 @@ class Message extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return int
      */
     public function getMessageID(): int
@@ -72,7 +77,8 @@ class Message extends AutoJsonSerializer
     }
 
     /**
-     * @param int $MessageID
+     *
+     * @param  int $MessageID
      * @return Message
      */
     public function setMessageID(int $MessageID): Message
@@ -82,6 +88,7 @@ class Message extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getMessageTimeStamp(): string
@@ -90,7 +97,8 @@ class Message extends AutoJsonSerializer
     }
 
     /**
-     * @param \DateTime $MessageTimeStamp
+     *
+     * @param  \DateTime $MessageTimeStamp
      * @return Message
      */
     public function setMessageTimeStamp(\DateTime $MessageTimeStamp): Message
@@ -100,6 +108,7 @@ class Message extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getPrintertype(): string
@@ -108,7 +117,8 @@ class Message extends AutoJsonSerializer
     }
 
     /**
-     * @param string $Printertype
+     *
+     * @param  string $Printertype
      * @return Message
      */
     public function setPrintertype(string $Printertype): Message

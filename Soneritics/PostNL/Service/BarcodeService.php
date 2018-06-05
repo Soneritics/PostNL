@@ -34,8 +34,9 @@ class BarcodeService extends AbstractService
 {
     /**
      * Generate a barcode.
-     * @param string $type
-     * @param string $serie
+     *
+     * @param  string $type
+     * @param  string $serie
      * @return string
      * @throws \Exception
      */

@@ -45,6 +45,7 @@ class Voormelding
     /**
      * Mapping array waarin wordt aangegeven welke getter overeenkomt
      * met welke veldcode. Definieert tevens de volgorde.
+     *
      * @var array
      */
     protected $mapping = [
@@ -61,78 +62,91 @@ class Voormelding
 
     /**
      * Collectie met de pakketten die via dit voormeldbestand aangemeld worden.
+     *
      * @var array
      */
     protected $pakketten = [];
 
     /**
      * Remboursinformatie. Niet verplicht wanneer geen rembourszending.
+     *
      * @var \PostNL\Data\Afzender
      */
     protected $afzender;
 
     /**
      * Remboursinformatie. Niet verplicht wanneer geen rembourszending.
+     *
      * @var \PostNL\Data\Rembours
      */
     protected $rembours;
 
     /**
      * Berichtversie. Standaardwaarde die niet gewijzigd kan worden.
+     *
      * @var int
      */
     protected $berichtVersie = 811;
 
     /**
      * Softwareversie. Standaardwaarde die niet gewijzigd kan worden.
+     *
      * @var int
      */
     protected $softwareVersie = 811;
 
     /**
      * Productversie. Standaardwaarde die niet gewijzigd kan worden.
+     *
      * @var int
      */
     protected $productVersie = 130;
 
     /**
      * Datum van aanmaken van dit bestand, in formaat: jjjjmmdd
+     *
      * @var string
      */
     protected $datumAanmaakBestand;
 
     /**
      * Tijd van aanmaken van dit bestand, in formaat: uummss
+     *
      * @var string
      */
     protected $tijdAanmaakBestand;
 
     /**
      * Datum van aanleveren zendingen, in formaat: jjjjmmdd
+     *
      * @var string
      */
     protected $aanleverdatumZendingen;
 
     /**
      * String van 4 karakters met de klantcode/partycode.
+     *
      * @var string
      */
     protected $klantCode;
 
     /**
      * PostNL Klantnummer.
+     *
      * @var string
      */
     protected $klantNr;
 
     /**
      * Voormelding ID (klantcode + volgnummer)
+     *
      * @var string
      */
     protected $voormeldingId;
 
     /**
      * Aanleverlocatie (BLS-code).
+     *
      * @var string
      */
     protected $aanleverLocatie;
@@ -147,6 +161,7 @@ class Voormelding
 
     /**
      * Genereert het voormeldbestand en `yield` de inhoud van dit bestand zodat er een Generator object ontstaat.
+     *
      * @return \Generator
      */
     public function genereer()
@@ -197,6 +212,7 @@ class Voormelding
 
     /**
      * Genereert de inhoud van het bestand en returnt de volledige inhoud van dit bestand.
+     *
      * @return string
      */
     public function genereerInhoud()
@@ -211,7 +227,8 @@ class Voormelding
 
     /**
      * Pakket toevoegen aan de zending.
-     * @param \PostNL\Pakket $pakket
+     *
+     * @param  \PostNL\Pakket $pakket
      * @return \PostNL\Voormelding
      */
     public function addPakket(Pakket $pakket)
@@ -222,7 +239,8 @@ class Voormelding
 
     /**
      * Afzender toevoegen aan de vooraanmelding.
-     * @param Afzender $afzender
+     *
+     * @param  Afzender $afzender
      * @return \PostNL\Voormelding
      */
     public function setAfzender(Afzender $afzender)
@@ -233,7 +251,8 @@ class Voormelding
 
     /**
      * Remboursinformatie toevoegen aan de vooraanmelding.
-     * @param \PostNL\Rembours $info
+     *
+     * @param  \PostNL\Rembours $info
      * @return \PostNL\Voormelding
      */
     public function setRemboursInfo(Rembours $info)
@@ -247,7 +266,8 @@ class Voormelding
      * standaard ingesteld dus is optioneel.
      * Wanneer setDatumTijdAanmaakBestand() wordt aangeroepen en de datum is na
      * de aanleverdatum, wordt de aanleverdatum ingesteld op deze datum.
-     * @param int $timestamp
+     *
+     * @param  int $timestamp
      * @return \PostNL\Voormelding
      * @throws \Exception
      */
@@ -264,8 +284,8 @@ class Voormelding
         $this->tijdAanmaakBestand = date('His', $timestamp);
 
         // Kijk of datum na aanleverdatum is
-        if (empty($this->aanleverdatumZendingen) ||
-            $datum > $this->aanleverdatumZendingen
+        if (empty($this->aanleverdatumZendingen) 
+            || $datum > $this->aanleverdatumZendingen
         ) {
             $this->setAanleverdatumZendingen($timestamp);
         }
@@ -279,7 +299,8 @@ class Voormelding
      * standaard ingesteld op vandaag dus is optioneel.
      * Wanneer setDatumTijdAanmaakBestand() wordt aangeroepen en de datum is na
      * de aanleverdatum, wordt de aanleverdatum ingesteld op deze datum.
-     * @param int $timestamp
+     *
+     * @param  int $timestamp
      * @return \PostNL\Voormelding
      * @throws \Exception
      */
@@ -299,6 +320,7 @@ class Voormelding
 
     /**
      * Setter voor de klantcode.
+     *
      * @param string $klantCode String van maximaal 4 karakters.
      */
     public function setKlantCode($klantCode)
@@ -314,6 +336,7 @@ class Voormelding
 
     /**
      * Setter voor het klantnummer.
+     *
      * @param string $klantNr
      */
     public function setKlantNr($klantNr)
@@ -325,7 +348,8 @@ class Voormelding
     /**
      * Setter voor het volgnummer. Genereert een PostNL voormeld ID.
      * Het is belangrijk dat het klantnummer reeds geset is.
-     * @param int $volgnummer
+     *
+     * @param  int $volgnummer
      * @return \PostNL\Voormelding
      * @throws \Exception
      */
@@ -356,7 +380,8 @@ class Voormelding
 
     /**
      * Setter voor de aanleverlocatie (BLS-code).
-     * @param int $locatie
+     *
+     * @param  int $locatie
      * @return \PostNL\Voormelding
      * @throws \Exception
      */
@@ -389,6 +414,7 @@ class Voormelding
      * Aangezien de setters al zorgen dat waarden op de juiste manier
      * geformatteerd worden, hoeft hier uitsluitend gecontroleerd te worden of
      * de waarden gezet zijn.
+     *
      * @throws \Exception Wanneer niet alle validaties succesvol zijn.
      */
     protected function validate()
@@ -416,6 +442,7 @@ class Voormelding
 
     /**
      * Getter voor de aanmaakdatum van het bestand.
+     *
      * @return string
      */
     final protected function getDatumAanmaakBestand()
@@ -425,6 +452,7 @@ class Voormelding
 
     /**
      * Getter voor de tijd van het aanmaakbestand.
+     *
      * @return string
      */
     final protected function getTijdAanmaakBestand()
@@ -434,6 +462,7 @@ class Voormelding
 
     /**
      * Getter voor de berichtversie.
+     *
      * @return int
      */
     final protected function getBerichtVersie()
@@ -443,6 +472,7 @@ class Voormelding
 
     /**
      * Getter voor de softwareversie.
+     *
      * @return int
      */
     final protected function getSoftwareVersie()
@@ -452,6 +482,7 @@ class Voormelding
 
     /**
      * Getter voor de productversie.
+     *
      * @return int
      */
     final protected function getProductVersie()
@@ -461,6 +492,7 @@ class Voormelding
 
     /**
      * Getter voor de aanleverlocatie.
+     *
      * @return int
      */
     final protected function getAanleverLocatie()
@@ -470,6 +502,7 @@ class Voormelding
 
     /**
      * Getter voor de klantcode.
+     *
      * @return string
      */
     final protected function getKlantCode()
@@ -479,6 +512,7 @@ class Voormelding
 
     /**
      * Getter voor het klantnummer.
+     *
      * @return string
      */
     final protected function getKlantNr()
@@ -488,6 +522,7 @@ class Voormelding
 
     /**
      * Getter voor het voormelding-id.
+     *
      * @return int
      */
     final protected function getVoormeldingId()
@@ -497,6 +532,7 @@ class Voormelding
 
     /**
      * Getter voor de aanleverdatum van de zending(en).
+     *
      * @return string
      */
     final protected function getAanleverdatumZendingen()

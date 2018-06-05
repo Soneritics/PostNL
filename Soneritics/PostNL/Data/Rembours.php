@@ -37,6 +37,7 @@ class Rembours extends MappingGenerator
     /**
      * Mapping array waarin wordt aangegeven welke getter overeenkomt
      * met welke veldcode. Definieert tevens de volgorde.
+     *
      * @var array
      */
     protected $mapping = [
@@ -46,18 +47,21 @@ class Rembours extends MappingGenerator
 
     /**
      * IBAN rekeningnummer van de verzender.
+     *
      * @var string
      */
     protected $IBAN;
 
     /**
      * BIC code van de verzender.
+     *
      * @var string
      */
     protected $BIC;
 
     /**
      * Getter voor het IBAN rekeningnummer.
+     *
      * @return string
      */
     protected function getIBAN()
@@ -67,6 +71,7 @@ class Rembours extends MappingGenerator
 
     /**
      * Getter voor de BIC code.
+     *
      * @return string
      */
     protected function getBIC()
@@ -76,7 +81,8 @@ class Rembours extends MappingGenerator
 
     /**
      * Stel het IBAN rekeningnummer in van de verzender.
-     * @param string $IBAN
+     *
+     * @param  string $IBAN
      * @return \PostNL\Data\Rembours
      */
     public function setIBAN($IBAN)
@@ -88,7 +94,8 @@ class Rembours extends MappingGenerator
 
     /**
      * Stel het BIC nummer in van de verzender.
-     * @param string $BIC
+     *
+     * @param  string $BIC
      * @throws \Exception
      * @return \PostNL\Data\Rembours
      */
@@ -105,6 +112,7 @@ class Rembours extends MappingGenerator
     /**
      * Valideer de ingevoerde gegevens voordat de mapping wordt toegepast om
      * output te genereren.
+     *
      * @throws \Exception
      */
     protected function validate()

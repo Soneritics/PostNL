@@ -37,6 +37,7 @@ class Afzender extends MappingGenerator
     /**
      * Mapping array waarin wordt aangegeven welke getter overeenkomt
      * met welke veldcode. Definieert tevens de volgorde.
+     *
      * @var array
      */
     protected $mapping = [
@@ -60,96 +61,112 @@ class Afzender extends MappingGenerator
 
     /**
      * Afzender bedrijfsnaam.
+     *
      * @var string
      */
     protected $bedrijfsnaam;
 
     /**
      * Afzender afdeling.
+     *
      * @var string
      */
     protected $afdeling;
 
     /**
      * Afzender achternaam.
+     *
      * @var string
      */
     protected $achternaam;
 
     /**
      * Afzender voornaam.
+     *
      * @var string
      */
     protected $voornaam;
 
     /**
      * Afzender gebouwnaam.
+     *
      * @var string
      */
     protected $gebouwnaam;
 
     /**
      * Afzender verdieping.
+     *
      * @var string
      */
     protected $verdieping;
 
     /**
      * Afzender straatnaam of postbus.
+     *
      * @var string
      */
     protected $straatnaamPostbus;
 
     /**
      * Afzender huisnummer of postbusnummer.
+     *
      * @var string
      */
     protected $huisnummerPostbusnummer;
 
     /**
      * Afzender huisnummer toevoeging.
+     *
      * @var string
      */
     protected $huisnummerToevoeging;
 
     /**
      * Afzender postcode.
+     *
      * @var string
      */
     protected $postcode;
 
     /**
      * Afzender woonplaats.
+     *
      * @var string
      */
     protected $woonplaats;
 
     /**
      * Afzender wijk.
+     *
      * @var string
      */
     protected $wijk;
 
     /**
      * Afzender regio.
+     *
      * @var string
      */
     protected $regio;
 
     /**
      * Afzender deurcode.
+     *
      * @var string
      */
     protected $deurcode;
 
     /**
      * Afzender opmerking.
+     *
      * @var string
      */
     protected $opmerking;
 
     /**
      * Afzender landcode.
+     *
      * @var string
      */
     protected $landcode;
@@ -157,6 +174,7 @@ class Afzender extends MappingGenerator
     /**
      * Valideer de ingevoerde gegevens voordat de mapping wordt toegepast om
      * output te genereren.
+     *
      * @throws \Exception
      */
     protected function validate()
@@ -181,6 +199,7 @@ class Afzender extends MappingGenerator
 
     /**
      * Getter voor de afzender bedrijfsnaam.
+     *
      * @return string
      */
     protected function getBedrijfsnaam()
@@ -190,6 +209,7 @@ class Afzender extends MappingGenerator
 
     /**
      * Getter voor de afzender afdeling.
+     *
      * @return string
      */
     protected function getAfdeling()
@@ -199,6 +219,7 @@ class Afzender extends MappingGenerator
 
     /**
      * Getter voor de afzender achternaam.
+     *
      * @return string
      */
     protected function getAchternaam()
@@ -208,6 +229,7 @@ class Afzender extends MappingGenerator
 
     /**
      * Getter voor de afzender voornaam.
+     *
      * @return string
      */
     protected function getVoornaam()
@@ -217,6 +239,7 @@ class Afzender extends MappingGenerator
 
     /**
      * Getter voor de afzender gebouwnaam.
+     *
      * @return string
      */
     protected function getGebouwnaam()
@@ -226,6 +249,7 @@ class Afzender extends MappingGenerator
 
     /**
      * Getter voor de afzender verdieping.
+     *
      * @return string
      */
     protected function getVerdieping()
@@ -235,6 +259,7 @@ class Afzender extends MappingGenerator
 
     /**
      * Getter voor de straatnaam/postbus.
+     *
      * @return string
      */
     protected function getStraatnaamPostbus()
@@ -244,6 +269,7 @@ class Afzender extends MappingGenerator
 
     /**
      * Getter voor de afzender huisnummer/postbusnummer.
+     *
      * @return string
      */
     protected function getHuisnummerPostbusnummer()
@@ -253,6 +279,7 @@ class Afzender extends MappingGenerator
 
     /**
      * Getter voor de huisnummer toevoeging.
+     *
      * @return string
      */
     protected function getHuisnummerToevoeging()
@@ -262,6 +289,7 @@ class Afzender extends MappingGenerator
 
     /**
      * Getter voor de afzender postcode.
+     *
      * @return string
      */
     protected function getPostcode()
@@ -271,6 +299,7 @@ class Afzender extends MappingGenerator
 
     /**
      * Getter voor de afzender woonplaats.
+     *
      * @return string
      */
     protected function getWoonplaats()
@@ -280,6 +309,7 @@ class Afzender extends MappingGenerator
 
     /**
      * Getter voor de afzender wijk.
+     *
      * @return string
      */
     protected function getWijk()
@@ -289,6 +319,7 @@ class Afzender extends MappingGenerator
 
     /**
      * Getter voor de afzender regio.
+     *
      * @return string
      */
     protected function getRegio()
@@ -298,6 +329,7 @@ class Afzender extends MappingGenerator
 
     /**
      * Getter voor de afzender deurcode.
+     *
      * @return string
      */
     protected function getDeurcode()
@@ -307,6 +339,7 @@ class Afzender extends MappingGenerator
 
     /**
      * Getter voor de afzender opmerkingen.
+     *
      * @return string
      */
     protected function getOpmerking()
@@ -316,6 +349,7 @@ class Afzender extends MappingGenerator
 
     /**
      * Getter voor de afzender landcode.
+     *
      * @return string
      */
     protected function getLandcode()
@@ -325,7 +359,8 @@ class Afzender extends MappingGenerator
 
     /**
      * Stel de bedrijfsnaam van de afzender in.
-     * @param string $bedrijfsnaam
+     *
+     * @param  string $bedrijfsnaam
      * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
@@ -341,7 +376,8 @@ class Afzender extends MappingGenerator
 
     /**
      * Stel de afdeling van de afzender in.
-     * @param string $afdeling
+     *
+     * @param  string $afdeling
      * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
@@ -357,7 +393,8 @@ class Afzender extends MappingGenerator
 
     /**
      * Stel de achternaam van de afzender in.
-     * @param string $achternaam
+     *
+     * @param  string $achternaam
      * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
@@ -373,7 +410,8 @@ class Afzender extends MappingGenerator
 
     /**
      * Stel de voornaam van de afzender in.
-     * @param string $voornaam
+     *
+     * @param  string $voornaam
      * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
@@ -389,7 +427,8 @@ class Afzender extends MappingGenerator
 
     /**
      * Stel de gebouwnaam van de afzender in.
-     * @param string $gebouwnaam
+     *
+     * @param  string $gebouwnaam
      * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
@@ -405,7 +444,8 @@ class Afzender extends MappingGenerator
 
     /**
      * Stel de verdieping van de afzender in.
-     * @param string $verdieping
+     *
+     * @param  string $verdieping
      * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
@@ -421,7 +461,8 @@ class Afzender extends MappingGenerator
 
     /**
      * Stel de straatnaam of postbus in voor de afzender.
-     * @param string $straatnaamPostbus
+     *
+     * @param  string $straatnaamPostbus
      * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
@@ -439,7 +480,8 @@ class Afzender extends MappingGenerator
 
     /**
      * Stel het huisnummer/postbusnummer in voor de afzender.
-     * @param string $huisnummerPostbusnummer
+     *
+     * @param  string $huisnummerPostbusnummer
      * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
@@ -457,7 +499,8 @@ class Afzender extends MappingGenerator
 
     /**
      * Stel de huisnummer-toevoeging in voor de afzender.
-     * @param string $huisnummerToevoeging
+     *
+     * @param  string $huisnummerToevoeging
      * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
@@ -475,7 +518,8 @@ class Afzender extends MappingGenerator
 
     /**
      * Stel de afzender postcode in.
-     * @param string $postcode
+     *
+     * @param  string $postcode
      * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
@@ -491,7 +535,8 @@ class Afzender extends MappingGenerator
 
     /**
      * Stel de afzender woonplaats in.
-     * @param string $woonplaats
+     *
+     * @param  string $woonplaats
      * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
@@ -507,7 +552,8 @@ class Afzender extends MappingGenerator
 
     /**
      * Stel de afzender wijk in.
-     * @param string $wijk
+     *
+     * @param  string $wijk
      * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
@@ -523,7 +569,8 @@ class Afzender extends MappingGenerator
 
     /**
      * Stel de afzender regio in.
-     * @param string $regio
+     *
+     * @param  string $regio
      * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
@@ -539,7 +586,8 @@ class Afzender extends MappingGenerator
 
     /**
      * Stel de afzender deurcode in.
-     * @param string $deurcode
+     *
+     * @param  string $deurcode
      * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
@@ -555,7 +603,8 @@ class Afzender extends MappingGenerator
 
     /**
      * Stel de afzender opmerking in.
-     * @param string $opmerking
+     *
+     * @param  string $opmerking
      * @throws \Exception
      * @return \PostNL\Data\Afzender
      */
@@ -577,7 +626,8 @@ class Afzender extends MappingGenerator
 
     /**
      * Stel de landcode van de afzender in.
-     * @param string $landcode
+     *
+     * @param  string $landcode
      * @throws \Exception
      * @return \PostNL\Data\Afzender
      */

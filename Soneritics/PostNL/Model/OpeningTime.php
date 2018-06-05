@@ -33,17 +33,20 @@ namespace PostNL\Model;
 class OpeningTime
 {
     /**
+     *
      * @var int
      */
     protected $hour;
 
     /**
+     *
      * @var int
      */
     protected $minute;
 
     /**
      * OpeningTime constructor.
+     *
      * @param int $hour
      * @param int $minute
      */
@@ -55,18 +58,22 @@ class OpeningTime
 
     /**
      * Get the opening time as a string
+     *
      * @return string
      */
     public function _toString()
     {
-        return implode(':', [
+        return implode(
+            ':', [
             str_pad((string)$this->hour, '0', STR_PAD_LEFT),
             str_pad((string)$this->minute, '0', STR_PAD_LEFT),
             '00'
-        ]);
+            ]
+        );
     }
 
     /**
+     *
      * @return int
      */
     public function getHour(): int
@@ -75,7 +82,8 @@ class OpeningTime
     }
 
     /**
-     * @param int $hour
+     *
+     * @param  int $hour
      * @return OpeningTime
      */
     public function setHour(int $hour): OpeningTime
@@ -85,6 +93,7 @@ class OpeningTime
     }
 
     /**
+     *
      * @return int
      */
     public function getMinute(): int
@@ -93,7 +102,8 @@ class OpeningTime
     }
 
     /**
-     * @param int $minute
+     *
+     * @param  int $minute
      * @return OpeningTime
      */
     public function setMinute(int $minute): OpeningTime

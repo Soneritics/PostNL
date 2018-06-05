@@ -39,10 +39,11 @@ class LocationsService extends AbstractService
 {
     /**
      * Get the nearest locations, based on an address
-     * @param Address $address
-     * @param array $deliveryOptions
-     * @param \DateTime|null $earliestDeliveryDate
-     * @param OpeningTime|null $openingTime
+     *
+     * @param  Address          $address
+     * @param  array            $deliveryOptions
+     * @param  \DateTime|null   $earliestDeliveryDate
+     * @param  OpeningTime|null $openingTime
      * @return array
      * @throws \Exception
      */
@@ -83,12 +84,13 @@ class LocationsService extends AbstractService
 
     /**
      * Get the nearest locations, based on a geocode
-     * @param int $lat
-     * @param int $lon
-     * @param string $countryCode
-     * @param array $deliveryOptions
-     * @param \DateTime|null $earliestDeliveryDate
-     * @param OpeningTime|null $openingTime
+     *
+     * @param  int              $lat
+     * @param  int              $lon
+     * @param  string           $countryCode
+     * @param  array            $deliveryOptions
+     * @param  \DateTime|null   $earliestDeliveryDate
+     * @param  OpeningTime|null $openingTime
      * @return array
      * @throws \Exception
      */
@@ -120,8 +122,9 @@ class LocationsService extends AbstractService
 
     /**
      * Lookup location information
-     * @param string $locationCode
-     * @param string $RetailNetworkID
+     *
+     * @param  string $locationCode
+     * @param  string $RetailNetworkID
      * @return array
      * @throws \Exception
      */

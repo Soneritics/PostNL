@@ -36,44 +36,52 @@ class Customer extends AutoJsonSerializer
 {
     /**
      * Mandatory
+     *
      * @var Address
      */
     protected $Address;
 
     /**
      * Mandatory
+     *
      * @var string
      */
     protected $CollectionLocation;
 
     /**
      * Mandatory
+     *
      * @var string
      */
     protected $CustomerCode;
 
     /**
      * Mandatory
+     *
      * @var string
      */
     protected $CustomerNumber;
 
     /**
+     *
      * @var string
      */
     protected $ContactPerson;
 
     /**
+     *
      * @var string
      */
     protected $Email;
 
     /**
+     *
      * @var string
      */
     protected $Name;
 
     /**
+     *
      * @return Address
      */
     public function getAddress(): Address
@@ -82,7 +90,8 @@ class Customer extends AutoJsonSerializer
     }
 
     /**
-     * @param Address $Address
+     *
+     * @param  Address $Address
      * @return Customer
      */
     public function setAddress(Address $Address): Customer
@@ -92,6 +101,7 @@ class Customer extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getCollectionLocation(): string
@@ -101,7 +111,8 @@ class Customer extends AutoJsonSerializer
 
     /**
      * Code of delivery location at PostNL Pakketten
-     * @param string $CollectionLocation
+     *
+     * @param  string $CollectionLocation
      * @return Customer
      */
     public function setCollectionLocation(string $CollectionLocation): Customer
@@ -112,6 +123,7 @@ class Customer extends AutoJsonSerializer
 
     /**
      * Customer code as known at PostNL Pakketten
+     *
      * @return string
      */
     public function getCustomerCode(): string
@@ -121,7 +133,8 @@ class Customer extends AutoJsonSerializer
 
     /**
      * Customer code as known at PostNL Pakketten
-     * @param string $CustomerCode
+     *
+     * @param  string $CustomerCode
      * @return Customer
      */
     public function setCustomerCode(string $CustomerCode): Customer
@@ -132,6 +145,7 @@ class Customer extends AutoJsonSerializer
 
     /**
      * Name of customer contact person
+     *
      * @return string
      */
     public function getCustomerNumber(): string
@@ -141,7 +155,8 @@ class Customer extends AutoJsonSerializer
 
     /**
      * Name of customer contact person
-     * @param string $CustomerNumber
+     *
+     * @param  string $CustomerNumber
      * @return Customer
      */
     public function setCustomerNumber(string $CustomerNumber): Customer
@@ -152,6 +167,7 @@ class Customer extends AutoJsonSerializer
 
     /**
      * Name of customer contact person
+     *
      * @return string
      */
     public function getContactPerson(): string
@@ -161,7 +177,8 @@ class Customer extends AutoJsonSerializer
 
     /**
      * Name of customer contact person
-     * @param string $ContactPerson
+     *
+     * @param  string $ContactPerson
      * @return Customer
      */
     public function setContactPerson(string $ContactPerson): Customer
@@ -172,6 +189,7 @@ class Customer extends AutoJsonSerializer
 
     /**
      * E-mail address of the customer
+     *
      * @return string
      */
     public function getEmail(): string
@@ -181,7 +199,8 @@ class Customer extends AutoJsonSerializer
 
     /**
      * E-mail address of the customer
-     * @param string $Email
+     *
+     * @param  string $Email
      * @return Customer
      */
     public function setEmail(string $Email): Customer
@@ -192,6 +211,7 @@ class Customer extends AutoJsonSerializer
 
     /**
      * Customer name
+     *
      * @return string
      */
     public function getName(): string
@@ -201,7 +221,8 @@ class Customer extends AutoJsonSerializer
 
     /**
      * Customer name
-     * @param string $Name
+     *
+     * @param  string $Name
      * @return Customer
      */
     public function setName(string $Name): Customer

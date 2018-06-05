@@ -37,6 +37,7 @@ class Pakket extends MappingGenerator
     /**
      * Mapping array waarin wordt aangegeven welke getter overeenkomt
      * met welke veldcode. Definieert tevens de volgorde.
+     *
      * @var array
      */
     protected $mapping = [
@@ -76,180 +77,210 @@ class Pakket extends MappingGenerator
 
     /**
      * Zendingcode (3S code).
+     *
      * @var string
      */
     protected $zendingcode;
 
     /**
      * Referentietekst (optioneel).
+     *
      * @var string
      */
     protected $referentietekst;
 
     /**
      * Productcode. Gedefinieerd in de Productcode class.
+     *
      * @var string
      */
     protected $productcode = Productcode::STANDAARD_VERZENDING;
 
     /**
      * Frankeeraanduiding. Vaste waarde.
+     *
      * @var int
      */
     protected $frankeeraanduiding = 15;
 
     /**
      * Emailadres (optioneel).
+     *
      * @var string
      */
     protected $emailadres;
 
     /**
      * Mobiele telefoonnummer (optioneel).
+     *
      * @var string
      */
     protected $mobiel;
 
     /**
      * Telefoonnummer (optioneel).
+     *
      * @var string
      */
     protected $telefoon;
 
     /**
      * Volgnummer van de collo, indien er meer colli in de zending zijn.
+     *
      * @var int
      */
     protected $volgnummerCollo = 1;
 
     /**
      * Aantal colli waaruit de zending bestaat.
+     *
      * @var int
      */
     protected $aantalColli = 1;
 
     /**
      * Remboursbedrag in eurocenten (optioneel).
+     *
      * @var int
      */
     protected $remboursbedrag = 0;
 
     /**
      * Verzekerd bedrag in centen (optioneel).
+     *
      * @var int
      */
     protected $verzekerdBedrag = 0;
 
     /**
      * Bedrijfsnaam van de geadresseerde.
+     *
      * @var string
      */
     protected $geadresseerdeBedrijfsnaam;
 
     /**
      * Afdeling van de geadresseerde.
+     *
      * @var string
      */
     protected $geadresseerdeAfdeling;
 
     /**
      * Achternaam van de geadresseerde.
+     *
      * @var string
      */
     protected $geadresseerdeAchternaam;
 
     /**
      * Voornaam van de geadresseerde.
+     *
      * @var string
      */
     protected $geadresseerdeVoornaam;
 
     /**
      * Gebouwnaam van de geadresseerde.
+     *
      * @var string
      */
     protected $geadresseerdeGebouwnaam;
 
     /**
      * Verdieping van de geadresseerde.
+     *
      * @var type
      */
     protected $geadresseerdeVerdieping;
 
     /**
      * Straatnaam van de geadresseerde.
+     *
      * @var string
      */
     protected $geadresseerdeStraatnaam;
 
     /**
      * Huisnummer óf postbusnummer van de geadresseerde.
+     *
      * @var string
      */
     protected $geadresseerdeHuisnummerPostbusnummer;
 
     /**
      * Toevoeging op het huisnummer (optioneel).
+     *
      * @var string
      */
     protected $geadresseerdeHuisnummerToevoeging;
 
     /**
      * Postcode van de geadresseerde.
+     *
      * @var string
      */
     protected $geadresseerdePostcode;
 
     /**
      * Woonplaats van de geadresseerde.
+     *
      * @var string
      */
     protected $geadresseerdeWoonplaats;
 
     /**
      * Wijk van de geadresseerde.
+     *
      * @var string
      */
     protected $geadresseerdeWijk;
 
     /**
      * Regio van de geadresseerde.
+     *
      * @var string
      */
     protected $geadresseerdeRegio;
 
     /**
      * Deurcode van de geadresseerde.
+     *
      * @var string
      */
     protected $geadresseerdeDeurcode;
 
     /**
      * Opmerking van de geadresseerde.
+     *
      * @var string
      */
     protected $geadresseerdeOpmerking;
 
     /**
      * Landcode van de geadresseerde.
+     *
      * @var string
      */
     protected $geadresseerdeLandcode = 'NL';
 
     /**
      * Inhoud van het pakket (optioneel).
+     *
      * @var string
      */
     protected $inhoud;
 
     /**
      * Gewicht van het pakket in grammen.
+     *
      * @var int
      */
     protected $gewicht;
 
     /**
      * Valideer de ingevoerde gegevens voordat de mapping wordt toegepast om output te genereren.
+     *
      * @throws \Exception
      */
     protected function validate()
@@ -274,6 +305,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor het open record. Is niet instelbaar maar altijd een vaste waarde.
+     *
      * @return string
      */
     protected function getOpenRecord()
@@ -283,6 +315,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de zendingcode.
+     *
      * @return string
      */
     protected function getZendingcode()
@@ -292,6 +325,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de referentietekst.
+     *
      * @return string
      */
     protected function getReferentietekst()
@@ -301,6 +335,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de productcode.
+     *
      * @return string
      */
     protected function getProductcode()
@@ -310,6 +345,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de frankeeraanduiding.
+     *
      * @return int
      */
     protected function getFrankeeraanduiding()
@@ -319,6 +355,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor het e-mailadres.
+     *
      * @return string
      */
     protected function getEmailadres()
@@ -328,6 +365,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor het mobiele nummer.
+     *
      * @return string
      */
     protected function getMobiel()
@@ -337,6 +375,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor het telefoonnummer.
+     *
      * @return string
      */
     protected function getTelefoon()
@@ -346,6 +385,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor het volgnummer van de collo.
+     *
      * @return int
      */
     protected function getVolgnummerCollo()
@@ -355,6 +395,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor het aantal colli.
+     *
      * @return int
      */
     protected function getAantalColli()
@@ -364,6 +405,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor het remboursbedrag.
+     *
      * @return int
      */
     public function getRemboursbedrag()
@@ -373,6 +415,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor het verzekerde bedrag.
+     *
      * @return int
      */
     protected function getVerzekerdBedrag()
@@ -382,6 +425,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de bedrijfsnaam van de geadresseerde.
+     *
      * @return string
      */
     protected function getGeadresseerdeBedrijfsnaam()
@@ -391,6 +435,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de afdeling van de geadresseerde.
+     *
      * @return string
      */
     protected function getGeadresseerdeAfdeling()
@@ -400,6 +445,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de achternaam van de geadresseerde.
+     *
      * @return string
      */
     protected function getGeadresseerdeAchternaam()
@@ -409,6 +455,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de voornaam van de geadresseerde.
+     *
      * @return string
      */
     protected function getGeadresseerdeVoornaam()
@@ -418,6 +465,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de gebouwnaam van de geadresseerde.
+     *
      * @return string
      */
     protected function getGeadresseerdeGebouwnaam()
@@ -427,6 +475,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de verdieping van de geadresseerde.
+     *
      * @return string
      */
     protected function getGeadresseerdeVerdieping()
@@ -436,6 +485,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de straatnaam van de geadresseerde.
+     *
      * @return string
      */
     protected function getGeadresseerdeStraatnaam()
@@ -445,6 +495,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor het huisnummer/postbusnummer van de geadresseerde.
+     *
      * @return string
      */
     protected function getGeadresseerdeHuisnummerPostbusnummer()
@@ -454,6 +505,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de huisnummer toevoeging van de geadresseerde.
+     *
      * @return string
      */
     protected function getGeadresseerdeHuisnummerToevoeging()
@@ -463,6 +515,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de postcode van de geadresseerde.
+     *
      * @return string
      */
     protected function getGeadresseerdePostcode()
@@ -472,6 +525,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de woonplaats van de geadresseerde.
+     *
      * @return string
      */
     protected function getGeadresseerdeWoonplaats()
@@ -481,6 +535,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de wijk van de geadresseerde.
+     *
      * @return string
      */
     protected function getGeadresseerdeWijk()
@@ -490,6 +545,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de regio van de geadresseerde.
+     *
      * @return string
      */
     protected function getGeadresseerdeRegio()
@@ -499,6 +555,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de deurcode van de geadresseerde.
+     *
      * @return string
      */
     protected function getGeadresseerdeDeurcode()
@@ -508,6 +565,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de opmerking van de geadresseerde.
+     *
      * @return string
      */
     protected function getGeadresseerdeOpmerking()
@@ -517,6 +575,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de landcode van de geadresseerde.
+     *
      * @return string
      */
     protected function getGeadresseerdeLandcode()
@@ -526,6 +585,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor de inhoud van het pakket.
+     *
      * @return string
      */
     protected function getInhoud()
@@ -535,6 +595,7 @@ class Pakket extends MappingGenerator
 
     /**
      * Getter voor het gewicht van het pakket (in grammen).
+     *
      * @return int
      */
     protected function getGewicht()
@@ -544,7 +605,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Zendingcode (3S) instellen.
-     * @param string $zendingcode
+     *
+     * @param  string $zendingcode
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -565,7 +627,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Referentietekst instellen.
-     * @param string $referentietekst
+     *
+     * @param  string $referentietekst
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -581,7 +644,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Productcode. Komt uit de Productcode class.
-     * @param string $productcode Constante uit de PostNL\Data\Productcode class
+     *
+     * @param  string $productcode Constante uit de PostNL\Data\Productcode class
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -597,7 +661,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Frankeeraanduiding.
-     * @param int $frankeeraanduiding
+     *
+     * @param  int $frankeeraanduiding
      * @return \PostNL\Data\Pakket
      */
     public function setFrankeeraanduiding($frankeeraanduiding)
@@ -608,7 +673,8 @@ class Pakket extends MappingGenerator
 
     /**
      * E-mailadres.
-     * @param string $emailadres
+     *
+     * @param  string $emailadres
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -624,7 +690,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Mobiele telefoonnummer.
-     * @param string $mobiel
+     *
+     * @param  string $mobiel
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -640,7 +707,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Telefoonnummer.
-     * @param string $telefoon
+     *
+     * @param  string $telefoon
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -656,7 +724,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Volgnummer van dit collo.
-     * @param int $volgnummerCollo
+     *
+     * @param  int $volgnummerCollo
      * @return \PostNL\Data\Pakket
      */
     public function setVolgnummerCollo($volgnummerCollo)
@@ -667,7 +736,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Aantal colli in zending.
-     * @param int $aantalColli
+     *
+     * @param  int $aantalColli
      * @return \PostNL\Data\Pakket
      */
     public function setAantalColli($aantalColli)
@@ -678,7 +748,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Remboursbedrag in eurocenten.
-     * @param int $remboursbedrag Remboursbedrag in eurocenten.
+     *
+     * @param  int $remboursbedrag Remboursbedrag in eurocenten.
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -694,7 +765,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Verzekerd bedrag in eurocenten.
-     * @param int $verzekerdBedrag Verzekerd bedrag in eurocenten.
+     *
+     * @param  int $verzekerdBedrag Verzekerd bedrag in eurocenten.
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -710,7 +782,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Bedrijfsnaam van de geadresseerde.
-     * @param string $geadresseerdeBedrijfsnaam
+     *
+     * @param  string $geadresseerdeBedrijfsnaam
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -726,7 +799,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Afdeling van de geadresseerde.
-     * @param string $geadresseerdeAfdeling
+     *
+     * @param  string $geadresseerdeAfdeling
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -742,7 +816,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Achternaam van de geadresseerde.
-     * @param string $geadresseerdeAchternaam
+     *
+     * @param  string $geadresseerdeAchternaam
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -758,7 +833,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Voornaam van de geadresseerde.
-     * @param string $geadresseerdeVoornaam
+     *
+     * @param  string $geadresseerdeVoornaam
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -774,7 +850,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Gebouwnaam van de geadresseerde.
-     * @param string $geadresseerdeGebouwnaam
+     *
+     * @param  string $geadresseerdeGebouwnaam
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -790,7 +867,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Verdieping van de geadresseerde.
-     * @param string $geadresseerdeVerdieping
+     *
+     * @param  string $geadresseerdeVerdieping
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -806,7 +884,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Straatnaam van de geadresseerde.
-     * @param string $geadresseerdeStraatnaam
+     *
+     * @param  string $geadresseerdeStraatnaam
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -822,7 +901,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Huisnummer/postbusnummer van de geadresseerde.
-     * @param int $geadresseerdeHuisnummerPostbusnummer
+     *
+     * @param  int $geadresseerdeHuisnummerPostbusnummer
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -842,7 +922,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Huisnummer toevoeging van de geadresseerde.
-     * @param string $geadresseerdeHuisnummerToevoeging
+     *
+     * @param  string $geadresseerdeHuisnummerToevoeging
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -858,7 +939,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Postcode van de geadresseerde.
-     * @param string $geadresseerdePostcode
+     *
+     * @param  string $geadresseerdePostcode
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -876,7 +958,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Woonplaats van de geadresseerde.
-     * @param string $geadresseerdeWoonplaats
+     *
+     * @param  string $geadresseerdeWoonplaats
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -892,7 +975,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Wijk van de geadresseerde.
-     * @param string $geadresseerdeWijk
+     *
+     * @param  string $geadresseerdeWijk
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -908,7 +992,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Regio van de geadresseerde.
-     * @param string $geadresseerdeRegio
+     *
+     * @param  string $geadresseerdeRegio
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -924,7 +1009,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Deurcode van de geadresseerde.
-     * @param string $geadresseerdeDeurcode
+     *
+     * @param  string $geadresseerdeDeurcode
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -940,7 +1026,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Opmerking van de geadresseerde.
-     * @param string $geadresseerdeOpmerking
+     *
+     * @param  string $geadresseerdeOpmerking
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -956,7 +1043,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Landcode van de geadresseerde.
-     * @param string $geadresseerdeLandcode
+     *
+     * @param  string $geadresseerdeLandcode
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -972,7 +1060,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Inhoud van het pakket.
-     * @param string $inhoud
+     *
+     * @param  string $inhoud
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */
@@ -988,7 +1077,8 @@ class Pakket extends MappingGenerator
 
     /**
      * Gewicht van het pakket in grammen.
-     * @param int $gewicht Gewicht in grammen.
+     *
+     * @param  int $gewicht Gewicht in grammen.
      * @return \PostNL\Data\Pakket
      * @throws \Exception
      */

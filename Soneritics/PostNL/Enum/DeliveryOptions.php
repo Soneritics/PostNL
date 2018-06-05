@@ -39,5 +39,5 @@ class DeliveryOptions
     const SUNDAY = 'Sunday'; // Sunday delivery
     const SAMEDAY = 'Sameday'; // Sameday delivery (must be used in combination with Evening)
     const AFTERNOON = 'Afternoon'; // Afternoon delivery before 17:00
-    const MYTIME = 'MyTime';	// MyTime delivery (in Dutch: Op Afspraak Bezorgd)
+    const MYTIME = 'MyTime';    // MyTime delivery (in Dutch: Op Afspraak Bezorgd)
 }

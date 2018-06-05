@@ -37,9 +37,10 @@ class LabellingService extends AbstractService
 {
     /**
      * Generate a label for a shipment.
-     * @param Shipments $shipments
-     * @param Message $message
-     * @param bool $confirm
+     *
+     * @param  Shipments $shipments
+     * @param  Message   $message
+     * @param  bool      $confirm
      * @return string
      * @throws \Exception
      */

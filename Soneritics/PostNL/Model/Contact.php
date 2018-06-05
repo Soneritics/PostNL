@@ -36,26 +36,31 @@ class Contact extends AutoJsonSerializer
 {
     /**
      * Mandatory
+     *
      * @var string
      */
     protected $ContactType = '01';
 
     /**
+     *
      * @var string
      */
     protected $Email;
 
     /**
+     *
      * @var string
      */
     protected $SMSNr;
 
     /**
+     *
      * @var string
      */
     protected $TelNr;
 
     /**
+     *
      * @return string
      */
     public function getContactType(): string
@@ -64,7 +69,8 @@ class Contact extends AutoJsonSerializer
     }
 
     /**
-     * @param string $ContactType
+     *
+     * @param  string $ContactType
      * @return Contact
      */
     public function setContactType(string $ContactType): Contact
@@ -74,6 +80,7 @@ class Contact extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getEmail(): string
@@ -82,7 +89,8 @@ class Contact extends AutoJsonSerializer
     }
 
     /**
-     * @param string $Email
+     *
+     * @param  string $Email
      * @return Contact
      */
     public function setEmail(string $Email): Contact
@@ -92,6 +100,7 @@ class Contact extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getSMSNr(): string
@@ -100,7 +109,8 @@ class Contact extends AutoJsonSerializer
     }
 
     /**
-     * @param string $SMSNr
+     *
+     * @param  string $SMSNr
      * @return Contact
      */
     public function setSMSNr(string $SMSNr): Contact
@@ -110,6 +120,7 @@ class Contact extends AutoJsonSerializer
     }
 
     /**
+     *
      * @return string
      */
     public function getTelNr(): string
@@ -118,7 +129,8 @@ class Contact extends AutoJsonSerializer
     }
 
     /**
-     * @param string $TelNr
+     *
+     * @param  string $TelNr
      * @return Contact
      */
     public function setTelNr(string $TelNr): Contact
