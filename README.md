@@ -169,6 +169,40 @@ if (!empty($result['GetLocationsResult']['ResponseLocation'])) {
 }
 ```
 
+### Code example: Fetch nearest location and create a label for pickup at the pickup point
+```php
+$result = $api->getLocationsService()->getNearestLocationsByGeocode(51.963807, 5.968984, 'NL');
+
+if (!empty($result['GetLocationsResult']['ResponseLocation'])) {
+    $location = $result['GetLocationsResult']['ResponseLocation'][0];
+    $locationCode = $location['LocationCode'];
+    $retailNetworkID = $location['RetailNetworkID'];
+
+    $pickupAddress = (new \PostNL\Model\Address)
+        ->setAddressType(\PostNL\Enum\AddressType::DELIVERY_ADDRESS_FOR_PICKUP)
+        ->setCompanyName($location['Name'])
+        ->setStreet($location['Address']['Street'])
+        ->setHouseNr($location['Address']['HouseNr'])
+        ->setZipcode($location['Address']['Zipcode'])
+        ->setCity($location['Address']['City'])
+        ->setCountrycode('NL');
+
+    $contact = (new \PostNL\Model\Contact)->setEmail('mail@jordijolink.nl');
+    $shipments = (new \PostNL\Model\Shipments)->addShipment(
+        (new \PostNL\Model\Shipment)
+            ->setAddresses((new \PostNL\Model\Addresses)->addAddress($receivingAddress)->addAddress($pickupAddress))
+            ->setBarcode($barcodeService->GenerateBarcode())
+            ->setDimension($dimension)
+            ->setContacts((new \PostNL\Model\Contacts)->addContact($contact))
+            ->setProductCodeDelivery('3533')
+            ->setDeliveryAddress(\PostNL\Enum\AddressType::DELIVERY_ADDRESS_FOR_PICKUP)
+    );
+
+    $result = $api->getLabellingService()->GenerateLabel($shipments, $message);
+    print_r($result);
+}
+```
+
 ---
 
 ## PostNL Vooraanmelding
