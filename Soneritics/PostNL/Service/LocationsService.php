@@ -85,8 +85,8 @@ class LocationsService extends AbstractService
     /**
      * Get the nearest locations, based on a geocode
      *
-     * @param  int              $lat
-     * @param  int              $lon
+     * @param  float            $lat
+     * @param  float            $lon
      * @param  string           $countryCode
      * @param  array            $deliveryOptions
      * @param  \DateTime|null   $earliestDeliveryDate
@@ -95,8 +95,8 @@ class LocationsService extends AbstractService
      * @throws \Exception
      */
     public function getNearestLocationsByGeocode(
-        int $lat,
-        int $lon,
+        float $lat,
+        float $lon,
         string $countryCode,
         array $deliveryOptions = [RequestDeliveryOptions::PICKUP_POSTNL],
         \DateTime $earliestDeliveryDate = null,
