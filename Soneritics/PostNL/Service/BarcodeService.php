@@ -40,7 +40,7 @@ class BarcodeService extends AbstractService
      * @return string
      * @throws \Exception
      */
-    public function GenerateBarcode($type = '3S', $serie = '000000000-999999999'): string
+    public function generateBarcode($type = '3S', $serie = '000000000-999999999'): string
     {
         $result = $this->get(
             '/barcode',

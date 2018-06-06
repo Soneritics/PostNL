@@ -63,7 +63,7 @@ $api = new API($apiKey, $customer, $endpoints);
 ### Code example: Fetching a barcode
 ```php
 $barcodeService = $api->getBarcodeService();
-$barcode = $barcodeService->GenerateBarcode();
+$barcode = $barcodeService->generateBarcode();
 echo "generated barcode: {$barcode}\r\n";
 ```
 
@@ -87,7 +87,7 @@ $shipments = (new Shipments)->addShipment(
         ->setDimension($dimension)
 );
 
-$result = $api->getLabellingService()->GenerateLabel($shipments, $message);
+$result = $api->getLabellingService()->generateLabel($shipments, $message);
 $labelContentsBase64 = $result['ResponseShipments'][0]['Labels'][0]['Content'];
 ```
 
@@ -128,7 +128,7 @@ if (!empty($result['Timeframes']['Timeframe'])) {
        $shipments = (new Shipments)->addShipment(
             (new Shipment)
                 ->setAddresses((new Addresses)->addAddress($receivingAddress))
-                ->setBarcode($barcodeService->GenerateBarcode())
+                ->setBarcode($barcodeService->generateBarcode())
                 ->setDimension($dimension)
                 ->setDeliveryDate($deliveryTimestampStart)
                 ->setDeliveryTimeStampStart($deliveryTimestampStart)
@@ -136,7 +136,7 @@ if (!empty($result['Timeframes']['Timeframe'])) {
                 ->setContacts((new Contacts)->addContact($contact))
         );
 
-        $result = $api->getLabellingService()->GenerateLabel($shipments, $message);
+        $result = $api->getLabellingService()->generateLabel($shipments, $message);
         print_r($result);
     }
 }
@@ -191,14 +191,14 @@ if (!empty($result['GetLocationsResult']['ResponseLocation'])) {
     $shipments = (new \PostNL\Model\Shipments)->addShipment(
         (new \PostNL\Model\Shipment)
             ->setAddresses((new \PostNL\Model\Addresses)->addAddress($receivingAddress)->addAddress($pickupAddress))
-            ->setBarcode($barcodeService->GenerateBarcode())
+            ->setBarcode($barcodeService->generateBarcode())
             ->setDimension($dimension)
             ->setContacts((new \PostNL\Model\Contacts)->addContact($contact))
             ->setProductCodeDelivery('3533')
             ->setDeliveryAddress(\PostNL\Enum\AddressType::DELIVERY_ADDRESS_FOR_PICKUP)
     );
 
-    $result = $api->getLabellingService()->GenerateLabel($shipments, $message);
+    $result = $api->getLabellingService()->generateLabel($shipments, $message);
     print_r($result);
 }
 ```

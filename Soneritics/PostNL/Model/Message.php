@@ -60,8 +60,11 @@ class Message extends AutoJsonSerializer
      * @param string         $Printertype
      * @param \DateTime|null $MessageTimeStamp
      */
-    public function __construct(int $MessageID, string $Printertype = PrinterType::PDF, \DateTime $MessageTimeStamp = null)
-    {
+    public function __construct(
+        int $MessageID,
+        string $Printertype = PrinterType::PDF,
+        \DateTime $MessageTimeStamp = null
+    ) {
         $this->setMessageID($MessageID);
         $this->setPrintertype($Printertype);
         $this->setMessageTimeStamp($MessageTimeStamp ?? new \DateTime());

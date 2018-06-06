@@ -64,10 +64,11 @@ class OpeningTime
     public function __toString()
     {
         return implode(
-            ':', [
-            str_pad((string)$this->hour, '0', STR_PAD_LEFT),
-            str_pad((string)$this->minute, '0', STR_PAD_LEFT),
-            '00'
+            ':',
+            [
+                str_pad((string)$this->hour, '0', STR_PAD_LEFT),
+                str_pad((string)$this->minute, '0', STR_PAD_LEFT),
+                '00'
             ]
         );
     }

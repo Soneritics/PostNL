@@ -44,7 +44,7 @@ class LabellingService extends AbstractService
      * @return string
      * @throws \Exception
      */
-    public function GenerateLabel(Shipments $shipments, Message $message, bool $confirm = true)
+    public function generateLabel(Shipments $shipments, Message $message, bool $confirm = true)
     {
         $serviceResult = $this->post(
             '/label?confirm=' . ($confirm ? 'true' : 'false'),

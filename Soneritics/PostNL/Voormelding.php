@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
  * The MIT License
  *
  * Copyright 2015 Soneritics Webdevelopment.
@@ -194,7 +194,6 @@ class Voormelding
         foreach ($this->pakketten as $pakket) {
             foreach ($pakket->genereer() as $value) {
                 yield $value;
-
             }
 
             // Remboursbedrag optellen indien gevuld
@@ -284,7 +283,7 @@ class Voormelding
         $this->tijdAanmaakBestand = date('His', $timestamp);
 
         // Kijk of datum na aanleverdatum is
-        if (empty($this->aanleverdatumZendingen) 
+        if (empty($this->aanleverdatumZendingen)
             || $datum > $this->aanleverdatumZendingen
         ) {
             $this->setAanleverdatumZendingen($timestamp);

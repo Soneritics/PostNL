@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
  * The MIT License
  *
  * Copyright 2015 Soneritics Webdevelopment.
