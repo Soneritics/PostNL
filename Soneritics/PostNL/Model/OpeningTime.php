@@ -61,7 +61,7 @@ class OpeningTime
      *
      * @return string
      */
-    public function _toString()
+    public function __toString()
     {
         return implode(
             ':', [
