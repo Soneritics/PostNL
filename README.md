@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/Soneritics/PostNL/badge.svg?branch=master)](https://coveralls.io/r/Soneritics/PostNL?branch=master)
 ![License](http://img.shields.io/badge/license-MIT-green.svg)
 
-Auteur
+Author
 * [@Soneritics](https://github.com/Soneritics) - Jordi Jolink
 
 ## Introduction
@@ -21,7 +21,7 @@ Use Composer to install: soneritics/postnl
 ## PostNL API
 The base for connecting to the PostNL API will be provided by this plugin.
 It is advised not to use it in a production environment, as it's nog error-proof,
-nor (fully automated) tested.
+nor (fully automated) tested. It does work, though :-)
 
 Create an issue if you need help, or need more services than the ones provided.
 
