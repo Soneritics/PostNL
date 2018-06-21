@@ -25,12 +25,15 @@
 namespace PostNL\Endpoints;
 
 /**
- * Production sndpoints
+ * Production endpoints
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  27-5-2018
  */
 class Production extends Endpoints
 {
-
+    public $Barcode = 'https://api.postnl.nl/shipment/v1_1';
+    public $Labelling = 'https://api.postnl.nl/shipment/v2_1';
+    public $Timeframe = 'https://api.postnl.nl/shipment/v2_1';
+    public $Locations = 'https://api.postnl.nl/shipment/v2_1/locations';
 }
