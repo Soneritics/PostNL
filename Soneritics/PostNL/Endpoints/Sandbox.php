@@ -25,7 +25,7 @@
 namespace PostNL\Endpoints;
 
 /**
- * Sandbox sndpoints
+ * Sandbox endpoints
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  27-5-2018
