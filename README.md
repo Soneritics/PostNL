@@ -22,7 +22,8 @@ Use Composer to install: soneritics/postnl
 ## PostNL API
 The base for connecting to the PostNL API will be provided by this plugin.
 It is advised not to use it in a production environment, as it's nog error-proof,
-nor (fully automated) tested. It does work, though :-)
+nor (fully automated) tested. It does work, though, and is currently being tested
+ in a production environment :-)
 
 Create an issue if you need help, or need more services than the ones provided.
 
@@ -31,7 +32,7 @@ Create an issue if you need help, or need more services than the ones provided.
 |-----------------------------------------------|:-----------:|:-------:|
 | **Send & Track**                                                    |||
 | Barcode webservice                            |      ✓      |   1_1   |
-| Confirming webservice                         |      X      |   N/A   |
+| Confirming webservice                         |      ✓      |   1_10  |
 | Labelling webservice                          |      ✓      |   2_1   |
 | Shippingstatus webservice                     |      X      |   N/A   |
 | **Delivery options**                                                |||
@@ -188,15 +189,15 @@ if (!empty($result['GetLocationsResult']['ResponseLocation'])) {
         ->setCity($location['Address']['City'])
         ->setCountrycode('NL');
 
-    $contact = (new \PostNL\Model\Contact)->setEmail('mail@jordijolink.nl');
-    $shipments = (new \PostNL\Model\Shipments)->addShipment(
-        (new \PostNL\Model\Shipment)
-            ->setAddresses((new \PostNL\Model\Addresses)->addAddress($receivingAddress)->addAddress($pickupAddress))
+    $contact = (new Contact)->setEmail('mail@jordijolink.nl');
+    $shipments = (new Shipments)->addShipment(
+        (new Shipment)
+            ->setAddresses((new Addresses)->addAddress($receivingAddress)->addAddress($pickupAddress))
             ->setBarcode($barcodeService->generateBarcode())
             ->setDimension($dimension)
-            ->setContacts((new \PostNL\Model\Contacts)->addContact($contact))
+            ->setContacts((new Contacts)->addContact($contact))
             ->setProductCodeDelivery('3533')
-            ->setDeliveryAddress(\PostNL\Enum\AddressType::DELIVERY_ADDRESS_FOR_PICKUP)
+            ->setDeliveryAddress(AddressType::DELIVERY_ADDRESS_FOR_PICKUP)
     );
 
     $result = $api->getLabellingService()->generateLabel($shipments, $message);
