@@ -2,6 +2,7 @@
 
 [![Build Status](https://api.travis-ci.org/Soneritics/PostNL.svg?branch=master)](https://travis-ci.org/Soneritics/PostNL)
 [![Coverage Status](https://coveralls.io/repos/Soneritics/PostNL/badge.svg?branch=master)](https://coveralls.io/r/Soneritics/PostNL?branch=master)
+[![Latest Stable](https://img.shields.io/packagist/v/soneritics/postnl.svg?style=flat-square&label=stable)](https://packagist.org/packages/soneritics/postnl?branch=master)
 ![License](http://img.shields.io/badge/license-MIT-green.svg)
 
 Author
