@@ -2,7 +2,7 @@
 /*
  * The MIT License
  *
- * Copyright 2015 Soneritics Webdevelopment.
+ * Copyright 2018 Jordi Jolink.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,54 +22,39 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace PostNL\Endpoints;
+namespace PostNL\Service;
+
+use PostNL\Model\Message;
+use PostNL\Model\Shipments;
 
 /**
- * Endpoints
+ * Class ConfirmService
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
- * @since  27-5-2018
+ * @since  17-8-2018
+ * @package PostNL\Service
  */
-abstract class Endpoints
+class ConfirmService extends AbstractService
 {
     /**
-     *
-     * @var string
-     */
-    public $Barcode;
-
-    /**
-     *
-     * @var string
-     */
-    public $Confirm;
-
-    /**
-     *
-     * @var string
-     */
-    public $Labelling;
-
-    /**
-     *
-     * @var string
-     */
-    public $Timeframe;
-
-    /**
-     *
-     * @var string
-     */
-    public $Locations;
-
-    /**
-     * Endpoints constructor.
-     * Check if all endpoints are implemented.
-     *
+     * Confirm a shipment
+     * @param Shipments $shipments
+     * @param Message $message
+     * @return string
      * @throws \Exception
      */
-    public function __construct()
+    public function confirmShipment(Shipments $shipments, Message $message)
     {
-        // @todo: Loop all class properties and check if !empty()
+        $serviceResult = $this->post(
+            '/confirm',
+            [
+                'Customer' => $this->customer,
+                'Message' => $message,
+                'Shipments' => $shipments
+            ]
+        );
+
+        // Directly return the serviceResult - @todo
+        return $serviceResult;
     }
 }

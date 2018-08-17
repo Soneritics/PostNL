@@ -33,6 +33,7 @@ namespace PostNL\Endpoints;
 class Production extends Endpoints
 {
     public $Barcode = 'https://api.postnl.nl/shipment/v1_1';
+    public $Confirm = 'https://api.postnl.nl/shipment/v1_10';
     public $Labelling = 'https://api.postnl.nl/shipment/v2_1';
     public $Timeframe = 'https://api.postnl.nl/shipment/v2_1';
     public $Locations = 'https://api.postnl.nl/shipment/v2_1/locations';

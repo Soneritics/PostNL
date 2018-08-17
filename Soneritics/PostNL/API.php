@@ -27,6 +27,7 @@ namespace PostNL;
 use PostNL\Endpoints\Endpoints;
 use PostNL\Model\Customer;
 use PostNL\Service\BarcodeService;
+use PostNL\Service\ConfirmService;
 use PostNL\Service\LabellingService;
 use PostNL\Service\LocationsService;
 use PostNL\Service\TimeframeService;
@@ -79,6 +80,16 @@ class API
     public function getBarcodeService(): BarcodeService
     {
         return new BarcodeService($this->apiKey, $this->customer, $this->endpoints->Barcode);
+    }
+
+    /**
+     * Get a confirm service instance.
+     *
+     * @return ConfirmService
+     */
+    public function getConfirmService(): ConfirmService
+    {
+        return new ConfirmService($this->apiKey, $this->customer, $this->endpoints->Confirm);
     }
 
     /**
