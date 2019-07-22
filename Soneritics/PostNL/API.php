@@ -30,6 +30,7 @@ use PostNL\Service\BarcodeService;
 use PostNL\Service\ConfirmService;
 use PostNL\Service\LabellingService;
 use PostNL\Service\LocationsService;
+use PostNL\Service\PostalcodeService;
 use PostNL\Service\TimeframeService;
 
 /**
@@ -120,5 +121,14 @@ class API
     public function getLocationsService(): LocationsService
     {
         return new LocationsService($this->apiKey, $this->customer, $this->endpoints->Locations);
+    }
+
+    /**
+     * Get a PostalcodeService instance
+     * @return PostalcodeService
+     */
+    public function getPostalcodeService(): PostalcodeService
+    {
+        return new PostalcodeService($this->apiKey, $this->customer, $this->endpoints->PostalCode);
     }
 }

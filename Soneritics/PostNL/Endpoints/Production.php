@@ -37,4 +37,5 @@ class Production extends Endpoints
     public $Labelling = 'https://api.postnl.nl/shipment/v2_1';
     public $Timeframe = 'https://api.postnl.nl/shipment/v2_1';
     public $Locations = 'https://api.postnl.nl/shipment/v2_1/locations';
+    public $PostalCode = 'https://api.postnl.nl/shipment/checkout/v1';
 }

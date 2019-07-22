@@ -39,6 +39,8 @@ Create an issue if you need help, or need more services than the ones provided.
 | Deliverydate webservice                       |      X      |   N/A   |
 | Location webservice                           |      ✓      |   2_1   |
 | Timeframe webservice                          |      ✓      |   2_1   |
+| **Checkout**                                                |||
+| Postalcode Check                              |      ✓      |   1   |
 
 ### Code example: Creating the API
 Always start with creating the API object.

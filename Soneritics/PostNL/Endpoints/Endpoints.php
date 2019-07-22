@@ -63,6 +63,12 @@ abstract class Endpoints
     public $Locations;
 
     /**
+     *
+     * @var string
+     */
+    public $PostalCode;
+
+    /**
      * Endpoints constructor.
      * Check if all endpoints are implemented.
      *
