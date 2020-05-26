@@ -78,10 +78,10 @@ $dimension = (new Dimension)->setWeight(1000);
 $receivingAddress = (new Address)
     ->setAddressType(AddressType::RECEIVER)
     ->setCompanyName('Jordi Jolink')
-    ->setStreet('De Rosmolen')
-    ->setHouseNr('153')
-    ->setZipcode('6932NC')
-    ->setCity('Westervoort')
+    ->setStreet('Some street')
+    ->setHouseNr('123')
+    ->setZipcode('1234AB')
+    ->setCity('Amsterdam')
     ->setCountrycode('NL');
 
 $shipments = (new Shipments)->addShipment(
@@ -99,11 +99,11 @@ $labelContentsBase64 = $result['ResponseShipments'][0]['Labels'][0]['Content'];
 ```php
 $receivingAddress = (new Address)
     ->setAddressType(AddressType::RECEIVER)
-    ->setCompanyName('Jordi Jolink')
-    ->setStreet('De Rosmolen')
-    ->setHouseNr('153')
-    ->setZipcode('6932NC')
-    ->setCity('Westervoort')
+    ->setCompanyName('Soneritics')
+    ->setStreet('Some street')
+    ->setHouseNr('123')
+    ->setZipcode('1234AB')
+    ->setCity('Amsterdam')
     ->setCountrycode('NL');
 
 $deliveryOptions = [
@@ -151,7 +151,7 @@ echo "Timeframe confirmed.\r\n";
 ```php
 $receivingAddress = (new Address)
     ->setAddressType(AddressType::RECEIVER)
-    ->setZipcode('6932NC')
+    ->setZipcode('1234AB')
     ->setCountrycode('NL');
 
 $result = $api->getLocationsService()->getNearestLocations($receivingAddress);
