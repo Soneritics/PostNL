@@ -55,9 +55,9 @@ $customer = (new Customer)
         ->setAddressType(AddressType::SENDER)
         ->setCompanyName('Soneritics')
         ->setStreet('De Rosmolen')
-        ->setHouseNr('153')
-        ->setZipcode('6932NC')
-        ->setCity('Westervoort')
+        ->setHouseNr('123')
+        ->setZipcode('1234AB')
+        ->setCity('Amsterdam')
         ->setCountrycode('NL')
     );
 
@@ -128,7 +128,7 @@ if (!empty($result['Timeframes']['Timeframe'])) {
         $deliveryTimestampStart = new DateTime($timeframe['Date'] . ' ' . $timeframe['Timeframes']['TimeframeTimeFrame']['From']);
         $deliveryTimestampEnd = new DateTime($timeframe['Date'] . ' ' . $timeframe['Timeframes']['TimeframeTimeFrame']['To']);
 
-       $contact = (new Contact)->setEmail('mail@jordijolink.nl');
+       $contact = (new Contact)->setEmail('mail@no-spam4me.nl');
        $shipments = (new Shipments)->addShipment(
             (new Shipment)
                 ->setAddresses((new Addresses)->addAddress($receivingAddress))
