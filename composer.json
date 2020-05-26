@@ -4,9 +4,8 @@
     "description": "PostNL API and Aanmaken van PostNL vooraanmeldingbestanden om pakketten te verzenden.",
     "homepage": "https://github.com/Soneritics/PostNL",
     "license": "MIT",
-    "minimum-stability": "dev",
     "require": {
-        "educoder/pest": "dev-master"
+        "educoder/pest": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7",
