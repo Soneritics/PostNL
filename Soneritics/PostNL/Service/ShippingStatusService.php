@@ -22,65 +22,30 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace PostNL\Endpoints;
+
+namespace PostNL\Service;
 
 /**
- * Endpoints
- *
- * @author Jordi Jolink <mail@jordijolink.nl>
- * @since  27-5-2018
+ * Shipping Status Service.
  */
-abstract class Endpoints
+class ShippingStatusService extends AbstractService
 {
     /**
+     * Get the status by a barcode.
      *
-     * @var string
-     */
-    public $Barcode;
-
-    /**
-     *
-     * @var string
-     */
-    public $Confirm;
-
-    /**
-     *
-     * @var string
-     */
-    public $Labelling;
-
-    /**
-     *
-     * @var string
-     */
-    public $Timeframe;
-
-    /**
-     *
-     * @var string
-     */
-    public $Locations;
-
-    /**
-     *
-     * @var string
-     */
-    public $PostalCode;
-
-	/**
-	 * @var string
-	 */
-    public $ShippingStatus;
-
-    /**
-     * Endpoints constructor.
-     * Check if all endpoints are implemented.
+     * @param string $barcode
+     * @param string $detail
+     * @param string $language
      *
      * @throws \Exception
+     *
+     * @return string
      */
-    public function __construct()
+    public function getByBarcode(string $barcode, string $detail = 'true', string $language = 'NL')
     {
-        // @todo: Loop all class properties and check if !empty()
+        return $this->get("/barcode/{$barcode}", [
+            'detail'   => $detail,
+            'language' => $language,
+        ]);
     }
 }
