@@ -31,6 +31,7 @@ use PostNL\Service\ConfirmService;
 use PostNL\Service\LabellingService;
 use PostNL\Service\LocationsService;
 use PostNL\Service\PostalcodeService;
+use PostNL\Service\ShippingStatusService;
 use PostNL\Service\TimeframeService;
 
 /**
@@ -131,4 +132,9 @@ class API
     {
         return new PostalcodeService($this->apiKey, $this->customer, $this->endpoints->PostalCode);
     }
+
+    public function getShippingStatusService(): ShippingStatusService
+	{
+		return new ShippingStatusService($this->apiKey, $this->customer, $this->endpoints->ShippingStatus);
+	}
 }

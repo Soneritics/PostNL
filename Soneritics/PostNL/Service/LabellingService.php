@@ -46,7 +46,7 @@ class LabellingService extends AbstractService
      */
     public function generateLabel(Shipments $shipments, Message $message, bool $confirm = true)
     {
-        $serviceResult = $this->post(
+        return $this->post(
             '/label?confirm=' . ($confirm ? 'true' : 'false'),
             [
                 'Customer' => $this->customer,
@@ -54,8 +54,5 @@ class LabellingService extends AbstractService
                 'Shipments' => $shipments
             ]
         );
-
-        // Directly return the serviceResult - @todo
-        return $serviceResult;
     }
 }

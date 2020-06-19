@@ -45,7 +45,7 @@ class ConfirmService extends AbstractService
      */
     public function confirmShipment(Shipments $shipments, Message $message)
     {
-        $serviceResult = $this->post(
+        return $this->post(
             '/confirm',
             [
                 'Customer' => $this->customer,
@@ -53,8 +53,5 @@ class ConfirmService extends AbstractService
                 'Shipments' => $shipments
             ]
         );
-
-        // Directly return the serviceResult - @todo
-        return $serviceResult;
     }
 }

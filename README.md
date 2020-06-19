@@ -34,7 +34,7 @@ Create an issue if you need help, or need more services than the ones provided.
 | Barcode webservice                            |      ✓      |   1_1   |
 | Confirming webservice                         |      ✓      |   1_10  |
 | Labelling webservice                          |      ✓      |   2_1   |
-| Shippingstatus webservice                     |      X      |   N/A   |
+| Shippingstatus webservice                     |      ✓      |   v2   |
 | **Delivery options**                                                |||
 | Deliverydate webservice                       |      X      |   N/A   |
 | Location webservice                           |      ✓      |   2_1   |
@@ -205,6 +205,14 @@ if (!empty($result['GetLocationsResult']['ResponseLocation'])) {
     $result = $api->getLabellingService()->generateLabel($shipments, $message);
     print_r($result);
 }
+```
+
+
+### Code example: Get the shipping status (via a barcode)
+```
+$endpoints = new Sandbox();
+$api = new API($key, new Customer(), $endpoints);
+$data = $api->getShippingStatusService()->getByBarcode($barcode);
 ```
 
 ---
