@@ -22,19 +22,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 namespace PostNL\Endpoints;
 
 /**
- * Sandbox endpoints
+ * Sandbox endpoints.
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
+ *
  * @since  27-5-2018
  */
 class Sandbox extends Endpoints
 {
     public $Barcode = 'https://api-sandbox.postnl.nl/shipment/v1_1';
     public $Confirm = 'https://api-sandbox.postnl.nl/shipment/v1_10';
-    public $Labelling = 'https://api-sandbox.postnl.nl/shipment/v2_1';
+    public $Labelling = 'https://api-sandbox.postnl.nl/shipment/v2_2';
     public $Timeframe = 'https://api-sandbox.postnl.nl/shipment/v2_1';
     public $Locations = 'https://api-sandbox.postnl.nl/shipment/v2_1/locations';
     public $PostalCode = 'https://api-sandbox.postnl.nl/shipment/checkout/v1';
