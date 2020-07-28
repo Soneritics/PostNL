@@ -33,7 +33,7 @@ Create an issue if you need help, or need more services than the ones provided.
 | **Send & Track**                                                    |||
 | Barcode webservice                            |      ✓      |   1_1   |
 | Confirming webservice                         |      ✓      |   1_10  |
-| Labelling webservice                          |      ✓      |   2_1   |
+| Labelling webservice                          |      ✓      |   2_2*   |
 | Shippingstatus webservice                     |      ✓      |   v2   |
 | **Delivery options**                                                |||
 | Deliverydate webservice                       |      X      |   N/A   |
@@ -41,6 +41,8 @@ Create an issue if you need help, or need more services than the ones provided.
 | Timeframe webservice                          |      ✓      |   2_1   |
 | **Checkout**                                                |||
 | Postalcode Check                              |      ✓      |   1   |
+
+> *`v2_2` supports ERS labels
 
 ### Code example: Creating the API
 Always start with creating the API object.
@@ -255,4 +257,18 @@ $voormelding->addPakket($pakket);
 // Contents ophalen. Dit kan opgeslagen worden in een LST bestand.
 $voormeldContents = $voormelding->genereerInhoud()
 ```
+
+---
+## ERS
+
+### Using ERS
+
+The product code for ERS labels is `4910`.
+
+PostNL does not have documentation available for this product code, but you can use the documentation from product code `3085 Return label in the box` as a base.
+There are additional things required for using ERS:
+- The `CustomerCode` (4 letters) should have ERS enabled, or be ERS specific. Contact PostNL support for this.
+- The `Addressses` of the `Customer` and `Shipment` all need to have a `name` filled in.
+- The `ReturnBarcode` should be set.
+
 
