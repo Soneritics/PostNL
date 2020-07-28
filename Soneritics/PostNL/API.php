@@ -134,7 +134,7 @@ class API
     }
 
     public function getShippingStatusService(): ShippingStatusService
-	{
-		return new ShippingStatusService($this->apiKey, $this->customer, $this->endpoints->ShippingStatus);
-	}
+    {
+        return new ShippingStatusService($this->apiKey, $this->customer, $this->endpoints->ShippingStatus);
+    }
 }
