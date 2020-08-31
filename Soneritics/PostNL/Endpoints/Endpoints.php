@@ -68,9 +68,9 @@ abstract class Endpoints
      */
     public $PostalCode;
 
-	/**
-	 * @var string
-	 */
+    /**
+     * @var string
+     */
     public $ShippingStatus;
 
     /**
