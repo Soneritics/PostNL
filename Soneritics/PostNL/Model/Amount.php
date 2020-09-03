@@ -22,6 +22,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 namespace PostNL\Model;
 
 use PostNL\Business\AutoJsonSerializer;
@@ -34,84 +35,84 @@ use PostNL\Business\AutoJsonSerializer;
  */
 class Amount extends AutoJsonSerializer
 {
-    /**
-     * Mandatory
-     *
-     * @var string
-     */
-    protected $AmountType;
+	/**
+	 * Mandatory
+	 *
+	 * @var string
+	 */
+	protected $AmountType;
 
-    /**
-     * Mandatory
-     *
-     * @var string
-     */
-    protected $Currency;
+	/**
+	 * Mandatory
+	 *
+	 * @var string
+	 */
+	protected $Currency;
 
-    /**
-     * Mandatory
-     *
-     * @var string
-     */
-    protected $Value;
-    
-    /**
-     *
-     * @return string
-     */
-    public function getAmountType(): string
-    {
-        return $this->AmountType;
-    }
+	/**
+	 * Mandatory
+	 *
+	 * @var string
+	 */
+	protected $Value;
 
-    /**
-     *
-     * @param  string $AmountType
-     * @return Amount
-     */
-    public function setAmountType(string $AmountType): Amount
-    {
-        $this->AmountType = $AmountType;
-        return $this;
-    }
+	/**
+	 *
+	 * @return string
+	 */
+	public function getAmountType(): string
+	{
+		return $this->AmountType;
+	}
 
-    /**
-     *
-     * @return string
-     */
-    public function getCurrency(): string
-    {
-        return $this->Currency;
-    }
+	/**
+	 *
+	 * @param string $AmountType
+	 * @return Amount
+	 */
+	public function setAmountType(string $AmountType): Amount
+	{
+		$this->AmountType = $AmountType;
+		return $this;
+	}
 
-    /**
-     *
-     * @param  string $Currency
-     * @return Amount
-     */
-    public function setCurrency(string $Currency): Amount
-    {
-        $this->Currency = $Currency;
-        return $this;
-    }
+	/**
+	 *
+	 * @return string
+	 */
+	public function getCurrency(): string
+	{
+		return $this->Currency;
+	}
 
-    /**
-     *
-     * @return string
-     */
-    public function getValue(): string
-    {
-        return $this->Value;
-    }
+	/**
+	 *
+	 * @param string $Currency
+	 * @return Amount
+	 */
+	public function setCurrency(string $Currency): Amount
+	{
+		$this->Currency = $Currency;
+		return $this;
+	}
 
-    /**
-     *
-     * @param  string $Value
-     * @return Amount
-     */
-    public function setValue(string $Value): Amount
-    {
-        $this->Value = $Value;
-        return $this;
-    }
+	/**
+	 *
+	 * @return string
+	 */
+	public function getValue(): string
+	{
+		return $this->Value;
+	}
+
+	/**
+	 *
+	 * @param string $Value
+	 * @return Amount
+	 */
+	public function setValue(string $Value): Amount
+	{
+		$this->Value = $Value;
+		return $this;
+	}
 }
