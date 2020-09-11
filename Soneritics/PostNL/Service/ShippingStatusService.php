@@ -48,4 +48,23 @@ class ShippingStatusService extends AbstractService
             'language' => $language,
         ]);
     }
+
+	/**
+	 * Only from period supported for now
+	 * @period = YYYY-MM-DDTHH:MM:SS
+	 *
+	 * @param string $customerNumber
+	 * @param string|null $fromPeriod
+	 * @return string
+	 * @throws \Exception
+	 */
+    public function getByCustomerNumber(string $customerNumber, string $fromPeriod = null)
+	{
+		$params = [];
+		if ($fromPeriod) {
+			$params['period'] = $fromPeriod;
+		}
+
+		return $this->get("{$customerNumber}/updatedshipments", $params);
+	}
 }
