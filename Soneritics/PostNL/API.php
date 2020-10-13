@@ -26,6 +26,7 @@ namespace PostNL;
 
 use PostNL\Endpoints\Endpoints;
 use PostNL\Model\Customer;
+use PostNL\Service\AddressService;
 use PostNL\Service\BarcodeService;
 use PostNL\Service\ConfirmService;
 use PostNL\Service\LabellingService;
@@ -137,4 +138,14 @@ class API
     {
         return new ShippingStatusService($this->apiKey, $this->customer, $this->endpoints->ShippingStatus);
     }
+
+	/**
+	 * Get the address service
+	 *
+	 * @return AddressService
+	 */
+	public function getAddressService(): AddressService
+	{
+		return new AddressService($this->apiKey, $this->customer, $this->endpoints->Address);
+	}
 }

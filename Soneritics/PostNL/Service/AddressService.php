@@ -22,24 +22,51 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
-namespace PostNL\Endpoints;
+namespace PostNL\Service;
 
 /**
- * Sandbox endpoints.
- *
- * @author Jordi Jolink <mail@jordijolink.nl>
- *
- * @since  27-5-2018
+ * Address Service
  */
-class Sandbox extends Endpoints
+class AddressService extends AbstractService
 {
-    public $Barcode = 'https://api-sandbox.postnl.nl/shipment/v1_1';
-    public $Confirm = 'https://api-sandbox.postnl.nl/shipment/v1_10';
-    public $Labelling = 'https://api-sandbox.postnl.nl/shipment/v2_2';
-    public $Timeframe = 'https://api-sandbox.postnl.nl/shipment/v2_1';
-    public $Locations = 'https://api-sandbox.postnl.nl/shipment/v2_1/locations';
-    public $PostalCode = 'https://api-sandbox.postnl.nl/shipment/checkout/v1';
-    public $ShippingStatus = 'https://api-sandbox.postnl.nl/shipment/v2/status';
-	public $Address = 'https://api.postnl.nl/address'; // No sandbox available
+    /**
+     * Check the address (Dutch)
+	 *
+     * @throws \Exception
+     */
+    public function check(string $postalCode, string $city, string $street, string $houseNumber, string $addition): array
+    {
+        return $this->get(
+            '/national/v1/validate',
+            [
+                'PostalCode' => $postalCode,
+				'Country' => 'NDL',
+				'City' => $city,
+                'Street' => $street,
+                'HouseNumber' => $houseNumber,
+                'Addition' => $addition
+            ]
+        );
+    }
+
+	/**
+	 * Check the address for international addresses
+	 *
+	 * @throws \Exception
+	 */
+	public function checkInternational(string $country, string $postalCode, string $city, string $street, string $houseNumber, string $addition): array
+	{
+		return $this->post(
+			'/international/v1/validate',
+			[
+				'PostalCode' => $postalCode,
+				'Country' => $country,
+				'City' => $city,
+				'Street' => $street,
+				'HouseNumber' => $houseNumber,
+				'Addition' => $addition
+			]
+		);
+	}
 }
+
