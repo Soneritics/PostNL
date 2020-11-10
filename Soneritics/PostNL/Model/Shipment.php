@@ -213,6 +213,12 @@ class Shipment extends AutoJsonSerializer
 
     /**
      *
+     * @var ShipmentGroups
+     */
+    protected $Groups;
+
+    /**
+     *
      * @return Addresses
      */
     public function getAddresses(): Addresses
@@ -786,6 +792,24 @@ class Shipment extends AutoJsonSerializer
     public function setTimeslotID(string $TimeslotID): Shipment
     {
         $this->TimeslotID = $TimeslotID;
+        return $this;
+    }
+
+    /**
+     * @return ShipmentGroups
+     */
+    public function Groups(): ShipmentGroups
+    {
+        return $this->Groups;
+    }
+
+    /**
+     * @param ShipmentGroups $ShipmentGroups
+     * @return Shipment
+     */
+    public function setGroups(ShipmentGroups $ShipmentGroups): Shipment
+    {
+        $this->Groups = $ShipmentGroups;
         return $this;
     }
 }
