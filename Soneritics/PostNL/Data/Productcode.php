@@ -2,7 +2,7 @@
 /*
  * The MIT License
  *
- * Copyright 2015 Soneritics Webdevelopment.
+ * Copyright 2020 Soneritics.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -27,9 +27,6 @@ namespace PostNL\Data;
 /**
  * Productcode class. Bevat constanten voor de productcodes die gebruikt kunenn worden binnen
  * de Pakket-class om productcodes mee aan te duiden.
- *
- * @author Jordi Jolink <mail@jordijolink.nl>
- * @since  17-4-2015
  */
 class Productcode
 {

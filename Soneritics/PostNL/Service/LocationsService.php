@@ -2,7 +2,7 @@
 /*
  * The MIT License
  *
- * Copyright 2015 Soneritics Webdevelopment.
+ * Copyright 2020 Soneritics.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -31,9 +31,6 @@ use PostNL\Model\OpeningTime;
 
 /**
  * Locations Service
- *
- * @author Jordi Jolink <mail@jordijolink.nl>
- * @since  4-6-2018
  */
 class LocationsService extends AbstractService
 {

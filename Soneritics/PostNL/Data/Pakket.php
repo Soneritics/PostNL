@@ -2,7 +2,7 @@
 /*
  * The MIT License
  *
- * Copyright 2015 Soneritics Webdevelopment.
+ * Copyright 2020 Soneritics.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,9 +28,6 @@ use PostNL\Mapping\MappingGenerator;
 
 /**
  * Pakket object.
- *
- * @author Jordi Jolink <mail@jordijolink.nl>
- * @since  14-4-2015
  */
 class Pakket extends MappingGenerator
 {

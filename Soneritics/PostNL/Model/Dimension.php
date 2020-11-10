@@ -2,7 +2,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 Soneritics Webdevelopment.
+ * Copyright 2020 Soneritics.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,9 +28,6 @@ use PostNL\Business\AutoJsonSerializer;
 
 /**
  * Dimension
- *
- * @author Jordi Jolink <mail@jordijolink.nl>
- * @since  28-5-2018
  */
 class Dimension extends AutoJsonSerializer
 {

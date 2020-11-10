@@ -5,9 +5,6 @@
 [![Latest Stable](https://img.shields.io/packagist/v/soneritics/postnl.svg?style=flat-square&label=stable)](https://packagist.org/packages/soneritics/postnl?branch=master)
 ![License](http://img.shields.io/badge/license-MIT-green.svg)
 
-Author
-* [@Soneritics](https://github.com/Soneritics) - Jordi Jolink
-
 ## Introduction
 This library offers a variety of functions for PostNL. Mainly, these are the two categories:
 - PostNL API - https://developer.postnl.nl
