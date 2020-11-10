@@ -136,13 +136,13 @@ class API
         return new ShippingStatusService($this->apiKey, $this->customer, $this->endpoints->ShippingStatus);
     }
 
-	/**
-	 * Get the address service
-	 *
-	 * @return AddressService
-	 */
-	public function getAddressService(): AddressService
-	{
-		return new AddressService($this->apiKey, $this->customer, $this->endpoints->Address);
-	}
+    /**
+     * Get the address service
+     *
+     * @return AddressService
+     */
+    public function getAddressService(): AddressService
+    {
+        return new AddressService($this->apiKey, $this->customer, $this->endpoints->Address);
+    }
 }

@@ -70,9 +70,9 @@ abstract class Endpoints
      */
     public $ShippingStatus;
 
-	/**
-	 * @var string
-	 */
+    /**
+     * @var string
+     */
     public $Address;
 
     /**

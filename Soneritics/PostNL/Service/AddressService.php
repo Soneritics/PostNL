@@ -31,17 +31,22 @@ class AddressService extends AbstractService
 {
     /**
      * Check the address (Dutch)
-	 *
+     *
      * @throws \Exception
      */
-    public function check(string $postalCode, string $city, string $street, string $houseNumber, string $addition): array
-    {
+    public function check(
+        string $postalCode,
+        string $city,
+        string $street,
+        string $houseNumber,
+        string $addition
+    ): array {
         return $this->get(
             '/national/v1/validate',
             [
                 'PostalCode' => $postalCode,
-				'Country' => 'NDL',
-				'City' => $city,
+                'Country' => 'NDL',
+                'City' => $city,
                 'Street' => $street,
                 'HouseNumber' => $houseNumber,
                 'Addition' => $addition
@@ -49,24 +54,29 @@ class AddressService extends AbstractService
         );
     }
 
-	/**
-	 * Check the address for international addresses
-	 *
-	 * @throws \Exception
-	 */
-	public function checkInternational(string $country, string $postalCode, string $city, string $street, string $houseNumber, string $addition): array
-	{
-		return $this->post(
-			'/international/v1/validate',
-			[
-				'PostalCode' => $postalCode,
-				'Country' => $country,
-				'City' => $city,
-				'Street' => $street,
-				'HouseNumber' => $houseNumber,
-				'Addition' => $addition
-			]
-		);
-	}
+    /**
+     * Check the address for international addresses
+     *
+     * @throws \Exception
+     */
+    public function checkInternational(
+        string $country,
+        string $postalCode,
+        string $city,
+        string $street,
+        string $houseNumber,
+        string $addition
+    ): array {
+        return $this->post(
+            '/international/v1/validate',
+            [
+                'PostalCode' => $postalCode,
+                'Country' => $country,
+                'City' => $city,
+                'Street' => $street,
+                'HouseNumber' => $houseNumber,
+                'Addition' => $addition
+            ]
+        );
+    }
 }
-

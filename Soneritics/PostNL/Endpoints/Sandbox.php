@@ -36,5 +36,5 @@ class Sandbox extends Endpoints
     public $Locations = 'https://api-sandbox.postnl.nl/shipment/v2_1/locations';
     public $PostalCode = 'https://api-sandbox.postnl.nl/shipment/checkout/v1';
     public $ShippingStatus = 'https://api-sandbox.postnl.nl/shipment/v2/status';
-	public $Address = 'https://api.postnl.nl/address'; // No sandbox available
+    public $Address = 'https://api.postnl.nl/address'; // No sandbox available
 }
