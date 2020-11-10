@@ -23,23 +23,96 @@
  * THE SOFTWARE.
  */
 
-namespace PostNL\Endpoints;
+namespace PostNL\Model;
+
+use PostNL\Business\AutoJsonSerializer;
 
 /**
- * Sandbox endpoints.
+ * Amount
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
- *
- * @since  27-5-2018
+ * @since  28-5-2018
  */
-class Sandbox extends Endpoints
+class Amount extends AutoJsonSerializer
 {
-    public $Barcode = 'https://api-sandbox.postnl.nl/shipment/v1_1';
-    public $Confirm = 'https://api-sandbox.postnl.nl/shipment/v1_10';
-    public $Labelling = 'https://api-sandbox.postnl.nl/shipment/v2_2';
-    public $Timeframe = 'https://api-sandbox.postnl.nl/shipment/v2_1';
-    public $Locations = 'https://api-sandbox.postnl.nl/shipment/v2_1/locations';
-    public $PostalCode = 'https://api-sandbox.postnl.nl/shipment/checkout/v1';
-    public $ShippingStatus = 'https://api-sandbox.postnl.nl/shipment/v2/status';
-	public $Address = 'https://api.postnl.nl/address'; // No sandbox available
+	/**
+	 * Mandatory
+	 *
+	 * @var string
+	 */
+	protected $AmountType;
+
+	/**
+	 * Mandatory
+	 *
+	 * @var string
+	 */
+	protected $Currency;
+
+	/**
+	 * Mandatory
+	 *
+	 * @var string
+	 */
+	protected $Value;
+
+	/**
+	 *
+	 * @return string
+	 */
+	public function getAmountType(): string
+	{
+		return $this->AmountType;
+	}
+
+	/**
+	 *
+	 * @param string $AmountType
+	 * @return Amount
+	 */
+	public function setAmountType(string $AmountType): Amount
+	{
+		$this->AmountType = $AmountType;
+		return $this;
+	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	public function getCurrency(): string
+	{
+		return $this->Currency;
+	}
+
+	/**
+	 *
+	 * @param string $Currency
+	 * @return Amount
+	 */
+	public function setCurrency(string $Currency): Amount
+	{
+		$this->Currency = $Currency;
+		return $this;
+	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	public function getValue(): string
+	{
+		return $this->Value;
+	}
+
+	/**
+	 *
+	 * @param string $Value
+	 * @return Amount
+	 */
+	public function setValue(string $Value): Amount
+	{
+		$this->Value = $Value;
+		return $this;
+	}
 }

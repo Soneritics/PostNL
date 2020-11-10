@@ -73,6 +73,11 @@ abstract class Endpoints
      */
     public $ShippingStatus;
 
+	/**
+	 * @var string
+	 */
+    public $Address;
+
     /**
      * Endpoints constructor.
      * Check if all endpoints are implemented.

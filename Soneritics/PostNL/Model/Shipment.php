@@ -41,6 +41,12 @@ class Shipment extends AutoJsonSerializer
      */
     protected $Addresses;
 
+	/**
+	 * Used for example in label: 3087 Extra Cover
+	 * @var
+	 */
+    protected $Amounts;
+
     /**
      * Mandatory
      *
@@ -227,6 +233,24 @@ class Shipment extends AutoJsonSerializer
         $this->Addresses = $Addresses;
         return $this;
     }
+
+	/**
+	 * @return Amounts
+	 */
+    public function getAmounts() : Amounts
+	{
+		return $this->Amounts;
+	}
+
+	/**
+	 * @param Amounts $Amounts
+	 * @return $this
+	 */
+	public function setAmounts(Amounts $Amounts) : Shipment
+	{
+		$this->Amounts = $Amounts;
+		return $this;
+	}
 
     /**
      *
