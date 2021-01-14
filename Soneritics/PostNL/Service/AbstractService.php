@@ -45,6 +45,12 @@ abstract class AbstractService
 
     /**
      *
+     * @var \PestJSON
+     */
+    private $httpClient;
+    
+    /**
+     *
      * @var Customer
      */
     protected $customer;
@@ -64,6 +70,29 @@ abstract class AbstractService
     }
 
     /**
+     * Get http client instance
+     * 
+     * @return \PestJSON
+     */
+    public function getHttpClient()
+    {
+        if(!$this->httpClient) {
+            $this->httpClient = new \PestJSON($this->endpoint);
+        }
+        return $this->httpClient;
+    }
+
+    /**
+     * Set http client instance
+     * 
+     * @param \PestJSON $client
+     */
+    public function setHttpClient(\PestJSON $client)
+    {
+        $this->httpClient = $client;
+    }
+    
+    /**
      * Get data from a REST call.
      *
      * @param  $url
@@ -73,7 +102,7 @@ abstract class AbstractService
      */
     protected function get($url, $data)
     {
-        return (new \PestJSON($this->endpoint))->get($url, $data, $this->getHeaders());
+        return $this->getHttpClient()->get($url, $data, $this->getHeaders());
     }
 
     /**
@@ -86,7 +115,7 @@ abstract class AbstractService
      */
     protected function post($url, $data)
     {
-        return (new \PestJSON($this->endpoint))->post($url, $data, $this->getHeaders());
+        return $this->getHttpClient()->post($url, $data, $this->getHeaders());
     }
 
     /**
