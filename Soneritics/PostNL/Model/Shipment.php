@@ -213,6 +213,12 @@ class Shipment extends AutoJsonSerializer
 
     /**
      *
+     * @var array
+     */
+    protected $ProductOptions = [];
+    
+    /**
+     *
      * @return Addresses
      */
     public function getAddresses(): Addresses
@@ -787,5 +793,26 @@ class Shipment extends AutoJsonSerializer
     {
         $this->TimeslotID = $TimeslotID;
         return $this;
+    }
+
+    /**
+     * Add a product option
+     *
+     * @param  ProductOption $productOption
+     * @return Shipment
+     */
+    public function addProductOption(ProductOption $productOption) : Shipment
+    {
+        $this->ProductOptions[] = $productOption;
+        return $this;
+    }
+    
+    /**
+     *
+     * @return array
+     */
+    public function getProductOptions()
+    {
+        return $this->ProductOptions;
     }
 }
