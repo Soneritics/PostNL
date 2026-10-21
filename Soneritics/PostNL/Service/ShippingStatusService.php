@@ -57,7 +57,7 @@ class ShippingStatusService extends AbstractService
      * @return string
      * @throws \Exception
      */
-    public function getByCustomerNumber(string $customerNumber, string $fromPeriod = null)
+    public function getByCustomerNumber(string $customerNumber, ?string $fromPeriod = null)
     {
         $params = [];
         if ($fromPeriod) {
